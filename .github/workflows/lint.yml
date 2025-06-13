@@ -16,7 +16,7 @@ jobs:
       - name: ESLint
         run: npm run lint
       - name: Type check
-        run: npm run typecheck
+        run: npm run tsc
       - name: Prettier
         run: npm run format:check
       - name: Tests

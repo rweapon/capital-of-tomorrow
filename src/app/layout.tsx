@@ -28,9 +28,6 @@ export const generateMetadata = (): Metadata => ({
     shortcut: '/favicon/favicon-16x16.png',
     apple: '/favicon/apple-touch-icon.png',
   },
-  verification: {
-    google: siteConfig.googleSiteVerificationId(),
-  },
   openGraph: {
     url: siteConfig.url(),
     title: siteConfig.title(),
