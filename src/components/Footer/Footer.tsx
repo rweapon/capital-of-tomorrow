@@ -22,6 +22,7 @@ export const footerData: IFooterData = {
     },
     privacy: 'PRIVACY POLICY',
 };
+
 export function Footer() {
     return (
         <footer className="bg-[#1E1E1E] py-6 text-white sm:mt-20 lg:mt-44">
