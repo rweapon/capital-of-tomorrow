@@ -17,10 +17,12 @@ export interface IGradientProps {
     gradient: IGradientDefinition;
     units?: string;
 }
+
 export interface IPartnershipTier {
     title: string;
     listItems: string[];
 }
+
 type BackgroundType = 'solid' | 'gold-gradient' | 'overlay-gradient';
 
 export interface ICardProps {

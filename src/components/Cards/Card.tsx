@@ -185,13 +185,14 @@ export const Card: React.FC<ICardProps> = ({
 
     const renderButton = () => {
         const buttonProps = {
-            className: 'font-mont rounded-[12px] font-bold text-xl transition-all duration-200',
+            className: 'font-mont rounded-[12px] font-bold text-xl transition-all duration-200 ',
             style: {
                 color: buttonTextColor,
                 cursor: 'pointer',
                 border: 'none',
                 width: buttonWidth,
                 height: buttonHeight,
+
             },
             children: 'Get started',
         };
@@ -244,7 +245,7 @@ export const Card: React.FC<ICardProps> = ({
                     </svg>
                     <button
                         {...buttonProps}
-                        className="font-mont relative z-10 size-full bg-transparent text-xl font-bold"
+                        className="font-mont  relative z-10 size-full bg-transparent text-xl font-bold"
                     />
                 </div>
             );
@@ -253,7 +254,9 @@ export const Card: React.FC<ICardProps> = ({
         return (
             <button
                 {...buttonProps}
+
                 style={{ ...buttonProps.style, background: buttonBackgroundColor }}
+
             />
         );
     };

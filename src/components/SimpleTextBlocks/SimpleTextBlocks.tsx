@@ -45,11 +45,7 @@ function Block({ text, size = 'small', className = '' }: IBlockProps) {
                 className="relative flex size-full items-center justify-center rounded-3xl p-4"
                 style={blockStyles}
             >
-                {isLarge ? (
-                    <h2 className={textClasses}>{text}</h2>
-                ) : (
-                    <p className={textClasses}>{text}</p>
-                )}
+                {isLarge ? <h2 className={textClasses}>{text}</h2> : <p className={textClasses}>{text}</p>}
             </div>
         </div>
     );
@@ -60,11 +56,7 @@ export function SimpleTextBlocks() {
         <div className="w-full">
             <div className="mx-auto max-w-7xl space-y-4 md:space-y-6 xl:space-y-0">
                 <div className="hidden items-center gap-2.5 xl:flex">
-                    <Block
-                        text={blockContent.largeBlocks[0]}
-                        size="large"
-                        className="h-[201px] w-[409px]"
-                    />
+                    <Block text={blockContent.largeBlocks[0]} size="large" className="h-[201px] w-[409px]" />
 
                     <div className="grid max-w-[480px] flex-1 grid-cols-2 gap-2.5">
                         {blockContent.smallBlocks.map((text, index) => (
@@ -72,11 +64,7 @@ export function SimpleTextBlocks() {
                         ))}
                     </div>
 
-                    <Block
-                        text={blockContent.largeBlocks[1]}
-                        size="large"
-                        className="h-[201px] w-[409px]"
-                    />
+                    <Block text={blockContent.largeBlocks[1]} size="large" className="h-[201px] w-[409px]" />
                 </div>
 
                 <div className="hidden lg:block xl:hidden">
