@@ -1,7 +1,6 @@
 interface FooterLink {
     href: string;
     text: string;
-    isHighlighted: boolean;
 }
 
 interface FooterSocial {
@@ -14,7 +13,7 @@ interface FooterAddress {
     lines: string[];
 }
 
-export interface FooterData {
+export default interface IFooterData {
     links: FooterLink[];
     copyright: string;
     social: FooterSocial;

@@ -9,12 +9,7 @@ module.exports = {
         'plugin:tailwindcss/recommended',
         'plugin:jsx-a11y/recommended',
     ],
-    plugins: [
-        'simple-import-sort',
-        'prettier',
-        '@typescript-eslint',
-        'jsx-a11y',
-    ],
+    plugins: ['simple-import-sort', 'prettier', '@typescript-eslint', 'jsx-a11y'],
     rules: {
         'prettier/prettier': ['error', { tabWidth: 4 }],
         indent: ['error', 4],
@@ -27,11 +22,7 @@ module.exports = {
             {
                 groups: [
                     ['^.+\\.s?css$'],
-                    [
-                        `^(${require('module').builtinModules.join('|')})(/|$)`,
-                        '^react',
-                        '^@?\\w',
-                    ],
+                    [`^(${require('module').builtinModules.join('|')})(/|$)`, '^react', '^@?\\w'],
                     ['^components(/.*|$)'],
                     ['^lib(/.*|$)', '^hooks(/.*|$)'],
                     ['^\\.'],
