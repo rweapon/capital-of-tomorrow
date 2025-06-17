@@ -185,7 +185,7 @@ export const Card: React.FC<ICardProps> = ({
 
     const renderButton = () => {
         const buttonProps = {
-            className: 'font-mont rounded-[12px] font-bold text-xl transition-all duration-200 ',
+            className: 'font-mont rounded-[12px] font-bold text-xl transition-all duration-200 hover:scale-105',
             style: {
                 color: buttonTextColor,
                 cursor: 'pointer',
@@ -200,7 +200,7 @@ export const Card: React.FC<ICardProps> = ({
         if (buttonBackgroundType === 'gold-gradient') {
             return (
                 <div
-                    className="relative overflow-hidden rounded-[12px]"
+                    className="relative overflow-hidden rounded-[12px] hover:scale-105 transition-all duration-200"
                     style={{ width: buttonWidth, height: buttonHeight }}
                 >
                     <div className="absolute inset-0 bg-[#C1A875]" />
