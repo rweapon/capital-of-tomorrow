@@ -1,73 +1,70 @@
-import { Card } from './Card';
-
+import Card from './Card';
 import { IPartnershipTier } from '@/types/Card.interfaces';
 
 const partnershipTiers: IPartnershipTier[] = [
     {
-        title: 'OFFICIAL PARTNER',
+        title: 'VISIBILITY PARTNER',
+        price: '1500',
         listItems: [
             'Logo on the website and printed materials',
-            'Roll-up in the welcome area',
+            'Branding in the welcome zone',
             'Partner certificate',
             'Access to photo and video materials',
-            'Access to the chats',
-            'Brochure stand in the ball room, 3 posts in social media',
         ],
     },
     {
         title: 'COLLABORATION PARTNER',
+        price: '3000',
         listItems: [
-            'Everything from the Official package',
+            'Everything from the Visibility package',
+            'Interactive brand activity',
+            'Invitation to a private partner dinner',
             'Own area for networking/branding',
-            'Stand table with company representative and merchandising',
-            '5 posts on social media and 1 vertical video about the company',
-            "Company brochure added to participants' merchandise",
+            'Possibility to provide a mentor or speaker',
         ],
     },
     {
-        title: 'PRIMARY PARTNER',
+        title: 'IMPACT PARTNER',
+        price: '7000',
         listItems: [
             'Everything from the Collaboration package',
-            'Logo of the company will be provided on our landing and event page forever',
-            'Opening and during breaks',
+            'General partner status',
+            'Brand video at the opening',
             'Presentation of the grant to the participant',
-            'Mention of your logo and slogan in every video on our social media channels',
-            'Thank-you speech from the head of Vostochnik Events',
+            'Personal promotional zone',
         ],
     },
 ];
 
 export const PartnershipCards = () => {
     return (
-        <div className="mx-auto flex max-w-[1440px] flex-col items-center px-4 py-12 sm:px-6 lg:px-8">
-            <h2 className="font-akira text-center text-3xl font-extrabold text-[#f8f7f5] md:text-4xl lg:text-5xl">
-                CONDITIONS OF PARTNERSHIP
+        <div className=" flex max-w-[1440px] flex-col items-center  mx-auto sm:mx-24 mb-4 sm:mb-10 lg:mb-[90px]">
+            <h2 className="font-akira text-center pb-4 sm:pb-8 lg:pb-12 text-3xl font-extrabold text-[#f8f7f5] md:text-4xl lg:text-5xl">
+                Conditions of Partnership
             </h2>
-            <div className="mt-12 w-full">
-                <ul className="flex flex-wrap justify-center gap-8">
-                    {partnershipTiers.map((tier, index) => (
-                        <li key={index} className="shrink-0" style={{ minWidth: '360px' }}>
-                            <Card
-                                opacity={0.5}
-                                title={tier.title}
-                                listItems={tier.listItems}
-                                width="360px"
-                                height="450px"
-                                backgroundType="overlay-gradient"
-                                backgroundColor="#2D2D2D"
-                                textColor="#FFFFFF"
-                                buttonBackgroundType="solid"
-                                buttonBackgroundColor="#E3AF64"
-                                buttonTextColor="#1E1E1E"
-                                borderColor="#606060"
-                                shadow="0 4px 4px 0 rgba(0, 0, 0, 0.25)"
-                                buttonWidth="290px"
-                                buttonHeight="50px"
-                                buttonFontSize="13px"
-                            />
-                        </li>
-                    ))}
-                </ul>
+            <div className="flex flex-wrap justify-center gap-8">
+                {partnershipTiers.map((tier) => (
+                    <Card
+                        key={tier.title}
+                        layout="partnership"
+                        title={tier.title}
+                        price={tier.price}
+                        listItems={tier.listItems}
+                        width="360px"
+                        height="380px"
+                        backgroundType="overlay-gradient"
+                        backgroundColor="#2D2D2D"
+                        textColor="#FFFFFF"
+                        buttonBackgroundType="solid"
+                        buttonBackgroundColor="#E3AF64"
+                        buttonTextColor="#1E1E1E"
+                        borderColor="#606060"
+                        shadow="0 4px 4px 0 rgba(0, 0, 0, 0.25)"
+                        buttonWidth="280px"
+                        buttonHeight="50px"
+                        opacity={0.5}
+                    />
+                ))}
             </div>
         </div>
     );

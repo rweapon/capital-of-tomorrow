@@ -7,6 +7,5 @@ interface ITimelineEvent {
 
 export interface ITimelineContent {
     title: string;
-    subtitle: string;
     events: ITimelineEvent[];
 }

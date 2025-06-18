@@ -20,6 +20,7 @@ export interface IGradientProps {
 
 export interface IPartnershipTier {
     title: string;
+    price: string;
     listItems: string[];
 }
 
@@ -42,4 +43,7 @@ export interface ICardProps {
     buttonWidth?: string;
     buttonHeight?: string;
     buttonFontSize?: string;
+    layout?: string;
+    price?: string;
+    buttonText?: string
 }

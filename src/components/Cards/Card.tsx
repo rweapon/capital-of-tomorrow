@@ -1,8 +1,7 @@
 import React from 'react';
-
 import { ICardProps, IGradientDefinition, IGradientProps } from '@/types/Card.interfaces';
 
-export const GRADIENTS = {
+const GRADIENTS = {
     goldBase: {
         x1: '15.6361',
         y1: '335.861',
@@ -41,14 +40,7 @@ export const GRADIENTS = {
 };
 
 const Gradient: React.FC<IGradientProps> = ({ id, gradient, units = 'userSpaceOnUse' }) => (
-    <linearGradient
-        id={id}
-        x1={gradient.x1}
-        y1={gradient.y1}
-        x2={gradient.x2}
-        y2={gradient.y2}
-        gradientUnits={units}
-    >
+    <linearGradient id={id} x1={gradient.x1} y1={gradient.y1} x2={gradient.x2} y2={gradient.y2} gradientUnits={units}>
         {gradient.stops.map((stop, i) => (
             <stop key={i} offset={stop.offset} stopColor={stop.color} stopOpacity={stop.opacity} />
         ))}
@@ -81,7 +73,7 @@ const NoiseFilter: React.FC<{ id: string }> = ({ id }) => (
     </filter>
 );
 
-export const Card: React.FC<ICardProps> = ({
+const Card: React.FC<ICardProps> = ({
     title,
     listItems,
     backgroundType,
@@ -98,13 +90,16 @@ export const Card: React.FC<ICardProps> = ({
     buttonWidth = '220px',
     buttonHeight = '85px',
     buttonFontSize,
+    layout = 'default',
+    price,
+    buttonText = 'Get started',
 }) => {
-    const numericWidth = Number.parseInt(width);
-    const numericHeight = Number.parseInt(height);
+    const numericWidth = parseInt(width);
+    const numericHeight = parseInt(height);
     const r = 20;
     const circleR = 22;
-    const y = numericHeight - 30 - 85 - 60 + 0.5;
-    const gradientId = `gradient-${Math.random().toString(36).substr(2, 9)}`;
+    const y = layout === 'partnership' ? 256 : numericHeight - 30 - 85 - 60 + 0.5;
+    const gradientId = React.useId();
 
     const path = `M ${r},0 H ${numericWidth - r} A ${r},${r} 0 0 1 ${numericWidth},${r} V ${y - circleR} A ${circleR},${circleR} 0 0 0 ${numericWidth - circleR},${y} A ${circleR},${circleR} 0 0 0 ${numericWidth},${y + circleR} V ${numericHeight - r} A ${r},${r} 0 0 1 ${numericWidth - r},${numericHeight} H ${r} A ${r},${r} 0 0 1 0,${numericHeight - r} V ${y + circleR} A ${circleR},${circleR} 0 0 0 ${circleR},${y} A ${circleR},${circleR} 0 0 0 0,${y - circleR} V ${r} A ${r},${r} 0 0 1 ${r},0 Z`;
 
@@ -118,19 +113,17 @@ export const Card: React.FC<ICardProps> = ({
             opacity: '0.7',
         };
 
-        switch (backgroundType) {
-            case 'gold-gradient':
-                return <line {...commonProps} stroke="#1e1e1e" strokeWidth="1" />;
-            case 'solid':
-                return (
-                    <g>
-                        <line {...commonProps} stroke="#1e1e1e" strokeWidth="3" opacity="1" />
-                        <line {...commonProps} stroke="#D4AF37" strokeWidth="1" opacity="1" />
-                    </g>
-                );
-            default:
-                return <line {...commonProps} stroke="#7c7676" strokeWidth="1" />;
+        if (backgroundType === 'gold-gradient') {
+            return <line {...commonProps} stroke="#1e1e1e" strokeWidth="1" />;
+        } else if (backgroundType === 'solid') {
+            return (
+                <g>
+                    <line {...commonProps} stroke="#1e1e1e" strokeWidth="3" opacity="1" />
+                    <line {...commonProps} stroke="#D4AF37" strokeWidth="1" opacity="1" />
+                </g>
+            );
         }
+        return <line {...commonProps} stroke="#7c7676" strokeWidth="1" />;
     };
 
     const renderBackground = () => {
@@ -140,69 +133,55 @@ export const Card: React.FC<ICardProps> = ({
                     <>
                         <defs>
                             <Gradient id={`goldBase-${gradientId}`} gradient={GRADIENTS.goldBase} />
-                            <Gradient
-                                id={`goldOverlay-${gradientId}`}
-                                gradient={GRADIENTS.goldOverlay}
-                            />
+                            <Gradient id={`goldOverlay-${gradientId}`} gradient={GRADIENTS.goldOverlay} />
+                            <NoiseFilter id={`noise-${gradientId}`} />
                         </defs>
-                        <path d={path} fill="#C1A875" stroke={borderColor} strokeWidth="1" />
-                        <path
-                            d={path}
-                            fill={`url(#goldBase-${gradientId})`}
-                            style={{ mixBlendMode: 'normal' }}
-                        />
-                        <path
-                            d={path}
-                            fill={`url(#goldOverlay-${gradientId})`}
-                            style={{ mixBlendMode: 'overlay' }}
-                        />
-                        <path d={path} fill="#C1A875" style={{ mixBlendMode: 'color' }} />
+                        <g filter={`url(#noise-${gradientId})`}>
+                            <path d={path} fill="#C1A875" stroke={borderColor} strokeWidth="1" />
+                            <path d={path} fill={`url(#goldBase-${gradientId})`} style={{ mixBlendMode: 'normal' }} />
+                            <path d={path} fill={`url(#goldOverlay-${gradientId})`} style={{ mixBlendMode: 'overlay' }} />
+                            <path d={path} fill="#C1A875" style={{ mixBlendMode: 'color' }} />
+                        </g>
                     </>
                 );
             case 'overlay-gradient':
                 return (
                     <>
                         <defs>
-                            <Gradient
-                                id={`overlayFill-${gradientId}`}
-                                gradient={GRADIENTS.overlayFill}
-                                units="objectBoundingBox"
-                            />
+                            <Gradient id={`overlayFill-${gradientId}`} gradient={GRADIENTS.overlayFill} units="objectBoundingBox" />
                             <NoiseFilter id={`noise-${gradientId}`} />
                         </defs>
                         <g filter={`url(#noise-${gradientId})`}>
-                            <path d={path} fill="#2a2a2a" stroke="#505050" strokeWidth="1" />
+                            <path d={path} fill={backgroundColor || '#2a2a2a'} stroke="#505050" strokeWidth="1" />
                             <path d={path} fill={`url(#overlayFill-${gradientId})`} />
                         </g>
                     </>
                 );
             default:
                 return (
-                    <path d={path} fill={backgroundColor} stroke={borderColor} strokeWidth="1" />
+                    <path
+                        d={path}
+                        fill={backgroundColor}
+                        stroke={borderColor}
+                        strokeWidth="1"
+                    />
                 );
         }
     };
 
     const renderButton = () => {
-        const buttonProps = {
-            className: 'font-mont rounded-[12px] font-bold text-xl transition-all duration-200 hover:scale-105',
-            style: {
-                color: buttonTextColor,
-                cursor: 'pointer',
-                border: 'none',
-                width: buttonWidth,
-                height: buttonHeight,
-
-            },
-            children: 'Get started',
+        const buttonStyle = {
+            color: buttonTextColor,
+            width: buttonWidth,
+            height: buttonHeight,
+            fontSize: layout === 'partnership' ? '16px' : '20px',
         };
+
+        const borderRadiusClass = layout === 'partnership' ? 'rounded-[35px]' : 'rounded-[12px]';
 
         if (buttonBackgroundType === 'gold-gradient') {
             return (
-                <div
-                    className="relative overflow-hidden rounded-[12px] hover:scale-105 transition-all duration-200"
-                    style={{ width: buttonWidth, height: buttonHeight }}
-                >
+                <div className="relative overflow-hidden rounded-[12px] hover:scale-105 transition-all duration-200" style={{ width: buttonWidth, height: buttonHeight }}>
                     <div className="absolute inset-0 bg-[#C1A875]" />
                     <svg className="absolute inset-0 size-full">
                         <defs>
@@ -224,66 +203,117 @@ export const Card: React.FC<ICardProps> = ({
                                 }}
                             />
                         </defs>
-                        <rect
-                            width="100%"
-                            height="100%"
-                            fill={`url(#btnGoldBase-${gradientId})`}
-                            style={{ mixBlendMode: 'normal' }}
-                        />
-                        <rect
-                            width="100%"
-                            height="100%"
-                            fill={`url(#btnGoldOverlay-${gradientId})`}
-                            style={{ mixBlendMode: 'overlay' }}
-                        />
-                        <rect
-                            width="100%"
-                            height="100%"
-                            fill="#C1A875"
-                            style={{ mixBlendMode: 'color' }}
-                        />
+                        <rect width="100%" height="100%" fill={`url(#btnGoldBase-${gradientId})`} style={{ mixBlendMode: 'normal' }} />
+                        <rect width="100%" height="100%" fill={`url(#btnGoldOverlay-${gradientId})`} style={{ mixBlendMode: 'overlay' }} />
+                        <rect width="100%" height="100%" fill="#C1A875" style={{ mixBlendMode: 'color' }} />
                     </svg>
                     <button
-                        {...buttonProps}
-                        className="font-mont  relative z-10 size-full bg-transparent text-xl font-bold"
-                    />
+                        className={`font-mont  relative z-10 size-full bg-transparent font-bold ${borderRadiusClass} hover:scale-105 transition-all duration-200`}
+                        style={buttonStyle}
+                    >
+                        {buttonText}
+                    </button>
                 </div>
             );
         }
 
         return (
             <button
-                {...buttonProps}
-
-                style={{ ...buttonProps.style, background: buttonBackgroundColor }}
-
-            />
+                className={`font-mont font-bold  ${borderRadiusClass} hover:scale-105 transition-all duration-200`}
+                style={{ ...buttonStyle, background: buttonBackgroundColor }}
+            >
+                {buttonText}
+            </button>
         );
     };
 
     const isGoldGradientText = textColor.includes('linear-gradient');
     const textStyle = isGoldGradientText
-        ? {
-            background: textColor,
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-        }
+        ? { background: textColor, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }
         : { color: textColor };
 
+    const renderContent = () => {
+        if (layout === 'partnership') {
+            return (
+                <>
+                    <header className='px-[34px] py-8 min-h-[256px] flex flex-col justify-between'>
+
+                        <h2 className="font-akira text-center text-[18px] font-bold uppercase leading-tight tracking-tight" style={textStyle}>
+                            {title}
+                        </h2>
+
+
+                        {price && (
+
+                            <div className="text-center leading-[34px] -ml-24">
+                                <span className="text-[#E3AF64] text-2xl font-bold align-super" style={{ verticalAlign: '20px' }}>£</span>
+                                <span className="text-[48px] font-[800] font-akira" style={textStyle}>
+                                    {price}
+                                </span>
+                            </div>
+                        )}
+
+                        <div className="flex justify-center">
+                            {renderButton()}
+                        </div>
+
+                    </header>
+
+
+                    <div className="flex-1 px-6 pt-8 pb-8">
+                        <ul className="font-mont text-[13px] leading-[1] ">
+                            {listItems.map((item, index) => (
+                                <li key={index} className="flex items-start">
+                                    <span className="mr-3 mt-1 text-[#E3AF64] leading-[1] text-xs">•</span>
+                                    <span style={textStyle} dangerouslySetInnerHTML={{ __html: item }} />
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                </>
+            );
+        }
+
+        return (
+            <>
+                <header className="h-24 px-3 pt-7">
+                    <h2 className="font-akira text-center text-[20px] font-bold uppercase leading-tight tracking-tight" style={textStyle}>
+                        {title}
+                    </h2>
+                </header>
+                <ul
+                    style={{ fontSize: buttonFontSize || '16px' }}
+                    className="font-mont max-h-[280px] overflow-y-auto px-4 text-base leading-[1.3]"
+                >
+                    {listItems.map((item, index) => (
+                        <li key={index} className="flex items-start">
+                            <svg
+                                width="16"
+                                height="16"
+                                viewBox="0 0 24 24"
+                                className="mr-2 mt-1 shrink-0"
+                                style={{ fill: isGoldGradientText ? '#E3AF64' : textColor }}
+                            >
+                                <circle cx="12" cy="12" r="4" />
+                            </svg>
+                            <span style={textStyle} dangerouslySetInnerHTML={{ __html: item }} />
+                        </li>
+                    ))}
+                </ul>
+                <div className={`mb-[30px] mt-auto flex justify-center`}>
+                    {renderButton()}
+                </div>
+            </>
+        );
+    };
+
     return (
-        <div
-            className="relative mx-auto"
-            style={{
-                width: '100%',
-                height,
-                filter: `drop-shadow(${shadow})`,
-            }}
-        >
+        <div className="relative " style={{ width, height, filter: `drop-shadow(${shadow})` }}>
             <svg
                 className="absolute inset-0"
                 width="100%"
+                height="100%"
                 style={{ opacity }}
-                height={numericHeight}
                 preserveAspectRatio="none"
             >
                 {renderBackground()}
@@ -291,48 +321,13 @@ export const Card: React.FC<ICardProps> = ({
             </svg>
 
             <div
-                className="absolute inset-0 flex flex-col justify-between"
-                style={{
-                    clipPath: `path('${path}')`,
-                    width: '100%',
-                }}
+                className="absolute inset-0 flex flex-col"
+                style={{ clipPath: `path('${path}')` }}
             >
-                <div>
-                    <header className="h-24 px-3 pt-7">
-                        <h2
-                            className="font-akira text-center text-[20px] font-bold uppercase leading-tight tracking-tight"
-                            style={textStyle}
-                        >
-                            {title}
-                        </h2>
-                    </header>
-                    <ul
-                        style={{
-                            fontSize: buttonFontSize || '16px',
-                        }}
-                        className="font-mont max-h-[280px] overflow-y-auto px-4 text-base leading-[1.2]"
-                    >
-                        {listItems.map((item, index) => (
-                            <li key={index} className="flex items-start">
-                                <svg
-                                    width="16"
-                                    height="16"
-                                    viewBox="0 0 24 24"
-                                    className="mr-2 mt-1 shrink-0"
-                                    style={{ fill: isGoldGradientText ? '#E3AF64' : textColor }}
-                                >
-                                    <circle cx="12" cy="12" r="4" />
-                                </svg>
-                                <span
-                                    style={textStyle}
-                                    dangerouslySetInnerHTML={{ __html: item }}
-                                />
-                            </li>
-                        ))}
-                    </ul>
-                </div>
-                <div className="mb-[30px] mt-auto flex justify-center">{renderButton()}</div>
+                {renderContent()}
             </div>
         </div>
     );
 };
+
+export default Card;

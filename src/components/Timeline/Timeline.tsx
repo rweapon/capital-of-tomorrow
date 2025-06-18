@@ -4,7 +4,6 @@ import { ITimelineContent } from '@/types/Timeline.interfeces';
 
 const timelineContent: ITimelineContent = {
     title: 'application timeline',
-    subtitle: 'upcoming events',
     events: [
         {
             date: '11',
@@ -34,12 +33,9 @@ export const Timeline = () => {
     return (
         <section className="mx-7 flex flex-col gap-3 sm:gap-5 md:gap-7 lg:gap-8 xl:mx-[124px] xl:gap-10">
             <div className="flex flex-col gap-1 sm:gap-2 md:gap-3 lg:gap-4 xl:gap-5">
-                <h1 className="font-akira whitespace-nowrap font-bold uppercase text-white sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl">
+                <h1 className="font-akira tracking-wider whitespace-nowrap  font-bold uppercase text-white sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl">
                     {timelineContent.title}
                 </h1>
-                <p className="font-mont font-thin uppercase text-white lg:text-xl">
-                    {timelineContent.subtitle}
-                </p>
             </div>
             <ul className="flex flex-col gap-2 md:flex-row md:gap-4 lg:gap-5 xl:gap-7">
                 {timelineContent.events.map((event, index) => (
