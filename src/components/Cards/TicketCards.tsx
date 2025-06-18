@@ -36,8 +36,9 @@ const tickets: ICardProps[] = [
             'Networking with mentors',
         ],
         backgroundType: 'overlay-gradient',
-        backgroundColor: '#2D2D2D', // Основной цвет фона
+        backgroundColor: '#2D2D2D',
         textColor: '#FFFFFF',
+        listTextColor: '#fffc',
         buttonBackgroundType: 'solid',
         buttonBackgroundColor: '#E3AF64',
         buttonTextColor: '#1e1e1e',
@@ -56,6 +57,7 @@ const tickets: ICardProps[] = [
         backgroundType: 'overlay-gradient',
         backgroundColor: '#2D2D2D',
         textColor: '#FFFFFF',
+        listTextColor: '#fffc',
         buttonBackgroundType: 'solid',
         buttonBackgroundColor: '#E3AF64',
         buttonTextColor: '#1e1e1e',

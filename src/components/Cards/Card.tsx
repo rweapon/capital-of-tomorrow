@@ -92,6 +92,7 @@ const Card: React.FC<ICardProps> = ({
     buttonFontSize,
     layout = 'default',
     price,
+    listTextColor,
     buttonText = 'Get started',
 }) => {
     const numericWidth = parseInt(width);
@@ -233,6 +234,12 @@ const Card: React.FC<ICardProps> = ({
         : { color: textColor };
 
     const renderContent = () => {
+        const listTextStyle = {
+            ...(listTextColor
+                ? { color: listTextColor }
+                : textStyle
+            )
+        };
         if (layout === 'partnership') {
             return (
                 <>
@@ -265,7 +272,7 @@ const Card: React.FC<ICardProps> = ({
                             {listItems.map((item, index) => (
                                 <li key={index} className="flex items-start">
                                     <span className="mr-3 mt-1 text-[#E3AF64] leading-[1] text-xs">•</span>
-                                    <span style={textStyle} dangerouslySetInnerHTML={{ __html: item }} />
+                                    <span style={{ color: '#fffc' }} dangerouslySetInnerHTML={{ __html: item }} />
                                 </li>
                             ))}
                         </ul>
@@ -296,7 +303,7 @@ const Card: React.FC<ICardProps> = ({
                             >
                                 <circle cx="12" cy="12" r="4" />
                             </svg>
-                            <span style={textStyle} dangerouslySetInnerHTML={{ __html: item }} />
+                            <span style={listTextStyle} dangerouslySetInnerHTML={{ __html: item }} />
                         </li>
                     ))}
                 </ul>

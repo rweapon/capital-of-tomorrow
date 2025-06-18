@@ -17,18 +17,17 @@ export interface IGradientProps {
     gradient: IGradientDefinition;
     units?: string;
 }
-
 export interface IPartnershipTier {
     title: string;
-    price: string;
     listItems: string[];
+    price: string;
 }
-
 type BackgroundType = 'solid' | 'gold-gradient' | 'overlay-gradient';
 
 export interface ICardProps {
     title: string;
     listItems: string[];
+    listTextColor?: string;
     backgroundType: BackgroundType;
     backgroundColor?: string;
     textColor: string;
@@ -43,7 +42,7 @@ export interface ICardProps {
     buttonWidth?: string;
     buttonHeight?: string;
     buttonFontSize?: string;
-    layout?: string;
-    price?: string;
-    buttonText?: string
+    layout?: string,
+    price?: string,
+    buttonText?: string,
 }
