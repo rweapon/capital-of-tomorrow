@@ -1,3 +1,5 @@
+'use client';
+
 import Accordion from '@/components/Accordion';
 import { PartnershipCards } from '@/components/Cards/PartnershipCards';
 import { TicketCards } from '@/components/Cards/TicketCards';

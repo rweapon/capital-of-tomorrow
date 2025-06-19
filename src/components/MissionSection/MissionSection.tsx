@@ -1,6 +1,7 @@
+'use client';
 import React from 'react';
 
-import { IMissionContent, IMissionGoals } from '@/types/MissionSection.interfeces';
+import { IMissionContent, IMissionGoals } from '@/types/MissionSection.interfaces';
 
 const missionContent: IMissionContent = {
   title: 'OUR MISSION',

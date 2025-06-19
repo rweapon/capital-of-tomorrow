@@ -1,6 +1,11 @@
 const { paraglide } = require('@inlang/paraglide-next/plugin');
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  basePath: '/capital-of-tomorrow',
+  output: 'export',
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
   images: {
     remotePatterns: [
       {

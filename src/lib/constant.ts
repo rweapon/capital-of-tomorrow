@@ -5,18 +5,7 @@ import { AccordionItem } from '@/types/Accordion.interfaces';
 export const siteConfig = {
   title: m.meta_title,
   description: m.meta_description,
-  keywords: () => [
-    m.meta_keyword_nextjs(),
-    m.meta_keyword_react(),
-    m.meta_keyword_nextjs_starter(),
-    m.meta_keyword_nextjs_boilerplate(),
-    m.meta_keyword_starter_template(),
-    m.meta_keyword_tailwindcss(),
-    m.meta_keyword_typescript(),
-    m.meta_keyword_shadcn_ui(),
-    m.meta_keyword_next_auth(),
-    m.meta_keyword_prisma(),
-  ],
+  keywords: () => [m.meta_keyword_nextjs()],
   url: () => env.APP_URL,
 };
 

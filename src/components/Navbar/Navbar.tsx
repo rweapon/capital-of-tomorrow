@@ -4,7 +4,7 @@ import {
   IEventInfo,
   IHeroContent,
   INavigationItem,
-} from '@/types/Navbar.interfeces';
+} from '@/types/Navbar.interfaces';
 
 const navigationItems: INavigationItem[] = [
   { id: 'about', label: 'ABOUT US', href: '/' },

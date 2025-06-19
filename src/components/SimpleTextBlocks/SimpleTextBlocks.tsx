@@ -1,6 +1,7 @@
+'use client';
 import React from 'react';
 
-import { IBlockContent, IBlockProps, IStyleData } from '@/types/SimpleTextBlocks.interfeces';
+import { IBlockContent, IBlockProps, IStyleData } from '@/types/SimpleTextBlocks.interfaces';
 
 const gradientBorderStyles: IStyleData = {
   background: 'linear-gradient(to top left, #1f2937, #6b7280, #d1d5db)',

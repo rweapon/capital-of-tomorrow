@@ -1,3 +1,4 @@
+'use client';
 import Card from './Card';
 
 import { ICardProps } from '@/types/Card.interfaces';

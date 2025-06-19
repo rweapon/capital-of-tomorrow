@@ -1,9 +1,9 @@
 import '@/styles/globals.css';
 
-import { PropsWithChildren } from 'react';
-import { LanguageProvider } from '@inlang/paraglide-next';
+import { PropsWithChildren, Suspense } from 'react';
 import type { Metadata } from 'next';
 
+import ClientProvider from '@/app/provider';
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 import { siteConfig } from '@/lib/constant';
@@ -40,31 +40,29 @@ export const generateMetadata = (): Metadata => ({
 
 const RootLayout = ({ children }: PropsWithChildren) => {
   return (
-    <LanguageProvider>
-      <html lang={languageTag()} suppressHydrationWarning>
-        <body
-          className={cn(
-            ' bg-custom-dark relative box-border min-h-screen overflow-x-hidden',
-            fonts
-          )}
-        >
-          <div
-            style={{
-              backgroundImage: 'url(/bg.svg)',
-              width: '100%',
-              height: '100%',
-            }}
-            className="min-w-100% min-h-100% absolute left-0 top-0 z-[-1] blur-3xl"
-          />
-
-          <div className="lg:gap-30 flex flex-col gap-8 md:gap-12 xl:gap-[168px] ">
-            <Navbar />
-            {children}
-            <Footer></Footer>
-          </div>
-        </body>
-      </html>
-    </LanguageProvider>
+    <html lang="en" suppressHydrationWarning>
+      <body
+        className={cn(' bg-custom-dark relative box-border min-h-screen overflow-x-hidden', fonts)}
+      >
+        <Suspense>
+          <ClientProvider>
+            <div
+              style={{
+                backgroundImage: 'url(/bg.svg)',
+                width: '100%',
+                height: '100%',
+              }}
+              className="min-w-100% min-h-100% absolute left-0 top-0 z-[-1] blur-3xl"
+            />
+            <div className="lg:gap-30 flex flex-col gap-8 md:gap-12 xl:gap-[168px] ">
+              <Navbar />
+              {children}
+              <Footer />
+            </div>
+          </ClientProvider>
+        </Suspense>
+      </body>
+    </html>
   );
 };
 

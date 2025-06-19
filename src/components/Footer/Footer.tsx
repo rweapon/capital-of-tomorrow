@@ -5,11 +5,11 @@ import IFooterData from '@/types/Footer.interfaces';
 
 export const footerData: IFooterData = {
   links: [
-    { href: '#', text: 'Home' },
-    { href: '#', text: 'Present the Investment Fund at the Forum' },
-    { href: '#', text: 'Public Offer' },
-    { href: '#', text: 'Pricing' },
-    { href: '#', text: 'Contact Us' },
+    { href: '/', text: 'Home' },
+    { href: '/', text: 'Present the Investment Fund at the Forum' },
+    { href: '/', text: 'Public Offer' },
+    { href: '/', text: 'Pricing' },
+    { href: '/', text: 'Contact Us' },
   ],
   copyright: '2025, VOSTOKTECH SOLUTIONS. \n ALL RIGHTS RESERVED.',
   social: {

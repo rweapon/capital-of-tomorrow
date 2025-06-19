@@ -1,3 +1,4 @@
+'use client';
 import React from 'react';
 
 import { ICardProps, IGradientDefinition, IGradientProps } from '@/types/Card.interfaces';

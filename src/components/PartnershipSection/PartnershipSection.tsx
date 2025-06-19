@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 
-import { IPartnerLogo, IPartnershipContent } from '@/types/PartnershipSection.interfeces';
+import { IPartnerLogo, IPartnershipContent } from '@/types/PartnershipSection.interfaces';
 
 const partnerLogos: IPartnerLogo[] = [
   { type: 'ad__dad', height: 44 },

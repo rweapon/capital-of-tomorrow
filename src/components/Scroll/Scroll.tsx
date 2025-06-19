@@ -1,14 +1,16 @@
 'use client';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 export function Scroll() {
   const containerRef = useRef<HTMLDivElement>(null);
   const textRef = useRef<HTMLDivElement>(null);
+  const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
-    const container = containerRef.current;
+    setIsClient(true);
+
     const text = textRef.current;
-    if (!container || !text) return;
+    if (!containerRef.current || !text) return;
 
     text.innerHTML = text.innerHTML + ' ' + text.innerHTML;
 
@@ -26,6 +28,8 @@ export function Scroll() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  if (!isClient) return null;
 
   return (
     <div

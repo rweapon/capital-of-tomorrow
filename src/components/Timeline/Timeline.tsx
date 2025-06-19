@@ -1,6 +1,7 @@
+'use client';
 import React from 'react';
 
-import { ITimelineContent } from '@/types/Timeline.interfeces';
+import { ITimelineContent } from '@/types/Timeline.interfaces';
 
 const timelineContent: ITimelineContent = {
   title: 'application timeline',
