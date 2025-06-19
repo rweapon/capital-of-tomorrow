@@ -1,22 +1,22 @@
 interface FooterLink {
-    href: string;
-    text: string;
+  href: string;
+  text: string;
 }
 
 interface FooterSocial {
-    title: string;
-    terms: string;
+  title: string;
+  terms: string;
 }
 
 interface FooterAddress {
-    title: string;
-    lines: string[];
+  title: string;
+  lines: string[];
 }
 
 export default interface IFooterData {
-    links: FooterLink[];
-    copyright: string;
-    social: FooterSocial;
-    address: FooterAddress;
-    privacy: string;
+  links: FooterLink[];
+  copyright: string;
+  social: FooterSocial;
+  address: FooterAddress;
+  privacy: string;
 }
