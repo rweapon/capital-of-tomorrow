@@ -1,14 +1,14 @@
 export interface IPartnerLogo {
-    type: string;
-    height: number;
+  type: string;
+  height: number;
 }
 
 export interface IAdvantageItem {
-    title: string;
-    text: string;
+  title: string;
+  text: string;
 }
 
 export interface IPartnershipContent {
-    title: string;
-    advantages: IAdvantageItem[];
+  title: string;
+  advantages: IAdvantageItem[];
 }

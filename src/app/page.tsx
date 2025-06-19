@@ -10,24 +10,24 @@ import Timeline from '@/components/Timeline';
 import { programData, qAData } from '@/lib/constant';
 
 const Home = () => {
-    return (
-        <>
-            <Scroll />
-            <MissionSection />
-            <Accordion
-                title="PROGRAM OF THE FORUM"
-                items={programData}
-                extraContent={<SimpleTextBlocks />}
-            />
-            <Timeline />
-            <TicketCards />
-            <Scroll />
-            <PartnershipSection />
-            <PartnershipCards />
-            <SliderImage />
-            <Accordion title="Q&A" items={qAData} />
-        </>
-    );
+  return (
+    <>
+      <Scroll />
+      <MissionSection />
+      <Accordion
+        title="PROGRAM OF THE FORUM"
+        items={programData}
+        extraContent={<SimpleTextBlocks />}
+      />
+      <Timeline />
+      <TicketCards />
+      <Scroll />
+      <PartnershipSection />
+      <PartnershipCards />
+      <SliderImage />
+      <Accordion title="Q&A" items={qAData} />
+    </>
+  );
 };
 
 export default Home;
