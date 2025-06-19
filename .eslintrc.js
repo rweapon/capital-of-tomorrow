@@ -11,7 +11,7 @@ module.exports = {
   ],
   plugins: ['simple-import-sort', 'prettier', '@typescript-eslint', 'jsx-a11y'],
   rules: {
-    'prettier/prettier': ['warning', { tabWidth: 2 }],
+    'prettier/prettier': [1, { tabWidth: 2 }],
     'sort-imports': 'off',
     'tailwindcss/no-custom-classname': 'off',
     '@typescript-eslint/no-var-requires': 'off',
