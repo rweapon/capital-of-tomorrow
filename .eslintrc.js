@@ -17,12 +17,15 @@ module.exports = {
     'no-console': 'warn',
     '@typescript-eslint/explicit-module-boundary-types': 'off',
     'react/no-unescaped-entities': 'off',
-
     'react/display-name': 'off',
     'react/jsx-curly-brace-presence': [
       'warn',
       { props: 'never', children: 'never' },
     ],
+
+    // Правила для React Hooks
+    'react-hooks/rules-of-hooks': 'error', // Проверяет правила хуков
+    'react-hooks/exhaustive-deps': 'warn', // Проверяет зависимости эффектов
 
     //#region  //*=========== Unused Import ===========
     '@typescript-eslint/no-unused-vars': 'off',
@@ -80,5 +83,10 @@ module.exports = {
   globals: {
     React: true,
     JSX: true,
+  },
+  settings: {
+    react: {
+      version: 'detect', // Автоматически определяет версию React
+    },
   },
 };
