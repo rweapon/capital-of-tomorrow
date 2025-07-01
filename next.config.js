@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  basePath: '/capital-of-tomorrow',
   eslint: {
     dirs: ['src'],
   },
