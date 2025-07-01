@@ -1,4 +1,3 @@
-'use client';
 import React from 'react';
 
 import {
@@ -25,7 +24,7 @@ const missionGoals: IMissionGoals = {
 
 export const MissionSection: React.FC = () => {
   return (
-    <div className='flex w-full items-center justify-center p-4 sm:p-6 md:p-8 xl:px-24 xl:py-0'>
+    <div className='flex w-full items-center justify-center px-4 sm:px-6 md:px-8 xl:px-24'>
       <div
         className='relative w-full max-w-[1440px] overflow-hidden rounded-2xl md:rounded-3xl'
         style={{
@@ -47,21 +46,23 @@ export const MissionSection: React.FC = () => {
             padding: '2px',
           }}
         />
-        <div className='relative flex min-h-[400px] flex-col sm:min-h-[450px] md:min-h-[300px] lg:flex-row'>
-          <div className='clip-image h-64 sm:h-72 lg:h-auto lg:min-w-[374px] xl:min-w-[488px]' />
+        <div className='relative flex flex-row  sm:min-h-[450px] md:min-h-[300px]'>
+          <div className=' min-h-auto w-full lg:min-w-[374px] xl:min-w-[488px]'>
+            <div className='clip-image h-64 sm:h-72 lg:h-auto lg:min-w-[374px] xl:min-w-[488px]' />
+          </div>
 
-          <div className='flex w-full flex-col p-8 text-white md:p-14 lg:pb-8 lg:pl-14 lg:pr-[83px] lg:pt-12'>
-            <h1 className='font-akira mb-3 text-2xl font-extrabold sm:mb-4 sm:text-3xl md:mb-5 md:text-[40px]'>
+          <div className='flex w-full flex-col p-5 text-white md:p-14 lg:pb-8 lg:pl-14 lg:pr-[83px] lg:pt-12'>
+            <h1 className='font-akira mb-2 text-[14px] font-extrabold sm:mb-4 sm:text-3xl md:mb-5 md:text-[40px]'>
               {missionContent.title}
             </h1>
-            <p className='font-monda text-think text-sm font-normal leading-relaxed text-[#F8F7F5E5]/70 sm:space-y-5 md:text-base'>
+            <p className='font-mont sm:font-monda text-think line-clamp-[9] text-sm font-normal leading-[13px] text-[#F8F7F5E5]/70 sm:line-clamp-[none]  sm:space-y-5 md:text-base'>
               {missionContent.description[0]}
               <br /> {missionContent.description[1]}
             </p>
           </div>
         </div>
 
-        <div className='w-full px-5 pb-6 sm:px-6 sm:pb-8 md:px-20 md:pb-12 md:pt-0'>
+        <div className='hidden w-full px-5 pb-6 sm:block sm:px-6 sm:pb-8 md:px-20 md:pb-12 md:pt-0'>
           <div className='py-6 sm:py-7 md:py-8 md:pt-0'>
             <div className='h-px w-full bg-white/20' />
           </div>

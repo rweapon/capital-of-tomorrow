@@ -1,4 +1,3 @@
-'use client';
 import React from 'react';
 
 import {
@@ -42,13 +41,35 @@ function Block({ text, size = 'small', className = '' }: IBlockProps) {
     : 'text-white font-mont text-center leading-tight text-sm';
 
   return (
-    <div className={`relative ${className}`}>
+    <div className={`group relative cursor-pointer ${className}`}>
       <div
-        className='pointer-events-none absolute inset-0 rounded-3xl'
+        className='pointer-events-none absolute inset-0 rounded-3xl transition-opacity duration-300 group-hover:opacity-0'
         style={gradientBorderStyles}
       />
       <div
-        className='relative flex size-full items-center justify-center rounded-3xl p-4'
+        className='absolute inset-0 rounded-3xl opacity-0 transition-opacity duration-300 group-hover:opacity-100'
+        style={{
+          background: `
+            linear-gradient(45deg, 
+              #1f2937 0%, 
+              #6b7280 25%, 
+              #d1d5db 50%, 
+              #6b7280 75%, 
+              #1f2937 100%
+            )
+          `,
+          backgroundSize: '400% 400%',
+          animation: 'gradient-flow 3s ease infinite',
+          mask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
+          maskComposite: 'xor',
+          WebkitMask:
+            'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
+          WebkitMaskComposite: 'xor',
+          padding: '2px',
+        }}
+      />
+      <div
+        className='relative z-10 flex size-full items-center justify-center rounded-3xl p-4'
         style={blockStyles}
       >
         {isLarge ? (
@@ -111,24 +132,6 @@ export function SimpleTextBlocks() {
               <Block key={index} text={text} className='h-20' />
             ))}
           </div>
-        </div>
-
-        <div className='block space-y-2.5 md:hidden'>
-          <Block
-            text={blockContent.largeBlocks[0]}
-            size='large'
-            className='h-32'
-          />
-
-          {blockContent.smallBlocks.map((text, index) => (
-            <Block key={index} text={text} className='h-16' />
-          ))}
-
-          <Block
-            text={blockContent.largeBlocks[1]}
-            size='large'
-            className='h-32'
-          />
         </div>
       </div>
     </div>

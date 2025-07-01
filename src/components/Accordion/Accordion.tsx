@@ -13,18 +13,18 @@ export const Accordion = ({ title, items, extraContent }: IAccordionProps) => {
   };
 
   return (
-    <section className='mx-auto w-full max-w-[1440px] px-4 sm:px-10 lg:px-24'>
-      <header className='mb-12'>
-        <h1 className='font-akira text-center text-4xl font-extrabold uppercase text-white md:text-5xl'>
+    <section className='mx-auto w-full max-w-[1440px] px-3 sm:px-10 lg:px-24'>
+      <header className='mx-16 mb-7 sm:mx-0 sm:mb-12'>
+        <h1 className='font-akira text-center text-xl font-extrabold uppercase text-white sm:text-4xl md:text-5xl'>
           {title}
         </h1>
       </header>
 
-      <div className=' px-2 sm:px-4 lg:px-[34px]'>
+      <div className='  sm:px-4 lg:px-[34px]'>
         {items.map((item, index) => (
           <article
             key={index}
-            className={`border-b border-white/20 p-9 ${
+            className={`border-b border-white/20 px-4 py-9 ${
               index === 0 ? 'border-t' : ''
             }`}
           >
@@ -38,7 +38,7 @@ export const Accordion = ({ title, items, extraContent }: IAccordionProps) => {
               aria-expanded={activeIndices.includes(index)}
               aria-controls={`accordion-content-${index}`}
             >
-              <span className='text-sm font-semibold md:text-base md:leading-[22px]'>
+              <span className='font-mont  text-sm font-normal md:text-base md:leading-[22px]'>
                 {item.title}
               </span>
               <svg
@@ -65,7 +65,7 @@ export const Accordion = ({ title, items, extraContent }: IAccordionProps) => {
                 activeIndices.includes(index) ? 'max-h-96' : 'max-h-0'
               }`}
             >
-              <p className='text-sm font-normal text-white/80 md:text-base md:leading-[22px]'>
+              <p className='font-mont text-[10px] font-thin leading-[12px] text-white/80 md:text-base md:leading-[22px]'>
                 {item.content}
               </p>
             </div>

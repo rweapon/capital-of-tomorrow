@@ -12,7 +12,7 @@ const nextConfig = {
         source: '/images/:path*',
         destination: '/capital-of-tomorrow/images/:path*', // The :path parameter isn't used here so will be automatically passed in the query
       },
-    ]
+    ];
   },
   images: {
     path: '/capital-of-tomorrow/images',
