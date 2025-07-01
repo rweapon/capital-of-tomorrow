@@ -1,6 +1,4 @@
-import Card from './Card';
-
-import { ICardProps } from '@/types/Card.interfaces';
+import Card, { ICardProps } from './Card';
 
 const tickets: ICardProps[] = [
   {

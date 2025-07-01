@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import React from 'react';
 
-import IFooterData from '@/types/Footer.interfaces';
+import IFooterData from '@/components/Footer/types';
 
 export const footerData: IFooterData = {
   links: [

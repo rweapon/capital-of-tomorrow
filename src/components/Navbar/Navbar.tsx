@@ -1,35 +1,11 @@
 import Link from 'next/link';
 
 import {
-  IButtonContent,
-  IEventInfo,
-  IHeroContent,
-  INavigationItem,
-} from '@/types/Navbar.interfaces';
-
-const navigationItems: INavigationItem[] = [
-  { id: 'about', label: 'ABOUT US', href: '/' },
-  { id: 'participate', label: 'PARTICIPATE', href: '/' },
-  { id: 'event', label: 'EVENT', href: '/' },
-  { id: 'partners', label: 'PARTNERS', href: '/' },
-  { id: 'contact', label: 'CONTACT US', href: '/' },
-];
-
-const heroContent: IHeroContent = {
-  title: 'CAPITAL OF TOMORROW',
-  description:
-    'A forum for young entrepreneurs ready to dream big, take action, and grow in a community of doers.',
-};
-
-const eventInfo: IEventInfo = {
-  location: 'DUBAI',
-  month: 'NOVEMBER',
-  year: '2025',
-};
-
-const buttonContent: IButtonContent = {
-  label: 'APPLY NOW',
-};
+  buttonContent,
+  eventInfo,
+  heroContent,
+  navigationItems,
+} from '@/components/Navbar/data';
 
 export const Navbar = () => {
   return (
