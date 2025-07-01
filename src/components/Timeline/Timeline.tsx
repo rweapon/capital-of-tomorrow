@@ -1,68 +1,110 @@
 'use client';
 import React from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/pagination';
 
-import { ITimelineContent } from '@/types/Timeline.interfaces';
+interface TimelineStep {
+  number: string;
+  title: string;
+  description: string;
+}
 
-const timelineContent: ITimelineContent = {
-  title: 'application timeline',
-  events: [
-    {
-      date: '11',
-      month: 'JUNE',
-      subtitle: 'TITLE',
-      description:
-        'Yes, each participant has the opportunity to present their idea on the Global Pitch stage. You will hear success stories and approaches to realizing various international businesses from experienced business people.',
-    },
-    {
-      date: '17',
-      month: 'JUNE',
-      subtitle: 'TITLE',
-      description:
-        'Yes, each participant has the opportunity to present their idea on the Global Pitch stage. You will hear success stories and approaches to realizing various international businesses from experienced business people.',
-    },
-    {
-      date: '21',
-      month: 'JUNE',
-      subtitle: 'TITLE',
-      description:
-        'Yes, each participant has the opportunity to present their idea on the Global Pitch stage. You will hear success stories and approaches to realizing various international businesses from experienced business people.',
-    },
-  ],
+const timelineSteps: TimelineStep[] = [
+  {
+    number: '1',
+    title: 'APPLICATION SUBMISSION',
+    description:
+      'Complete the online application form and pay the required application fee to confirm your submission.',
+  },
+  {
+    number: '2',
+    title: 'EVALUATION AND SELECTION',
+    description:
+      'Applications will be reviewed by an independent selection committee considering leadership potential, impact, and alignment with the summit’s vision.',
+  },
+  {
+    number: '3',
+    title: 'RESULTS DISTRIBUTION',
+    description:
+      'Shortlisted candidates will be notified via email with further details on their selection and next steps.',
+  },
+];
+
+interface TimelineSectionProps {
+  top: boolean;
+  step: TimelineStep;
+}
+
+const TimelineSection: React.FC<TimelineSectionProps> = ({ top, step }) => {
+  const gradientNumberClass =
+    'absolute top-1/2 left-full md:translate-x-[20px] -translate-y-16 md:-translate-y-1/2 text-[100px]  md:text-[180px] font-bold select-none pointer-events-none leading-none ' +
+    'bg-gradient-to-b from-white/30 via-white/5 to-transparent bg-clip-text text-transparent';
+
+  return (
+    <div className={`w-[179px] text-center md:w-auto ${top ? '' : 'self-end'}`}>
+      <div className='relative z-10 h-[120px] md:h-auto'>
+        <div className='relative inline-block'>
+          <h3 className='font-mont relative z-10 mb-4 text-sm font-normal tracking-tighter  text-white md:text-lg md:font-bold'>
+            {step.title}
+          </h3>
+          <div className={gradientNumberClass}>{step.number}</div>
+        </div>
+        <p className='font-mont mx-auto max-w-xs text-[12px] font-thin leading-3 tracking-wide text-[#F8F7F5BF] md:text-sm md:font-light md:uppercase md:leading-relaxed'>
+          {step.description}
+        </p>
+      </div>
+    </div>
+  );
 };
 
-export const Timeline = () => {
+export const Timeline: React.FC = () => {
+  const dotClass =
+    'hidden md:block absolute top-1/2 w-[38px] h-[38px] bg-white rounded-full z-20 transform -translate-x-1/2 -translate-y-1/2';
+
   return (
-    <section className='mx-7 flex flex-col gap-3 sm:gap-5 md:gap-7 lg:gap-8 xl:mx-[124px] xl:gap-10'>
-      <div className='flex flex-col gap-1 sm:gap-2 md:gap-3 lg:gap-4 xl:gap-5'>
-        <h1 className='font-akira whitespace-nowrap font-bold  uppercase tracking-wider text-white sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl'>
-          {timelineContent.title}
-        </h1>
+    <div className='flex w-full justify-center px-3 md:px-24'>
+      <div className='w-full max-w-7xl'>
+        <div className='text-center md:mb-20'>
+          <h1 className='font-akira text-xl font-bold text-white  md:mb-4 md:text-5xl lg:text-6xl'>
+            APPLICATION TIMELINE
+          </h1>
+        </div>
+
+        <div className='relative'>
+          <div className='relative  md:h-[600px] lg:block'>
+            <div className='hidden h-full flex-row justify-between p-16 md:flex'>
+              <TimelineSection top={true} step={timelineSteps[0]} />
+              <TimelineSection top={false} step={timelineSteps[1]} />
+              <TimelineSection top={true} step={timelineSteps[2]} />
+              <div className={`${dotClass} left-[17.66%]`}></div>
+              <div className={`${dotClass} left-1/2`}></div>
+              <div className={`${dotClass} left-[82.7%]`}></div>
+              <div className='absolute left-1/2 top-1/2 z-10 hidden h-[2px] w-screen -translate-x-1/2 bg-white/60 md:block'></div>
+            </div>
+
+            <div className='h-full p-4 md:hidden'>
+              <Swiper slidesPerView={1} className='timeline-swiper'>
+                {timelineSteps.map((step, index) => (
+                  <SwiperSlide key={index}>
+                    <div className='flex h-full items-center justify-center px-8 py-6'>
+                      <TimelineSection top={true} step={step} />
+                    </div>
+                    <div
+                      className={`absolute bottom-0 ${
+                        index == 2 ? 'left-0 w-1/2' : ''
+                      } ${index == 1 ? 'w-full' : ''} ${
+                        index == 0 ? 'right-0 w-1/2' : ''
+                      } z-10 h-[2px]    bg-white/60`}
+                    ></div>
+                    <div className='absolute -bottom-2 right-[48%] z-20 size-[15px]  rounded-full bg-white'></div>
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+            </div>
+          </div>
+        </div>
       </div>
-      <ul className='flex flex-col gap-2 md:flex-row md:gap-4 lg:gap-5 xl:gap-7'>
-        {timelineContent.events.map((event, index) => (
-          <li
-            key={index}
-            className={`rounded-lg bg-[#F8F7F5]/[0.05] shadow-[inset_0_0_15px_0_rgba(0,0,0,0.1)] ${
-              index == 1 ? 'text-[#E3AF64]' : 'text-[#F8F7F5]'
-            }`}
-          >
-            <header
-              className={`flex flex-col border-b border-dotted ${
-                index === 1 ? 'border-[#E3AF64]' : 'border-[#F8F7F5]'
-              } p-5 sm:p-6 md:p-8 lg:p-7 xl:px-8 xl:pb-8 xl:pt-10`}
-            >
-              <h2 className='font-akira text-2xl uppercase md:text-3xl lg:text-4xl xl:text-5xl'>
-                {event.date}
-              </h2>
-              <h2 className='font-mont text-xs md:text-sm'>{event.month}</h2>
-            </header>
-            <section className='flex flex-col gap-3 p-5 text-sm leading-[140%] sm:p-6 md:p-8 lg:gap-4 lg:p-7 xl:gap-6 xl:p-8 xl:pb-10'>
-              <h3 className='text-lg uppercase'>{event.subtitle}</h3>
-              <p>{event.description}</p>
-            </section>
-          </li>
-        ))}
-      </ul>
-    </section>
+    </div>
   );
 };

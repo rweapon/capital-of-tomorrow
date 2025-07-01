@@ -2,9 +2,9 @@ name: Deploy Next.js to Github Pages using pnpm
 
 on:
   push:
-    branches: [ 'main' ]  # Только при пуше в main
+    branches: ['main'] # Только при пуше в main
   pull_request:
-    branches: [ 'main' ]  # Только для PR в main
+    branches: ['main'] # Только для PR в main
 
 jobs:
   build:

@@ -1,9 +1,6 @@
-'use client';
 import Card from './Card';
 
 import { ICardProps } from '@/types/Card.interfaces';
-
-const goldGradient = `linear-gradient(82deg, #c1a875 0%, #B8860B 10%, #D4AF37 25%, #DAA520 46%, #B8860B 55%, #CD853F 82%, #DEB887 93%, #B8860B 100%)`;
 
 const tickets: ICardProps[] = [
   {
@@ -26,7 +23,7 @@ const tickets: ICardProps[] = [
   },
   {
     title: 'SELF FUNDED',
-    opacity: 0.5,
+    opacity: 0.3,
     listItems: [
       'Participation in the forum',
       'Twin accommodation',
@@ -37,17 +34,17 @@ const tickets: ICardProps[] = [
       'Networking with mentors',
     ],
     backgroundType: 'overlay-gradient',
-    backgroundColor: '#2D2D2D',
+    backgroundColor: '#2D2D2D', // Основной цвет фона
     textColor: '#FFFFFF',
     listTextColor: '#fffc',
     buttonBackgroundType: 'solid',
     buttonBackgroundColor: '#E3AF64',
     buttonTextColor: '#1e1e1e',
-    borderColor: '#404040',
+    borderColor: '#c7c1c1',
   },
   {
     title: 'INVITATION LETTER',
-    opacity: 0.5,
+    opacity: 0.3,
     listItems: [
       'Official invitation',
       'Confirmation of participation for the embassy',
@@ -62,7 +59,7 @@ const tickets: ICardProps[] = [
     buttonBackgroundType: 'solid',
     buttonBackgroundColor: '#E3AF64',
     buttonTextColor: '#1e1e1e',
-    borderColor: '#404040',
+    borderColor: '#c7c1c1',
   },
   {
     title: 'VIP',
@@ -78,7 +75,7 @@ const tickets: ICardProps[] = [
     ],
     backgroundType: 'solid',
     backgroundColor: '#1A1A1A',
-    textColor: goldGradient,
+    textColor: 'linear-gradient(90deg, #C1A875 0%, #D4AF37 100%)',
     buttonBackgroundType: 'gold-gradient',
     buttonTextColor: '#1e1e1e',
     borderColor: '#D4AF37',
@@ -88,15 +85,29 @@ const tickets: ICardProps[] = [
 
 export const TicketCards = () => {
   return (
-    <div className='mx-auto w-full max-w-[1440px] px-6 sm:px-10 lg:px-20'>
-      <h2 className='font-akira mb-8 text-center text-2xl leading-snug text-[#f8f7f5] sm:mx-20 sm:text-3xl md:mb-12 md:text-4xl lg:text-5xl'>
+    <div className='relative mx-auto max-w-[1440px] overflow-hidden px-4 py-8 sm:px-6 lg:px-8'>
+      <h2 className='font-akira mb-8 text-center text-2xl leading-snug text-[#f8f7f5] sm:text-3xl md:mb-12 md:text-4xl lg:text-5xl'>
         Explore Flexible Participation Categories
       </h2>
 
-      <div className='flex w-full flex-wrap justify-center gap-5 '>
+      <div className='hidden w-full flex-wrap justify-center gap-8 px-4 md:flex'>
         {tickets.map((ticket) => (
-          <Card key={ticket.title} {...ticket} width='273px' height='540px' />
+          <Card key={ticket.title} {...ticket} width='280px' height='540px' />
         ))}
+      </div>
+
+      <div className='relative flex h-[560px] w-full justify-center md:hidden'>
+        <div className='relative z-10'>
+          <Card {...tickets[0]} width='280px' height='540px' />
+        </div>
+
+        <div className='absolute left-1/2 top-0 z-0 -translate-x-[160%] translate-y-[-7px] rotate-[5deg]'>
+          <Card {...tickets[1]} width='280px' height='540px' />
+        </div>
+
+        <div className='absolute left-1/2 top-0 z-0 translate-x-[60%] translate-y-[-7px] rotate-[-5deg]'>
+          <Card {...tickets[2]} width='280px' height='540px' />
+        </div>
       </div>
     </div>
   );
