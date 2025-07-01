@@ -5,6 +5,8 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Swiper as SwiperType } from 'swiper/types';
 import 'swiper/css';
 
+import { basePath, imagePrefix } from '@/constant/env';
+
 import { ISlide, ISliderStyles } from '@/types/ImageSlider.interfaces';
 
 export const ImageSlider = () => {
@@ -12,11 +14,11 @@ export const ImageSlider = () => {
   const [swiperInstance, setSwiperInstance] = useState<SwiperType | null>(null);
 
   const slides: ISlide[] = [
-    { id: 1, src: '/1.png', alt: 'Slide 1' },
-    { id: 2, src: '/2.png', alt: 'Slide 2' },
-    { id: 3, src: '/3.png', alt: 'Slide 3' },
-    { id: 4, src: '/4.png', alt: 'Slide 4' },
-    { id: 5, src: '/5.png', alt: 'Slide 5' },
+    { id: 1, src: '1.png', alt: 'Slide 1' },
+    { id: 2, src: '2.png', alt: 'Slide 2' },
+    { id: 3, src: '3.png', alt: 'Slide 3' },
+    { id: 4, src: '4.png', alt: 'Slide 4' },
+    { id: 5, src: '5.png', alt: 'Slide 5' },
   ];
 
   const styles: ISliderStyles = {
@@ -111,7 +113,7 @@ export const ImageSlider = () => {
               type='button'
             >
               <Image
-                src={slide.src}
+                src={`${basePath}${imagePrefix}/${slide.src}`}
                 alt={slide.alt}
                 className='size-full object-cover'
                 width={300}

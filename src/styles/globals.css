@@ -25,8 +25,7 @@
     --ring: 240 5.9% 10%;
     --radius: 0.5rem;
   }
-
-  .dark {
+  w .dark {
     --background: 240 10% 3.9%;
     --foreground: 0 0% 98%;
     --card: 240 10% 3.9%;
@@ -51,17 +50,17 @@
 
 @layer base {
   .header-l::before {
-    @apply content-[''];
+    @apply content-[''] hidden xl:block;
     position: absolute;
     top: 0;
     right: 355px;
-    background-image: url('/Vector 5.svg');
+    background-image: url('/capital-of-tomorrow/images/Vector 5.svg');
     height: 535px;
     width: 257px;
   }
 
   .clip-image {
-    background-image: url(/our__mission.jpg);
+    background-image: url('/capital-of-tomorrow/images/our__mission.jpg');
     background-position: -126px -48px;
     background-size: 134%;
     mask-image: radial-gradient(at 30%, #000 30%, #0000 70%);
@@ -79,7 +78,7 @@
     .clip-image {
       background-size: 110%;
       min-width: 374px;
-      background-image: url(/our__mission.jpg);
+      background-image: url('/capital-of-tomorrow/images/our__mission.jpg');
       mask-image: radial-gradient(at 30%, #000 30%, #0000 70%);
       -webkit-mask-image: radial-gradient(at 32% 33%, #000 32%, #0000 71%);
       background-position: -10px -217px;
@@ -90,17 +89,6 @@
     .clip-image {
       background-size: 120%;
       background-position: -18px -100px;
-    }
-  }
-
-  @media (max-width: 1285) {
-    .header-l::before {
-      display: none;
-      /* или */
-      /* background-image: none; */
-      /* или */
-      /* opacity: 0; */
-      /* в зависимости от того, как вы хотите его скрыть */
     }
   }
 }

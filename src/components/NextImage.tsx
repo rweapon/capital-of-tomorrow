@@ -3,6 +3,8 @@ import * as React from 'react';
 
 import { cn } from '@/lib/utils';
 
+import basePath from '../../next.config';
+
 type NextImageProps = {
   useSkeleton?: boolean;
   classNames?: {
@@ -46,7 +48,7 @@ export default function NextImage({
           classNames?.image,
           status === 'loading' && cn('animate-pulse', classNames?.blur)
         )}
-        src={src}
+        src={`${basePath}/${src}`}
         width={width}
         height={height}
         alt={alt}

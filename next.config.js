@@ -1,21 +1,25 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  basePath: '/capital-of-tomorrow',
+  output: 'export',
   eslint: {
+    ignoreDuringBuilds: true,
     dirs: ['src'],
+  },
+  async rewrites() {
+    return [
+      {
+        source: '/images/:path*',
+        destination: '/capital-of-tomorrow/images/:path*', // The :path parameter isn't used here so will be automatically passed in the query
+      },
+    ]
+  },
+  images: {
+    path: '/capital-of-tomorrow/images',
   },
 
   reactStrictMode: true,
   swcMinify: true,
-
-  // Uncoment to add domain whitelist
-  // images: {
-  //   remotePatterns: [
-  //     {
-  //       protocol: 'https',
-  //       hostname: 'res.cloudinary.com',
-  //     },
-  //   ]
-  // },
 
   webpack(config) {
     // Grab the existing rule that handles SVG imports
@@ -50,4 +54,4 @@ const nextConfig = {
   },
 };
 
-module.exports = nextConfig;
+export default nextConfig;

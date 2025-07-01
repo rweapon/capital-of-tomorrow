@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "rm -rf out && next build",
     "start": "next start",
     "lint": "next lint",
     "lint:fix": "eslint src --fix && pnpm format",
@@ -28,6 +28,7 @@
     "react-icons": "^5.4.0",
     "swiper": "^11.2.10",
     "tailwind-merge": "^2.6.0",
+    "tsconfig-paths-webpack-plugin": "^4.2.0",
     "zod": "^3.24.1"
   },
   "devDependencies": {
@@ -35,11 +36,9 @@
     "@commitlint/config-conventional": "^16.2.4",
     "@svgr/webpack": "^8.1.0",
     "@tailwindcss/forms": "^0.5.10",
-    "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^15.0.7",
     "@types/node": "24.0.7",
     "@types/react": "^18.3.18",
-    "@types/testing-library__jest-dom": "^5.14.9",
     "@typescript-eslint/eslint-plugin": "^5.62.0",
     "@typescript-eslint/parser": "^5.62.0",
     "autoprefixer": "^10.4.20",
@@ -52,7 +51,6 @@
     "eslint-plugin-simple-import-sort": "^7.0.0",
     "eslint-plugin-unused-imports": "^2.0.0",
     "husky": "^9.1.7",
-    "jest": "^27.5.1",
     "lint-staged": "^12.5.0",
     "next-router-mock": "^0.9.0",
     "next-sitemap": "^2.5.28",

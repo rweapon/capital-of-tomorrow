@@ -10,6 +10,7 @@ import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 
 import { siteConfig } from '@/constant/config';
+import { basePath } from '@/constant/env';
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -19,7 +20,7 @@ export const metadata: Metadata = {
   },
   description: siteConfig.description,
   robots: { index: true, follow: true },
-  manifest: `/favicon/site.webmanifest`,
+  manifest: `${basePath}/favicon/site.webmanifest`,
   openGraph: {
     url: siteConfig.url,
     title: siteConfig.title,
@@ -50,7 +51,7 @@ export default function RootLayout({
       >
         <div
           style={{
-            backgroundImage: 'url(/bg.svg)',
+            backgroundImage: 'url(/capital-of-tomorrow/images/bg.svg)',
             width: '100%',
             height: '100%',
           }}

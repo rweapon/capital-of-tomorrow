@@ -1,6 +1,8 @@
 import Image from 'next/image';
 import React from 'react';
 
+import { basePath, imagePrefix } from '@/constant/env';
+
 import {
   IPartnerLogo,
   IPartnershipContent,
@@ -66,7 +68,7 @@ export const PartnershipSection: React.FC = () => {
           <div
             className='h-64 w-full bg-cover bg-top sm:h-72 md:h-96 lg:h-full lg:w-[567px] lg:min-w-[567px]'
             style={{
-              backgroundImage: 'url(/Partnership__advantages.jpg)',
+              backgroundImage: `url(${basePath}${imagePrefix}/Partnership__advantages.jpg)`,
               maskImage:
                 'radial-gradient(ellipse at 79% 30%, black 25%, transparent 68%)',
               WebkitMaskImage:
@@ -110,7 +112,7 @@ export const PartnershipSection: React.FC = () => {
                 className={`hh- flex flex-1 justify-center ${logo.height}px`}
               >
                 <Image
-                  src={`/${logo.type}.svg`}
+                  src={`${basePath}${imagePrefix}/${logo.type}.svg`}
                   alt='Partner logo'
                   width={logo.height * 2}
                   height={logo.height}
