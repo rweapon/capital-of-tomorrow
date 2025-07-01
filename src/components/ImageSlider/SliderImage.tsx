@@ -7,6 +7,19 @@ import 'swiper/css';
 
 import { basePath, imagePrefix } from '@/constant/env';
 
+export interface ISlide {
+  id: number;
+  src: string;
+  alt: string;
+}
+
+export interface ISliderStyles {
+  container: React.CSSProperties;
+  swiper: React.CSSProperties;
+  slide: (isActive: boolean) => React.CSSProperties;
+  slideButton: React.CSSProperties;
+}
+
 export const ImageSlider = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [swiperInstance, setSwiperInstance] = useState<SwiperType | null>(null);
@@ -131,7 +144,7 @@ export const ImageSlider = () => {
               aria-label={`View slide ${index + 1}: ${slide.alt}`}
             >
               <Image
-                src={`${basePath}${imagePrefix}/${slide.src}`}
+                src={`${basePath}${imagePrefix}/slides/${slide.src}`}
                 alt={slide.alt}
                 width={300}
                 height={300}

@@ -3,6 +3,7 @@
 import Accordion from '@/components/Accordion';
 import { PartnershipCards } from '@/components/Cards/PartnershipCards';
 import { TicketCards } from '@/components/Cards/TicketCards';
+import Hero from '@/components/Hero';
 import SliderImage from '@/components/ImageSlider';
 import MissionSection from '@/components/MissionSection';
 import PartnershipSection from '@/components/PartnershipSection';
@@ -15,6 +16,7 @@ import { programData, qAData } from '@/constant/data';
 const Home = () => {
   return (
     <>
+      <Hero />
       <Scroll />
       <MissionSection />
       <Accordion

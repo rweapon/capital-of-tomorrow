@@ -1,6 +1,6 @@
-import Card from './Card';
+import { IPartnershipTier } from '@/components/Cards/types';
 
-import { IPartnershipTier } from '@/types/Card.interfaces';
+import Card from './Card';
 
 const partnershipTiers: IPartnershipTier[] = [
   {

@@ -9,3 +9,9 @@ export interface ITimelineContent {
   title: string;
   events: ITimelineEvent[];
 }
+
+export interface TimelineStep {
+  number: string;
+  title: string;
+  description: string;
+}

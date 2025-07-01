@@ -193,6 +193,9 @@ export const BlobsParallaxGroup: React.FC<BlobsParallaxGroupProps> = ({
               src={`${basePath}${imagePrefix}${blob.img}`}
               alt=''
               style={positionStyles}
+              width={width}
+              height={height}
+              draggable={false}
               className='transition-all duration-300 ease-out'
             />
           );

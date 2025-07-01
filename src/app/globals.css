@@ -46,6 +46,15 @@
     --input: 240 3.7% 15.9%;
     --ring: 240 4.9% 83.9%;
   }
+
+  .local {
+    --towerUrl: url(../../public/images/tower_test.svg);
+    --missionUrl: url(../../public/images/our__mission.jpg);
+  }
+  .prod {
+    --towerUrl: url(/capital-of-tomorrow/images/tower_test.svg);
+    --missionUrl: url(/capital-of-tomorrow/images/our__mission.jpg);
+  }
 }
 
 @layer base {
@@ -54,13 +63,13 @@
     position: absolute;
     top: 0;
     right: 355px;
-    background-image: url('/capital-of-tomorrow/images/Vector 5.svg');
+    background-image: var(--towerUrl);
     height: 535px;
     width: 257px;
   }
 
   .clip-image {
-    background-image: url('/capital-of-tomorrow/images/our__mission.jpg');
+    background-image: var(--missionUrl);
     background-position: -126px -48px;
     background-size: 134%;
     mask-image: radial-gradient(at 30%, #000 30%, #0000 70%);
@@ -78,7 +87,7 @@
     .clip-image {
       background-size: 110%;
       min-width: 374px;
-      background-image: url('/capital-of-tomorrow/images/our__mission.jpg');
+      background-image: var(--missionUrl);
       mask-image: radial-gradient(at 30%, #000 30%, #0000 70%);
       -webkit-mask-image: radial-gradient(at 32% 33%, #000 32%, #0000 71%);
       background-position: -10px -217px;
