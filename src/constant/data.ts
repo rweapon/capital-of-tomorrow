@@ -1,6 +1,5 @@
+import { AccordionItem } from '@/components/Accordion/Accordion';
 import { BlobData } from '@/components/BlobsParallaxGroup/BlobsParallaxGroup';
-
-import { AccordionItem } from '@/types/Accordion.interfaces';
 
 interface BlobElement extends BlobData {
   translateX?: number;

@@ -1,18 +1,15 @@
 import { Metadata } from 'next';
 import * as React from 'react';
 
-import '@/styles/globals.css';
+import './globals.css';
 
 import { fonts } from '@/lib/fonts';
 import { cn } from '@/lib/utils';
 
-import BlobsParallaxGroup from '@/components/BlobsParallaxGroup';
-import Footer from '@/components/Footer';
-import Navbar from '@/components/Navbar';
+import { Footer, Navbar } from '@/components';
 
 import { siteConfig } from '@/constant/config';
-import { blobs } from '@/constant/data';
-import { basePath } from '@/constant/env';
+import { basePath, isProd } from '@/constant/env';
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -38,25 +35,20 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: React.PropsWithChildren) {
   return (
     <html lang='en' suppressHydrationWarning>
       <body
         className={cn(
-          ' bg-custom-dark relative box-border min-h-screen overflow-x-hidden',
-          fonts
+          'bg-custom-dark relative box-border min-h-screen overflow-x-hidden lg:gap-30 flex flex-col gap-8 md:gap-12 xl:gap-28',
+          fonts,
+          isProd ? 'prod' : 'local'
         )}
       >
-        <BlobsParallaxGroup blobs={blobs} />
-        <div className='lg:gap-30 flex flex-col gap-8 md:gap-12 xl:gap-[168px] '>
-          <Navbar />
-          {children}
-          <Footer />
-        </div>
+        {/* <BlobsParallaxGroup blobs={blobs} /> */}
+        <Navbar />
+        {children}
+        <Footer />
       </body>
     </html>
   );

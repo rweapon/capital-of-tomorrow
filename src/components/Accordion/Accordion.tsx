@@ -1,7 +1,16 @@
 'use client';
-import { useState } from 'react';
+import { ReactNode, useState } from 'react';
 
-import { IAccordionProps } from '@/types/Accordion.interfaces';
+export type AccordionItem = {
+  title: string;
+  content: string;
+};
+
+export interface IAccordionProps {
+  title: string;
+  items: AccordionItem[];
+  extraContent?: ReactNode;
+}
 
 export const Accordion = ({ title, items, extraContent }: IAccordionProps) => {
   const [activeIndices, setActiveIndices] = useState<number[]>([]);

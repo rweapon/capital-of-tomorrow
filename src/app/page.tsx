@@ -1,20 +1,23 @@
 'use client';
 
-import Accordion from '@/components/Accordion';
-import { PartnershipCards } from '@/components/Cards/PartnershipCards';
-import { TicketCards } from '@/components/Cards/TicketCards';
-import SliderImage from '@/components/ImageSlider';
-import MissionSection from '@/components/MissionSection';
-import PartnershipSection from '@/components/PartnershipSection';
-import Scroll from '@/components/Scroll';
-import SimpleTextBlocks from '@/components/SimpleTextBlocks';
-import Timeline from '@/components/Timeline';
+import {
+  Accordion,
+  ImageSlider,
+  MissionSection,
+  SimpleTextBlocks,
+  Timeline,
+} from '@/components';
 
 import { programData, qAData } from '@/constant/data';
+import { PartnershipCards, TicketCards } from '@/views/Home/Cards';
+import HomeHero from '@/views/Home/Hero';
+import PartnershipSection from '@/views/Home/PartnershipSection';
+import Scroll from '@/views/Home/Scroll';
 
 const Home = () => {
   return (
     <>
+      <HomeHero />
       <Scroll />
       <MissionSection />
       <Accordion
@@ -27,7 +30,7 @@ const Home = () => {
       <Scroll />
       <PartnershipSection />
       <PartnershipCards />
-      <SliderImage />
+      <ImageSlider />
       <Accordion title='Q&A' items={qAData} />
     </>
   );

@@ -1,9 +1,13 @@
 import React from 'react';
 
-import {
-  IMissionContent,
-  IMissionGoals,
-} from '@/types/MissionSection.interfaces';
+export interface IMissionContent {
+  title: string;
+  description: string[];
+}
+
+export interface IMissionGoals {
+  items: string[];
+}
 
 const missionContent: IMissionContent = {
   title: 'OUR MISSION',
@@ -13,14 +17,12 @@ const missionContent: IMissionContent = {
   ],
 };
 
-const missionGoals: IMissionGoals = {
-  items: [
-    'Learn to think big',
-    'Open access for global networking',
-    'Support the best projects',
-    'Create a community of like-minded people',
-  ],
-};
+const missionGoals = [
+  'Learn to think big',
+  'Open access for global networking',
+  'Support the best projects',
+  'Create a community of like-minded people',
+];
 
 export const MissionSection: React.FC = () => {
   return (
@@ -67,9 +69,9 @@ export const MissionSection: React.FC = () => {
             <div className='h-px w-full bg-white/20' />
           </div>
           <div className='flex flex-col justify-between sm:flex-row'>
-            {missionGoals.items.map((goal, index) => (
+            {missionGoals.map((goal) => (
               <h2
-                key={index}
+                key={crypto.randomUUID()}
                 className='font-mont xs:text-sm xs:text-left text-start text-xs font-bold text-white/80 sm:text-base'
               >
                 {goal}
