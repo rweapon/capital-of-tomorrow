@@ -1,7 +1,7 @@
 import {
   IPartnerLogo,
   IPartnershipContent,
-} from '@/components/PartnershipSection/types';
+} from '@/views/Home/PartnershipSection/types';
 
 export const partnerLogos: IPartnerLogo[] = [
   { type: 'ad__dad', height: 44 },
