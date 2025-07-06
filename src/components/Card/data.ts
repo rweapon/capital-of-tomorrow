@@ -1,4 +1,4 @@
-import { IGradientDefinition } from '@/components/Cards/types';
+import { IGradientDefinition } from '@/components/Card/types';
 
 export const GRADIENTS: Record<string, IGradientDefinition> = {
   goldBase: {

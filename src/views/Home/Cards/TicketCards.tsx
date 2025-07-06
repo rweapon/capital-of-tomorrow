@@ -1,4 +1,4 @@
-import Card, { ICardProps } from './Card';
+import Card, { ICardProps } from '@/components/Card/Card';
 
 const tickets: ICardProps[] = [
   {
@@ -18,6 +18,7 @@ const tickets: ICardProps[] = [
     buttonTextColor: '#D4AF37',
     borderColor: '#1e1e1e',
     shadow: '0 4px 4px 0 rgba(0, 0, 0, 0.25)',
+    link: '/apply/1',
   },
   {
     title: 'SELF FUNDED',
@@ -39,6 +40,7 @@ const tickets: ICardProps[] = [
     buttonBackgroundColor: '#E3AF64',
     buttonTextColor: '#1e1e1e',
     borderColor: '#c7c1c1',
+    link: '/apply/1',
   },
   {
     title: 'INVITATION LETTER',
@@ -58,6 +60,7 @@ const tickets: ICardProps[] = [
     buttonBackgroundColor: '#E3AF64',
     buttonTextColor: '#1e1e1e',
     borderColor: '#c7c1c1',
+    link: '/apply/1',
   },
   {
     title: 'VIP',
@@ -78,6 +81,7 @@ const tickets: ICardProps[] = [
     buttonTextColor: '#1e1e1e',
     borderColor: '#D4AF37',
     shadow: '0 8px 32px rgba(212, 175, 55, 0.3)',
+    link: '/apply/1',
   },
 ];
 
