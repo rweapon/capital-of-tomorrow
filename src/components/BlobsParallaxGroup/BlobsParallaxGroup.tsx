@@ -120,6 +120,7 @@ export const BlobsParallaxGroup: React.FC<BlobsParallaxGroupProps> = ({
     return () => {
       if (animationRef.current) cancelAnimationFrame(animationRef.current);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [mousePosition, windowSize, isMounted]);
 
   useEffect(() => {

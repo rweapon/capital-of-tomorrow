@@ -1,12 +1,11 @@
 import Image from 'next/image';
 import React from 'react';
 
+import { basePath, imagePrefix } from '@/constant/env';
 import {
   partnerLogos,
   partnershipContent,
-} from '@/components/PartnershipSection/data';
-
-import { basePath, imagePrefix } from '@/constant/env';
+} from '@/views/Home/PartnershipSection/data';
 
 export const PartnershipSection: React.FC = () => {
   return (

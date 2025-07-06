@@ -59,6 +59,7 @@ export const ImageSlider = () => {
     return () => {
       if (intervalRef.current) clearInterval(intervalRef.current);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [activeIndex, swiperInstance]);
 
   const handleSlideChange = (swiper: SwiperType) => {

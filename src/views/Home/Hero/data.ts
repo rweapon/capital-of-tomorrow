@@ -2,7 +2,7 @@ import {
   IButtonContent,
   IEventInfo,
   IHeroContent,
-} from '@/components/Hero/types';
+} from '@/views/Home/Hero/types';
 
 export const heroContent: IHeroContent = {
   title: 'CAPITAL OF TOMORROW',

@@ -1,8 +1,9 @@
 'use client';
+import Link from 'next/link';
 import React from 'react';
 
-import { GRADIENTS } from '@/components/Cards/data';
-import { BackgroundType, IGradientProps } from '@/components/Cards/types';
+import { GRADIENTS } from '@/components/Card/data';
+import { BackgroundType, IGradientProps } from '@/components/Card/types';
 
 export interface ICardProps {
   title: string;
@@ -25,6 +26,7 @@ export interface ICardProps {
   layout?: string;
   price?: string;
   buttonText?: string;
+  link: string;
 }
 
 const Gradient: React.FC<IGradientProps> = ({
@@ -115,6 +117,7 @@ const Card: React.FC<ICardProps> = ({
   price,
   listTextColor,
   buttonText = 'Get started',
+  link,
 }) => {
   const numericWidth = parseInt(width);
   const numericHeight = parseInt(height);
@@ -290,23 +293,27 @@ const Card: React.FC<ICardProps> = ({
               style={{ mixBlendMode: 'color' }}
             />
           </svg>
-          <button
-            className={`font-mont  relative z-10 size-full bg-transparent font-bold ${borderRadiusClass} transition-all duration-200 hover:scale-105`}
-            style={buttonStyle}
-          >
-            {buttonText}
-          </button>
+          <Link as={link} href={link}>
+            <button
+              className={`font-mont  relative z-10 size-full bg-transparent font-bold ${borderRadiusClass} transition-all duration-200 hover:scale-105`}
+              style={buttonStyle}
+            >
+              {buttonText}
+            </button>
+          </Link>
         </div>
       );
     }
 
     return (
-      <button
-        className={`font-mont font-bold  ${borderRadiusClass} transition-all duration-200 hover:scale-105`}
-        style={{ ...buttonStyle, background: buttonBackgroundColor }}
-      >
-        {buttonText}
-      </button>
+      <Link as={link} href={link}>
+        <button
+          className={`font-mont font-bold  ${borderRadiusClass} transition-all duration-200 hover:scale-105`}
+          style={{ ...buttonStyle, background: buttonBackgroundColor }}
+        >
+          {buttonText}
+        </button>
+      </Link>
     );
   };
 

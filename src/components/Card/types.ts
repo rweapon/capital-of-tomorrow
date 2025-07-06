@@ -21,6 +21,7 @@ export interface IPartnershipTier {
   title: string;
   listItems: string[];
   price: string;
+  link: string;
 }
 
 export type BackgroundType = 'solid' | 'gold-gradient' | 'overlay-gradient';

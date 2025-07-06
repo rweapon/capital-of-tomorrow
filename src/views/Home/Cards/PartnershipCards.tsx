@@ -1,6 +1,5 @@
-import { IPartnershipTier } from '@/components/Cards/types';
-
-import Card from './Card';
+import Card from '@/components/Card/Card';
+import { IPartnershipTier } from '@/components/Card/types';
 
 const partnershipTiers: IPartnershipTier[] = [
   {
@@ -14,6 +13,7 @@ const partnershipTiers: IPartnershipTier[] = [
       'Access to the chats',
       'Brochure stand in the ballroom, 3 posts in social media',
     ],
+    link: '/',
   },
   {
     title: 'COLLABORATION PARTNER',
@@ -24,6 +24,7 @@ const partnershipTiers: IPartnershipTier[] = [
       'Stand table with company representative and merchandising',
       "5 posts on social media and 1 vertical video about the company; company brochure added to participants' merchandise",
     ],
+    link: '/',
   },
   {
     title: 'IMPACT PARTNER',
@@ -36,6 +37,7 @@ const partnershipTiers: IPartnershipTier[] = [
       'Mention of your logo and slogan in every video on our social media channels for the entire period before the project and 1 month afterwards',
       'Thank-you speech from the head of Vostochnik Events',
     ],
+    link: '/',
   },
 ];
 
@@ -54,6 +56,7 @@ export const PartnershipCards = () => {
             title={tier.title}
             price={tier.price}
             listItems={tier.listItems}
+            link={tier.link}
             width='360px'
             height='524px'
             backgroundType='overlay-gradient'
