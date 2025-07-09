@@ -27,7 +27,7 @@ export const footerData: IFooterData = {
 };
 export function Footer() {
   return (
-    <footer className='bg-[#1E1E1E] py-2 text-white sm:mt-20 sm:py-6 lg:mt-44'>
+    <footer className='bg-[#1E1E1E] py-2 text-white sm:mt-20 sm:py-6 '>
       <div className='container mx-auto px-4 sm:px-6 lg:px-7'>
         <div className='grid grid-cols-3 gap-8'>
           <div>
