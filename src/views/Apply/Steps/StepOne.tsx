@@ -35,7 +35,7 @@ const StepOne = () => {
               <RadioGroupItem value='yes' id='visa_yes' />
               <label
                 htmlFor='visa_yes'
-                className='font-mont text-xl text-primary-foreground'
+                className='font-mont text-xl text-primary-foreground cursor-pointer'
               >
                 Yes
               </label>
@@ -44,7 +44,7 @@ const StepOne = () => {
               <RadioGroupItem value='no' id='visa_no' />
               <label
                 htmlFor='visa_no'
-                className='font-mont text-xl text-primary-foreground'
+                className='font-mont text-xl text-primary-foreground cursor-pointer'
               >
                 No
               </label>

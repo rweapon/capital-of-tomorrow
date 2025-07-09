@@ -7,9 +7,26 @@ import { cn } from '@/lib/utils';
 import { Button } from '@/components';
 
 import { ProgressBar, progressStep } from '@/views/Apply/ProgressBar';
-const StepOne = dynamic(() => import('./StepOne').then((res) => res.default), {
-  ssr: false,
-});
+
+const StepOne = dynamic(
+  () => import('@/views/Apply/Steps/StepOne').then((res) => res.default),
+  {
+    ssr: false,
+  }
+);
+const StepTwo = dynamic(
+  () => import('@/views/Apply/Steps/StepTwo').then((res) => res.default),
+  {
+    ssr: false,
+  }
+);
+const StepThree = dynamic(
+  () => import('@/views/Apply/Steps/StepThree').then((res) => res.default),
+  {
+    ssr: false,
+  }
+);
+
 type Props = {
   params: { step: string };
 };
@@ -22,10 +39,17 @@ export const form = ({ params }: Props) => {
     // notFound();
   }
 
+  const stepComponent: Record<number, React.ReactElement> = {
+    1: <StepOne />,
+    2: <StepTwo />,
+    3: <StepThree />,
+    4: <div />,
+  };
+
   return (
     <section className='container flex flex-col gap-20'>
       <ProgressBar step={numStep as keyof typeof progressStep} />
-      {numStep === 1 && <StepOne />}
+      {stepComponent[numStep]}
       <div
         className={cn(
           'flex items-center w-full',
