@@ -1,5 +1,6 @@
 import dynamic from 'next/dynamic';
 import Link from 'next/link';
+import { notFound } from 'next/navigation';
 import React from 'react';
 
 import { cn } from '@/lib/utils';
@@ -31,12 +32,16 @@ type Props = {
   params: { step: string };
 };
 
-export const form = ({ params }: Props) => {
+export function generateStaticParams() {
+  return [{ step: '1' }, { step: '2' }, { step: '3' }, { step: '4' }];
+}
+
+const Apply = ({ params }: Props) => {
   const numStep = parseInt(params.step);
 
   // Validate step
   if (![1, 2, 3, 4].includes(numStep)) {
-    // notFound();
+    notFound();
   }
 
   const stepComponent: Record<number, React.ReactElement> = {
@@ -76,4 +81,4 @@ export const form = ({ params }: Props) => {
   );
 };
 
-export default form;
+export default Apply;
