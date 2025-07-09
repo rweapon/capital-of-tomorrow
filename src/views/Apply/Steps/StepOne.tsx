@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { Input, RadioGroup, RadioGroupItem } from '@/components';
+import { Checkbox } from '@/components/Сheckbox/Сheckbox';
 
 const StepOne = () => {
   return (
@@ -50,6 +51,12 @@ const StepOne = () => {
               </label>
             </div>
           </RadioGroup>
+        </div>
+        <div className='flex gap-4 text-primary-foreground font-mont text-xl '>
+          <Checkbox id='personal_data' />
+          <label htmlFor='personal_data' className='cursor-pointer'>
+            I agree to the processing of my personal data
+          </label>
         </div>
       </div>
       <div className='flex flex-col gap-9 w-full'>
