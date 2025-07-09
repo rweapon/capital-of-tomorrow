@@ -7,6 +7,7 @@ import { cn } from '@/lib/utils';
 
 import { Button } from '@/components';
 
+import PayAndSubmit from '@/app/apply/[step]/Pay&Submit';
 import { ProgressBar, progressStep } from '@/views/Apply/ProgressBar';
 
 const StepOne = dynamic(
@@ -23,6 +24,12 @@ const StepTwo = dynamic(
 );
 const StepThree = dynamic(
   () => import('@/views/Apply/Steps/StepThree').then((res) => res.default),
+  {
+    ssr: false,
+  }
+);
+const StepFour = dynamic(
+  () => import('@/views/Apply/Steps/StepFour').then((res) => res.default),
   {
     ssr: false,
   }
@@ -48,7 +55,7 @@ const Apply = ({ params }: Props) => {
     1: <StepOne />,
     2: <StepTwo />,
     3: <StepThree />,
-    4: <div />,
+    4: <StepFour />,
   };
 
   return (
@@ -76,6 +83,7 @@ const Apply = ({ params }: Props) => {
             <Button className='font-semibold !text-xl py-5 px-14'>Next</Button>
           </Link>
         )}
+        {numStep === 4 && <PayAndSubmit />}
       </div>
     </section>
   );
