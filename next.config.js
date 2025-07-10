@@ -1,23 +1,11 @@
 /** @type {import('next').NextConfig} */
-const isProd = process.env.NODE_ENV === 'production';
 
 const nextConfig = {
-  basePath: isProd ? '/capital-of-tomorrow' : '',
+  basePath: '',
   eslint: {
     ignoreDuringBuilds: true,
     dirs: ['src'],
   },
-  // async rewrites() {
-  //   return [
-  //     {
-  //       source: '/images/:path*',
-  //       destination: '/capital-of-tomorrow/images/:path*', // The :path parameter isn't used here so will be automatically passed in the query
-  //     },
-  //   ];
-  // },
-  // images: {
-  //   path: '/capital-of-tomorrow/images',
-  // },
 
   reactStrictMode: true,
   swcMinify: true,
