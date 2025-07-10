@@ -69,9 +69,9 @@ export const MissionSection: React.FC = () => {
             <div className='h-px w-full bg-white/20' />
           </div>
           <div className='flex flex-col justify-between sm:flex-row'>
-            {missionGoals.map((goal) => (
+            {missionGoals.map((goal, index) => (
               <h2
-                key={crypto.randomUUID()}
+                key={index}
                 className='font-mont xs:text-sm xs:text-left text-start text-xs font-bold text-white/80 sm:text-base'
               >
                 {goal}

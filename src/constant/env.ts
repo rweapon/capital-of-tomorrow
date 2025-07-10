@@ -5,6 +5,6 @@ export const showLogger = isLocal
   ? true
   : process.env.NEXT_PUBLIC_SHOW_LOGGER === 'true' || false;
 
-export const basePath = isLocal ? '' : '/vostochnik';
+export const basePath = '';
 
 export const imagePrefix = '/images';
