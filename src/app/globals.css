@@ -62,8 +62,8 @@
     --missionUrl: url(../../public/images/our__mission.jpg);
   }
   .prod {
-    --towerUrl: url(/capital-of-tomorrow/images/tower_test.svg);
-    --missionUrl: url(/capital-of-tomorrow/images/our__mission.jpg);
+    --towerUrl: url(/vostochnik/images/tower_test.svg);
+    --missionUrl: url(/vostochnik/images/our__mission.jpg);
   }
   .dark {
     --background: 0 0% 3.9%;
