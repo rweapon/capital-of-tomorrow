@@ -1,6 +1,8 @@
 'use client';
 import { useEffect, useRef } from 'react';
 
+import { isLocal } from '@/constant/env';
+
 export function Scroll() {
   const containerRef = useRef<HTMLDivElement>(null);
   const textRef = useRef<HTMLDivElement>(null);
@@ -10,7 +12,7 @@ export function Scroll() {
 
   useEffect(() => {
     const text = textRef.current;
-    if (!text) return;
+    if (!text || isLocal) return;
 
     // Дублируем текст для бесшовной прокрутки
     text.innerHTML = text.innerHTML + ' ' + text.innerHTML;
