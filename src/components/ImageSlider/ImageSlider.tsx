@@ -108,7 +108,7 @@ export const ImageSlider = () => {
   };
 
   return (
-    <div
+    <section
       className='relative hidden w-full sm:block'
       style={styles.container}
       onMouseEnter={handleMouseEnter}
@@ -160,6 +160,6 @@ export const ImageSlider = () => {
           </SwiperSlide>
         ))}
       </Swiper>
-    </div>
+    </section>
   );
 };

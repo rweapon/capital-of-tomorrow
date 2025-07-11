@@ -1,8 +1,13 @@
+import Image from 'next/image';
 import React from 'react';
+
+import { basePath, imagePrefix } from '@/constant/env';
 
 export interface IMissionContent {
   title: string;
   description: string[];
+  adaptiveDescription: string;
+  smallDescription: string[];
 }
 
 export interface IMissionGoals {
@@ -14,6 +19,12 @@ const missionContent: IMissionContent = {
   description: [
     "Capital of Tomorrow is not just a typical business event - it's an event where young entrepreneurs can develop pitching and public speaking skills, acquire knowledge of and experience new approaches to international business, as well as find partners and investors. As part of this project, experienced entrepreneurs can become mentors and try their hand at business instruction, invest in bright and bold young projects and see young people’s fresh vision of domestic and international business. In addition, they will have an opportunity to present their projects and engage young audience, which will be done on the international level and face no limits.",
     'Those who are on the verge of creating their own business and wish to get away from the hackneyed recruitment are offered a unique opportunity to touch the world of entrepreneurship and come to realize that nothing is impossible.',
+  ],
+  adaptiveDescription:
+    'Capital of Tomorrow is where young entrepreneurs grow ideas, pitch to investors, and explore global business. Mentors can guide, invest, and connect with the next generation. For future founders, it’s a bold step into real entrepreneurship — no limits, just opportunities.',
+  smallDescription: [
+    'Capital of Tomorrow is where young entrepreneurs grow ideas, pitch to investors, and explore global business. ',
+    'Mentors can guide, invest, and connect with the next generation. For future founders, it’s a bold step into real entrepreneurship — no limits, just opportunities.',
   ],
 };
 
@@ -48,23 +59,36 @@ export const MissionSection: React.FC = () => {
             padding: '2px',
           }}
         />
-        <div className='relative flex flex-row  sm:min-h-[450px] md:min-h-[300px]'>
-          <div className=' min-h-auto w-full lg:min-w-[374px] xl:min-w-[488px]'>
-            <div className='clip-image h-64 sm:h-72 lg:h-auto lg:min-w-[374px] xl:min-w-[488px]' />
+        <div className='relative flex flex-row-reverse sm:flex-row min-h-80'>
+          <div className='absolute right-0 top-0 sm:static min-h-auto w-1/2 sm:w-full max-w-lg'>
+            <Image
+              src={`${basePath}${imagePrefix}/our__mission.jpg`}
+              alt='Dmitry'
+              width={488}
+              height={256}
+              className='h-auto lg:max-w-xs xl:max-w-lg clip-image'
+            />
           </div>
 
-          <div className='flex w-full flex-col p-5 text-white md:p-14 lg:pb-8 lg:pl-14 lg:pr-[83px] lg:pt-12'>
-            <h1 className='font-akira mb-2 text-[14px] font-extrabold sm:mb-4 sm:text-3xl md:mb-5 md:text-[40px]'>
+          <div className='flex w-full flex-col p-8 pr-2 md:pl-[unset] text-white md:p-14 lg:p-16'>
+            <h1 className='font-akira mb-2 text-lg font-extrabold sm:mb-4 sm:text-3xl md:mb-5 md:text-[40px]'>
               {missionContent.title}
             </h1>
-            <p className='font-mont sm:font-monda text-think line-clamp-[9] text-sm font-normal leading-[13px] text-[#F8F7F5E5]/70 sm:line-clamp-[none]  sm:space-y-5 md:text-base'>
+            <p className='hidden lg:block font-mont line-clamp-[9] text-sm font-normal leading-[13px] text-[#F8F7F5E5]/70 lg:line-clamp-[none]  sm:space-y-5 md:text-base'>
               {missionContent.description[0]}
               <br /> {missionContent.description[1]}
             </p>
+            <p className='hidden sm:block lg:hidden font-mont text-base text-[#F8F7F5E5]/90   '>
+              {missionContent.adaptiveDescription}
+            </p>
+            <div className='block sm:hidden font-mont text-base text-[#F8F7F5E5]/90'>
+              <p className='w-[220px]'>{missionContent.smallDescription[0]}</p>
+              {missionContent.smallDescription[1]}
+            </div>
           </div>
         </div>
 
-        <div className='hidden w-full px-5 pb-6 sm:block sm:px-6 sm:pb-8 md:px-20 md:pb-12 md:pt-0'>
+        <div className='hidden w-full px-5 pb-6 lg:block sm:px-6 sm:pb-8 md:px-20 md:pb-12 md:pt-0'>
           <div className='py-6 sm:py-7 md:py-8 md:pt-0'>
             <div className='h-px w-full bg-white/20' />
           </div>
