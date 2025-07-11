@@ -6,9 +6,10 @@ import './globals.css';
 import { fonts } from '@/lib/fonts';
 import { cn } from '@/lib/utils';
 
-import { Footer, Navbar } from '@/components';
+import { BlobsParallaxGroup, Footer, Navbar } from '@/components';
 
 import { siteConfig } from '@/constant/config';
+import { blobs } from '@/constant/data';
 import { basePath, isProd } from '@/constant/env';
 
 export const metadata: Metadata = {
@@ -40,12 +41,12 @@ export default function RootLayout({ children }: React.PropsWithChildren) {
     <html lang='en' suppressHydrationWarning>
       <body
         className={cn(
-          'bg-custom-dark relative box-border min-h-screen overflow-x-hidden lg:gap-30 flex flex-col gap-8 md:gap-12 xl:gap-28',
+          'bg-custom-dark relative box-border min-h-screen overflow-x-hidden flex flex-col gap-8 md:gap-12 lg:gap-20 ',
           fonts,
           isProd ? 'prod' : 'local'
         )}
       >
-        {/* <BlobsParallaxGroup blobs={blobs} /> */}
+        {isProd && <BlobsParallaxGroup blobs={blobs} />}
         <Navbar />
         {children}
         <Footer />

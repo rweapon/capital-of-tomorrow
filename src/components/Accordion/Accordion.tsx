@@ -1,6 +1,8 @@
 'use client';
 import { ReactNode, useState } from 'react';
 
+import { cn } from '@/lib/utils';
+
 export type AccordionItem = {
   title: string;
   content: string;
@@ -29,25 +31,24 @@ export const Accordion = ({ title, items, extraContent }: IAccordionProps) => {
         </h1>
       </header>
 
-      <div className='  sm:px-4 lg:px-[34px]'>
+      <div className='sm:px-4 lg:px-[34px]'>
         {items.map((item, index) => (
           <article
             key={index}
-            className={`border-b border-white/20 px-4 py-9 ${
+            className={`border-b border-white/20 px-4 py-6 cursor-pointer ${
               index === 0 ? 'border-t' : ''
             }`}
+            onClick={() => toggleAccordion(index)}
           >
-            <button
-              className={`flex w-full items-center justify-between text-left transition-colors ${
-                activeIndices.includes(index)
-                  ? 'text-white'
-                  : 'cursor-pointer text-white hover:text-gray-300'
-              }`}
-              onClick={() => toggleAccordion(index)}
+            <div
+              className={cn(
+                'flex h-full w-full items-center justify-between text-left transition-colors text-white',
+                !activeIndices.includes(index) && 'hover:text-gray-300'
+              )}
               aria-expanded={activeIndices.includes(index)}
               aria-controls={`accordion-content-${index}`}
             >
-              <span className='font-mont  text-sm font-normal md:text-base md:leading-[22px]'>
+              <span className='font-mont text-base font-normal md:text-lg md:leading-[22px]'>
                 {item.title}
               </span>
               <svg
@@ -66,7 +67,7 @@ export const Accordion = ({ title, items, extraContent }: IAccordionProps) => {
                   d='M19 9l-7 7-7-7'
                 />
               </svg>
-            </button>
+            </div>
 
             <div
               id={`accordion-content-${index}`}
@@ -74,7 +75,7 @@ export const Accordion = ({ title, items, extraContent }: IAccordionProps) => {
                 activeIndices.includes(index) ? 'max-h-96' : 'max-h-0'
               }`}
             >
-              <p className='font-mont text-[10px] font-thin leading-[12px] text-white/80 md:text-base md:leading-[22px]'>
+              <p className='font-mont text-sm font-thin text-white/80 md:text-base md:leading-[22px]'>
                 {item.content}
               </p>
             </div>

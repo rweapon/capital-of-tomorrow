@@ -1,3 +1,7 @@
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/pagination';
+
 import Card, { ICardProps } from '@/components/Card/Card';
 
 const tickets: ICardProps[] = [
@@ -87,7 +91,7 @@ const tickets: ICardProps[] = [
 
 export const TicketCards = () => {
   return (
-    <div className='relative mx-auto max-w-[1440px] overflow-hidden px-4 py-8 sm:px-6 lg:px-8'>
+    <section className='relative mx-auto w-svw md:w-[unset] md:max-w-[1440px] overflow-hidden px-4 py-8 sm:px-6 lg:px-8'>
       <h2 className='font-akira mb-8 text-center text-2xl leading-snug text-[#f8f7f5] sm:text-3xl md:mb-12 md:text-4xl lg:text-5xl'>
         Explore Flexible Participation Categories
       </h2>
@@ -99,18 +103,43 @@ export const TicketCards = () => {
       </div>
 
       <div className='relative flex h-[560px] w-full justify-center md:hidden'>
-        <div className='relative z-10'>
+        <Swiper
+          slidesPerView='auto'
+          className='timeline-swiper'
+          breakpoints={{
+            0: { slidesOffsetBefore: 20, slidesOffsetAfter: 20 },
+            320: { slidesOffsetBefore: 30, slidesOffsetAfter: 30 },
+            420: { slidesOffsetBefore: 50, slidesOffsetAfter: 50 },
+            560: { slidesOffsetBefore: 100, slidesOffsetAfter: 100 },
+            640: { slidesOffsetBefore: 100, slidesOffsetAfter: 100 },
+          }}
+        >
+          {tickets.map((ticket, index) => (
+            <SwiperSlide
+              key={index}
+              className='flex h-full items-center justify-center !w-[300px] p-4'
+            >
+              <Card
+                key={ticket.title}
+                {...ticket}
+                width='280px'
+                height='540px'
+              />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+        {/* <div className='relative z-10'>
           <Card {...tickets[0]} width='280px' height='540px' />
-        </div>
+        </div> */}
 
-        <div className='absolute left-1/2 top-0 z-0 -translate-x-[160%] translate-y-[-7px] rotate-[5deg]'>
+        {/* <div className='absolute left-1/2 top-0 z-0 -translate-x-[160%] translate-y-[-7px] rotate-[5deg]'>
           <Card {...tickets[1]} width='280px' height='540px' />
         </div>
 
         <div className='absolute left-1/2 top-0 z-0 translate-x-[60%] translate-y-[-7px] rotate-[-5deg]'>
           <Card {...tickets[2]} width='280px' height='540px' />
-        </div>
+        </div> */}
       </div>
-    </div>
+    </section>
   );
 };

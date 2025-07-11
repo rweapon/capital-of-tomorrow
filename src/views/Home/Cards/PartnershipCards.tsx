@@ -1,3 +1,7 @@
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/pagination';
+
 import Card from '@/components/Card/Card';
 import { IPartnershipTier } from '@/components/Card/types';
 
@@ -43,7 +47,7 @@ const partnershipTiers: IPartnershipTier[] = [
 
 export const PartnershipCards = () => {
   return (
-    <div className='py-12  lg:px-8'>
+    <section className='py-12  lg:px-8'>
       <h2 className='font-akira py-12 text-center text-3xl font-extrabold text-[#f8f7f5] md:text-4xl lg:text-5xl'>
         Conditions of Partnership
       </h2>
@@ -73,68 +77,47 @@ export const PartnershipCards = () => {
           />
         ))}
       </div>
-
-      <div className='relative flex h-[540px] w-full justify-center overflow-hidden md:hidden'>
-        <div className='relative z-10'>
-          <Card
-            {...partnershipTiers[0]}
-            layout='partnership'
-            width='360px'
-            height='524px'
-            backgroundType='overlay-gradient'
-            backgroundColor='#2D2D2D'
-            textColor='#FFFFFF'
-            buttonBackgroundType='solid'
-            buttonBackgroundColor='#E3AF64'
-            buttonTextColor='#1E1E1E'
-            borderColor='#c7c1c1'
-            shadow='0 4px 4px 0 rgba(0, 0, 0, 0.25)'
-            buttonWidth='280px'
-            buttonHeight='50px'
-            opacity={0.3}
-          />
-        </div>
-
-        <div className='absolute left-1/2 top-0 z-0 -translate-x-[160%] translate-y-[-7px] rotate-[5deg]'>
-          <Card
-            {...partnershipTiers[1]}
-            layout='partnership'
-            width='360px'
-            height='524px'
-            backgroundType='overlay-gradient'
-            backgroundColor='#2D2D2D'
-            textColor='#FFFFFF'
-            buttonBackgroundType='solid'
-            buttonBackgroundColor='#E3AF64'
-            buttonTextColor='#1E1E1E'
-            borderColor='#c7c1c1'
-            shadow='0 4px 4px 0 rgba(0, 0, 0, 0.25)'
-            buttonWidth='280px'
-            buttonHeight='50px'
-            opacity={0.3}
-          />
-        </div>
-
-        <div className='absolute left-1/2 top-0 z-0 translate-x-[60%] translate-y-[-7px]  rotate-[-5deg]'>
-          <Card
-            {...partnershipTiers[2]}
-            layout='partnership'
-            width='360px'
-            height='524px'
-            backgroundType='overlay-gradient'
-            backgroundColor='#2D2D2D'
-            textColor='#FFFFFF'
-            buttonBackgroundType='solid'
-            buttonBackgroundColor='#E3AF64'
-            buttonTextColor='#1E1E1E'
-            borderColor='#c7c1c1'
-            shadow='0 4px 4px 0 rgba(0, 0, 0, 0.25)'
-            buttonWidth='280px'
-            buttonHeight='50px'
-            opacity={0.3}
-          />
-        </div>
+      <div className='relative flex h-[560px] w-full justify-center md:hidden'>
+        <Swiper
+          slidesPerView='auto'
+          className='timeline-swiper'
+          breakpoints={{
+            0: { slidesOffsetBefore: 0, slidesOffsetAfter: 0 },
+            420: { slidesOffsetBefore: 30, slidesOffsetAfter: 30 },
+            560: { slidesOffsetBefore: 100, slidesOffsetAfter: 100 },
+            640: { slidesOffsetBefore: 150, slidesOffsetAfter: 150 },
+          }}
+        >
+          {partnershipTiers.map((tier, index) => (
+            <SwiperSlide
+              key={index}
+              className='flex h-full items-center justify-center !w-[380px] p-2'
+            >
+              <Card
+                key={tier.title}
+                layout='partnership'
+                title={tier.title}
+                price={tier.price}
+                listItems={tier.listItems}
+                link={tier.link}
+                width='360px'
+                height='524px'
+                backgroundType='overlay-gradient'
+                backgroundColor='#2D2D2D'
+                textColor='#FFFFFF'
+                buttonBackgroundType='solid'
+                buttonBackgroundColor='#E3AF64'
+                buttonTextColor='#1E1E1E'
+                borderColor='#c7c1c1'
+                shadow='0 4px 4px 0 rgba(0, 0, 0, 0.25)'
+                buttonWidth='280px'
+                buttonHeight='50px'
+                opacity={0.3}
+              />
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </div>
-    </div>
+    </section>
   );
 };
