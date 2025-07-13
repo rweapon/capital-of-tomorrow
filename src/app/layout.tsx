@@ -41,7 +41,7 @@ export default function RootLayout({ children }: React.PropsWithChildren) {
     <html lang='en' suppressHydrationWarning>
       <body
         className={cn(
-          'bg-custom-dark relative box-border min-h-screen overflow-x-hidden flex flex-col gap-8 md:gap-12 lg:gap-20 ',
+          'relative box-border min-h-screen overflow-x-hidden flex flex-col gap-8 md:gap-12 lg:gap-20 ',
           fonts,
           isProd ? 'prod' : 'local'
         )}

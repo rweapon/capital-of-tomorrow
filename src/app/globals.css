@@ -118,6 +118,51 @@
       -webkit-mask-image: radial-gradient(at 50%, #000 15%, #0000 70%);
     }
   }
+
+  .flip-clock {
+    --fcc-flip-duration: 0.5s; /* transition duration when flip card */
+    --fcc-spacing: 4px; /* space between unit times and separators */
+    --fcc-digit-block-width: 64px; /* width of digit card */
+    --fcc-digit-block-height: 64px; /* height of digit card, highly recommend in even number */
+    --fcc-digit-block-radius: 12px; /* border radius of digit card */
+    --fcc-digit-block-spacing: 5px; /* space between blocks in each unit of time */
+    --fcc-digit-font-size: 64px;
+    --fcc-divider-height: 2px;
+    --fcc-divider-color: rgb(
+      41 41 41 / var(--tw-bg-opacity, 1)
+    ); /* color of divider */
+    --fcc-digit-color: rgb(
+      41 41 41 / var(--tw-bg-opacity, 1)
+    ); /* color of digit */
+    --fcc-background: white; /* background of digit card */
+  }
+  @media (max-width: 1024px) {
+    .flip-clock {
+      --fcc-flip-duration: 0.5s; /* transition duration when flip card */
+      --fcc-spacing: 2px; /* space between unit times and separators */
+      --fcc-divider-height: 1px;
+      --fcc-digit-block-width: 45px; /* width of digit card */
+      --fcc-digit-block-height: 45px; /* height of digit card, highly recommend in even number */
+      --fcc-digit-block-radius: 6px; /* border radius of digit card */
+      --fcc-digit-block-spacing: 4px; /* space between blocks in each unit of time */
+      --fcc-digit-font-size: 32px;
+    }
+  }
+  @media (max-width: 640px) {
+    .flip-clock {
+      --fcc-flip-duration: 0.5s; /* transition duration when flip card */
+      --fcc-spacing: 2px; /* space between unit times and separators */
+      --fcc-divider-height: 1px;
+      --fcc-digit-block-width: 30px; /* width of digit card */
+      --fcc-digit-block-height: 30px; /* height of digit card, highly recommend in even number */
+      --fcc-digit-block-radius: 6px; /* border radius of digit card */
+      --fcc-digit-block-spacing: 4px; /* space between blocks in each unit of time */
+      --fcc-digit-font-size: 20px;
+    }
+  }
+  .flip-clock .fcc__digit_block {
+    @apply *:!font-bold;
+  }
 }
 
 @layer utilities {
@@ -165,6 +210,6 @@
   }
 
   body {
-    @apply text-foreground;
+    @apply bg-custom-dark text-foreground;
   }
 }

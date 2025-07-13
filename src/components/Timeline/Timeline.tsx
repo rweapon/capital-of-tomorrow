@@ -38,7 +38,7 @@ export const Timeline: React.FC = () => {
     'hidden md:block w-[38px] h-[38px] bg-white rounded-full z-20 ';
 
   return (
-    <section className='flex w-full justify-center px-10 lg:px-24'>
+    <section className='flex w-full justify-center px-10 lg:px-24 overflow-hidden'>
       <div className='w-full max-w-7xl'>
         <div className='text-center md:mb-20'>
           <h1 className='font-akira font-bold text-white text-2xl sm:text-3xl md:mb-12 md:text-4xl lg:text-5xl'>
