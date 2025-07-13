@@ -91,7 +91,7 @@ const tickets: ICardProps[] = [
 
 export const TicketCards = () => {
   return (
-    <section className='relative mx-auto w-svw md:w-[unset] md:max-w-[1440px] overflow-hidden px-4 py-8 sm:px-6 lg:px-8'>
+    <section className='relative mx-auto w-svw md:w-[unset] md:max-w-[1440px] overflow-hidden py-8 md:px-6 lg:px-8'>
       <h2 className='font-akira mb-8 text-center text-2xl leading-snug text-[#f8f7f5] sm:text-3xl md:mb-12 md:text-4xl lg:text-5xl'>
         Explore Flexible Participation Categories
       </h2>
