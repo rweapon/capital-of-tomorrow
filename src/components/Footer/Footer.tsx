@@ -3,27 +3,30 @@ import React from 'react';
 
 import IFooterData from '@/components/Footer/types';
 
+import { basePath } from '@/constant/env';
+
 export const footerData: IFooterData = {
   links: [
-    { href: '#', text: 'Home' },
-    { href: '#', text: 'Present the Investment Fund at the Forum' },
-    { href: '#', text: 'Public Offer' },
-    { href: '#', text: 'Pricing' },
-    { href: '#', text: 'Contact Us' },
+    { href: '#', text: 'Home', target: '_self' },
+    {
+      href: `${basePath}/Public_Offer.pdf`,
+      text: 'Public Offer',
+      target: '_blank',
+    },
+    {
+      href: `${basePath}/Privacy_Policy.pdf`,
+      text: 'PRIVACY POLICY',
+      target: '_blank',
+    },
   ],
-  copyright: '2025, VOSTOKTECH SOLUTIONS. \n ALL RIGHTS RESERVED.',
-  social: {
-    title: 'FOLLOW US',
-    terms: 'TERMS & CONDITIONS',
-  },
+  copyright: '2025, VOSTOCHNIK. \n ALL RIGHTS RESERVED.',
   address: {
     title: 'ADDRESS',
     lines: [
-      "Bol'shayayushun'skaya street №1A,B.3,",
-      'MOSCOW, RUSSIAN FEDERATION, 117303',
+      'Individual Entrepreneur Ositkovskii Dmitrii Sergeevich',
+      'TIN: 780721528372',
     ],
   },
-  privacy: 'PRIVACY POLICY',
 };
 export function Footer() {
   return (
@@ -36,6 +39,7 @@ export function Footer() {
                 <li key={index} className='leading-none'>
                   <Link
                     href={link.href}
+                    target={link.target}
                     className='font-monda text-[8px] uppercase text-[#F8F7F5]/70 transition-colors hover:text-blue-500 sm:text-sm'
                   >
                     {link.text}
@@ -49,24 +53,21 @@ export function Footer() {
             </p>
           </div>
 
-          <div className='flex flex-col items-center justify-between'>
+          <div className='flex flex-col items-center gap-2'>
+            <p className='font-monda text-[8px] uppercase text-[#F8F7F5]/70 sm:text-sm'>
+              Contact us:
+            </p>
             <Link
-              href='#'
+              href='mailto:vostochnik.solution@gmail.com'
               className='font-monda text-[8px] uppercase text-[#F8F7F5]/70 hover:text-blue-500 sm:text-sm'
             >
-              {footerData.social.title}
-            </Link>
-            <Link
-              href='#'
-              className='font-monda hidden text-sm uppercase text-[#F8F7F5]/70 transition-colors hover:text-blue-500 sm:block'
-            >
-              {footerData.social.terms}
+              vostochnik.solution@gmail.com
             </Link>
           </div>
 
           <div className='flex flex-col items-end justify-between'>
-            <section className='flex flex-col items-center'>
-              <h3 className='font-monda mb-4 text-[8px] uppercase text-[#F8F7F5]/70 sm:text-sm'>
+            <section className='flex flex-col items-center gap-2'>
+              <h3 className='font-monda text-[8px] uppercase text-[#F8F7F5]/70 sm:text-sm'>
                 {footerData.address.title}
               </h3>
               <address className='font-monda text-[6px] uppercase not-italic text-[#F8F7F5]/70 sm:text-[10px]'>
@@ -75,12 +76,6 @@ export function Footer() {
                 ))}
               </address>
             </section>
-            <Link
-              href='#'
-              className='font-monda hidden text-sm uppercase text-[#F8F7F5]/70 hover:text-blue-500 sm:block'
-            >
-              {footerData.privacy}
-            </Link>
           </div>
         </div>
       </div>
