@@ -10,7 +10,7 @@ import { buttonContent, eventInfo, heroContent } from '@/views/Home/Hero/data';
 
 export const HomeHero = () => {
   return (
-    <section className='flex w-full flex-col px-4 sm:px-6 md:px-8 lg:px-12 xl:px-24 mb-2 sm:mb-20 md:mb-22 overflow-hidden'>
+    <section className='flex w-full flex-col px-4 sm:px-6 md:px-8 lg:px-12 xl:px-24 mb-2 sm:mb-20 md:mb-22 overflow-hidden sm:overflow-visible'>
       <div className='relative flex w-full flex-col justify-between gap-4 sm:flex-row xl:gap-20 xl:px-10'>
         <div className='flex flex-col gap-2 md:gap-5 max-w-80 sm:max-w-sm md:max-w-md xl:max-w-2xl'>
           <h1 className='font-akira text-4xl font-bold tracking-[-0.26px] text-[#f8f7f5] sm:text-5xl sm:font-extrabold sm:tracking-normal xl:text-[64px]'>
