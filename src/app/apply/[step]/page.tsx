@@ -59,7 +59,7 @@ const Apply = ({ params }: Props) => {
   };
 
   return (
-    <section className='container flex flex-col gap-20'>
+    <section className='container flex flex-col gap-8 md:gap-12 sm:gap-20'>
       <ProgressBar step={numStep as keyof typeof progressStep} />
       {stepComponent[numStep]}
       <div
@@ -72,7 +72,7 @@ const Apply = ({ params }: Props) => {
           <Link href={`/apply/${numStep - 1}`}>
             <Button
               variant='secondary'
-              className='font-semibold !text-xl py-5 px-14'
+              className='font-semibold !text-xl p-3 md:p-5 lg:py-5 lg:px-14'
             >
               Previous
             </Button>
@@ -80,7 +80,9 @@ const Apply = ({ params }: Props) => {
         )}
         {numStep < 4 && (
           <Link href={`/apply/${numStep + 1}`}>
-            <Button className='font-semibold !text-xl py-5 px-14'>Next</Button>
+            <Button className='font-semibold !text-xl p-3 md:p-5 lg:py-5 lg:px-14'>
+              Next
+            </Button>
           </Link>
         )}
         {numStep === 4 && <PayAndSubmit />}
