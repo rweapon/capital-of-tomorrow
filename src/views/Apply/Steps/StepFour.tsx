@@ -5,7 +5,7 @@ import { Checkbox } from '@/components/Сheckbox/Сheckbox';
 
 const StepFour = () => {
   return (
-    <div className='max-w-4xl self-center flex flex-col items-start justify-between gap-6'>
+    <div className='md:max-w-xl md:self-center flex flex-col md:items-start justify-between gap-6'>
       <div className='flex flex-col gap-6 w-full'>
         <Input
           title='Full Name (as per Card)'
@@ -14,7 +14,7 @@ const StepFour = () => {
         />
         <Input title='Credit/Debit card *' id='card_number' />
       </div>
-      <div className='flex gap-6 w-full'>
+      <div className='contents md:flex justify-between md:gap-4 lg:gap-6 w-full '>
         <Input title='Expiry *' id='gender' />
         <Input title='CVC *' id='cvc' />
       </div>
