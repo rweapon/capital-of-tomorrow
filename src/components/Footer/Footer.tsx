@@ -6,23 +6,30 @@ import IFooterData from '@/components/Footer/types';
 import { basePath } from '@/constant/env';
 
 export const footerData: IFooterData = {
-  links: [
-    { href: '#', text: 'Home', target: '_self' },
-    {
-      href: `${basePath}/Public_Offer.pdf`,
-      text: 'Public Offer',
-      target: '_blank',
-    },
-    {
-      href: `${basePath}/Privacy_Policy.pdf`,
-      text: 'PRIVACY POLICY',
-      target: '_blank',
-    },
-  ],
-  copyright: '2025, VOSTOCHNIK. \n ALL RIGHTS RESERVED.',
-  address: {
-    title: 'ADDRESS',
-    lines: [
+  navigation: {
+    title: 'Navigation:',
+    data: [
+      { id: 'home', label: 'HOME', href: '/' },
+      { id: 'participate', label: 'PARTICIPATE', href: '/apply' },
+      { id: 'event', label: 'EVENT', href: '/' },
+      { id: 'partners', label: 'PARTNERS', href: '/' },
+    ],
+  },
+  contacts: {
+    title: 'Contacts:',
+    data: [
+      {
+        href: 'mailto:vostochnik.solution@gmail.com',
+        label: 'vostochnik.solution@gmail.com',
+        id: 'mail',
+      },
+    ],
+  },
+  information: {
+    title: 'Information:',
+    data: [
+      "Bol'shaya Yushun'skaya street №1A, b. 3,",
+      'Moscow, Russian Federation, 117303',
       'Individual Entrepreneur Ositkovskii Dmitrii Sergeevich',
       'TIN: 780721528372',
     ],
@@ -30,55 +37,70 @@ export const footerData: IFooterData = {
 };
 export function Footer() {
   return (
-    <footer className='bg-[#1E1E1E] py-2 text-white sm:mt-20 sm:py-6 '>
-      <div className='container mx-auto px-4 sm:px-6 lg:px-7'>
-        <div className='grid grid-cols-3 gap-8'>
-          <div>
-            <ul className=' text-sm sm:space-y-3'>
-              {footerData.links.map((link, index) => (
-                <li key={index} className='leading-none'>
-                  <Link
-                    href={link.href}
-                    target={link.target}
-                    className='font-monda text-[8px] uppercase text-[#F8F7F5]/70 transition-colors hover:text-blue-500 sm:text-sm'
-                  >
-                    {link.text}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-
-            <p className='font-monda mt-12 hidden whitespace-pre-line text-sm uppercase text-[#F8F7F5]/70 sm:block'>
-              {footerData.copyright}
-            </p>
+    <footer className='bg-[#1E1E1E]/70 text-white/70 sm:mt-20 pt-6 font-monda uppercase'>
+      <section className='container pb-4'>
+        <div className='flex flex-col md:flex-row md:*:flex-1 gap-8'>
+          <div className='flex flex-col gap-2'>
+            <h4 className='text-base sm:text-lg font-semibold '>
+              {footerData.navigation.title}
+            </h4>
+            {footerData.navigation.data.map((link) => (
+              <Link
+                key={link.id}
+                href={link.href}
+                className='text-sm transition-colors hover:text-blue-500 sm:text-base'
+              >
+                {link.label}
+              </Link>
+            ))}
           </div>
 
-          <div className='flex flex-col items-center gap-2'>
-            <p className='font-monda text-[8px] uppercase text-[#F8F7F5]/70 sm:text-sm'>
-              Contact us:
-            </p>
-            <Link
-              href='mailto:vostochnik.solution@gmail.com'
-              className='font-monda text-[8px] uppercase text-[#F8F7F5]/70 hover:text-blue-500 sm:text-sm'
-            >
-              vostochnik.solution@gmail.com
-            </Link>
+          <div className='flex flex-col md:items-center gap-2  '>
+            <h4 className='text-base sm:text-lg font-semibold '>
+              {footerData.contacts.title}
+            </h4>
+            {footerData.contacts.data.map((link) => (
+              <Link
+                key={link.id}
+                href={link.href}
+                className='text-sm transition-colors hover:text-blue-500 sm:text-base'
+              >
+                {link.label}
+              </Link>
+            ))}
           </div>
 
-          <div className='flex flex-col items-end justify-between'>
-            <section className='flex flex-col items-center gap-2'>
-              <h3 className='font-monda text-[8px] uppercase text-[#F8F7F5]/70 sm:text-sm'>
-                {footerData.address.title}
-              </h3>
-              <address className='font-monda text-[6px] uppercase not-italic text-[#F8F7F5]/70 sm:text-[10px]'>
-                {footerData.address.lines.map((line, index) => (
-                  <p key={index}>{line}</p>
-                ))}
-              </address>
-            </section>
+          <div className='flex flex-col md:items-end gap-2'>
+            <h4 className='text-base sm:text-lg font-semibold'>
+              {footerData.information.title}
+            </h4>
+            {footerData.information.data.map((line, index) => (
+              <p key={index} className='text-sm sm:text-base'>
+                {line}
+              </p>
+            ))}
           </div>
         </div>
-      </div>
+      </section>
+      <section className='bg-black/30 py-4'>
+        <div className='container text-white  text-sm sm:text-base  flex flex-col md:flex-row md:items-center justify-between gap-2'>
+          <Link
+            href={`${basePath}/Public_Offer.pdf`}
+            className='hover:text-blue-500 font-semibold order-2 md:order-[unset]'
+            target='_blank'
+          >
+            Public Offer
+          </Link>
+          <p className='text-base'>2025, VOSTOCHNIK. ALL RIGHTS RESERVED.</p>
+          <Link
+            href={`${basePath}/Privacy_Policy.pdf`}
+            className='hover:text-blue-500 font-semibold'
+            target='_blank'
+          >
+            PRIVACY POLICY
+          </Link>
+        </div>
+      </section>
     </footer>
   );
 }

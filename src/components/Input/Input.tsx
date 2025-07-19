@@ -5,11 +5,11 @@ import { cn } from '@/lib/utils';
 const Input = React.forwardRef<HTMLInputElement, React.ComponentProps<'input'>>(
   ({ className, type, title, id, ...props }, ref) => {
     return (
-      <div className='flex flex-col gap-4'>
+      <div className='flex flex-col gap-3 sm:gap-4'>
         {title && (
           <label
             htmlFor={id}
-            className='font-mont text-xl text-primary-foreground'
+            className='font-mont text-lg md:text-xl text-primary-foreground'
           >
             {title}
           </label>

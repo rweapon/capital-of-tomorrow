@@ -14,8 +14,10 @@ type ProgressBarProps = {
 export const ProgressBar = ({ step }: ProgressBarProps) => {
   return (
     <div className='w-full max-w-4xl mx-auto p-8 text-primary-foreground'>
-      <div className='flex items-center justify-center mb-12'>
-        <h2 className='text-4xl font-bold'>{progressStep[step]}</h2>
+      <div className='flex items-center justify-center mb-6 md:mb-12'>
+        <h2 className='text-xl sm:text-3xl lg:text-4xl font-bold'>
+          {progressStep[step]}
+        </h2>
       </div>
       <div className='relative flex items-center justify-between'>
         <div className='w-[99%] absolute top-1/2 left-0 h-1 bg-gray-300 rounded-full -translate-y-1/2' />

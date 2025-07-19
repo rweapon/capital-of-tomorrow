@@ -4,7 +4,7 @@ import { Checkbox } from '@/components/Сheckbox/Сheckbox';
 
 const StepThree = () => {
   return (
-    <div className='flex flex-col items-start gap-6 text-primary-foreground text-2xl font-mont'>
+    <div className='flex flex-col items-start gap-6 text-primary-foreground text-base sm:text-xl lg:text-2xl font-mont'>
       <div className='flex gap-6'>
         <Checkbox id='delaration' />
         <label htmlFor='delaration'>
