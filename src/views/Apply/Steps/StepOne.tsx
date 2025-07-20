@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Input, RadioGroup, RadioGroupItem } from '@/components';
+import { Input } from '@/components';
 import { Checkbox } from '@/components/Сheckbox/Сheckbox';
 
 const StepOne = () => {
@@ -27,32 +27,13 @@ const StepOne = () => {
           id='country'
           autoComplete='country webauthn'
         />
-        <div className='order-1 sm:order-[unset] flex flex-col gap-4'>
-          <label className='font-mont text-xl text-primary-foreground'>
-            Do you need visa? *
+        <div className='order-1 sm:order-[unset] flex gap-4 text-primary-foreground font-mont text-lg md:text-xl'>
+          <Checkbox id='visa' />
+          <label htmlFor='visa' className='cursor-pointer'>
+            I need visa
           </label>
-          <RadioGroup>
-            <div className='flex items-center gap-4'>
-              <RadioGroupItem value='yes' id='visa_yes' />
-              <label
-                htmlFor='visa_yes'
-                className='font-mont text-xl text-primary-foreground cursor-pointer'
-              >
-                Yes
-              </label>
-            </div>
-            <div className='flex items-center gap-4'>
-              <RadioGroupItem value='no' id='visa_no' />
-              <label
-                htmlFor='visa_no'
-                className='font-mont text-xl text-primary-foreground cursor-pointer'
-              >
-                No
-              </label>
-            </div>
-          </RadioGroup>
         </div>
-        <div className='order-2 sm:order-[unset] flex gap-4 text-primary-foreground font-mont text-xl '>
+        <div className='order-2 sm:order-[unset] flex gap-4 text-primary-foreground font-mont text-lg md:text-xl '>
           <Checkbox id='personal_data' />
           <label htmlFor='personal_data' className='cursor-pointer'>
             I agree to the processing of my personal data

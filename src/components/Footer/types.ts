@@ -1,16 +1,12 @@
-interface FooterLink {
-  href: string;
-  text: string;
-  target: string;
-}
+import { INavigationItem } from '@/components/Navbar/types';
 
-interface FooterAddress {
+type FooterCol<T> = {
   title: string;
-  lines: string[];
-}
+  data: T;
+};
 
 export default interface IFooterData {
-  links: FooterLink[];
-  copyright: string;
-  address: FooterAddress;
+  navigation: FooterCol<INavigationItem[]>;
+  contacts: FooterCol<INavigationItem[]>;
+  information: FooterCol<string[]>;
 }
