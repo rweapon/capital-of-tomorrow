@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "lint:fix": "eslint src --fix && pnpm format",
-    "tsc": "tsc --noEmit --incremental false",
+    "tsc": "tsc --noEmit --incremental false --skipLibCheck",
     "format": "prettier -w .",
     "format:check": "prettier -c .",
     "postbuild": "next-sitemap --config next-sitemap.config.js",
@@ -71,7 +71,7 @@
     "prettier": "^2.8.8",
     "prettier-plugin-tailwindcss": "^0.5.0",
     "tailwindcss": "^3.4.17",
-    "typescript": "^4.9.5"
+    "typescript": "^5.8.2"
   },
   "husky": {
     "hooks": {
