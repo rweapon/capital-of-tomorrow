@@ -9,10 +9,10 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-     env:
-        RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
-        FROM_EMAIL: ${{ secrets.FROM_EMAIL }}
-        ADMIN_EMAIL: ${{ secrets.ADMIN_EMAIL }}
+    env:
+      RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+      FROM_EMAIL: ${{ secrets.FROM_EMAIL }}
+      ADMIN_EMAIL: ${{ secrets.ADMIN_EMAIL }}
 
     steps:
       - name: Checkout
