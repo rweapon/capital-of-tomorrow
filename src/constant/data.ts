@@ -377,3 +377,6 @@ export const qAData: AccordionItem[] = [
       'Applicants are strongly advised to hold a valid passport for travel. However, you may apply by uploading your National/Student ID in the passport section and ensure your passport is secured before the event date.',
   },
 ];
+
+export const PHOTO_KEY = 'stepOne_photo';
+export const PASSPORT_KEY = 'stepOne_passport';

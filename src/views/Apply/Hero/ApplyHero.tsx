@@ -6,7 +6,7 @@ export function ApplyHero() {
       <h1 className='font-akira text-2xl md:text-3xl lg:text-5xl mb-6 lg:mb-12'>
         APPLICATION FORM
       </h1>
-      <p className='font-mont text-lg md:text-2xl font-light md:leading-9'>
+      <p className='font-mont text-base sm:text-lg md:text-xl lg:text-2xl font-light md:leading-9'>
         We invite bold dreamers and creators to Capital of Tomorrow, a forum for
         the next generation of entrepreneurs to be held in Dubai on November
         26-28, 2025. If you are a startup, future entrepreneur, visionary, or

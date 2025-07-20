@@ -2,18 +2,14 @@ import Link from 'next/link';
 import React from 'react';
 
 import IFooterData from '@/components/Footer/types';
+import { navigationItems } from '@/components/Navbar/data';
 
 import { basePath } from '@/constant/env';
 
 export const footerData: IFooterData = {
   navigation: {
     title: 'Navigation:',
-    data: [
-      { id: 'home', label: 'HOME', href: '/' },
-      { id: 'participate', label: 'PARTICIPATE', href: '/apply' },
-      { id: 'event', label: 'EVENT', href: '/' },
-      { id: 'partners', label: 'PARTNERS', href: '/' },
-    ],
+    data: navigationItems,
   },
   contacts: {
     title: 'Contacts:',
