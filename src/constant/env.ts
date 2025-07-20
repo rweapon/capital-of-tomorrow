@@ -8,3 +8,7 @@ export const showLogger = isLocal
 export const basePath = '';
 
 export const imagePrefix = '/images';
+
+export const RESEND_API_KEY = process.env.RESEND_API_KEY || '';
+export const FROM_EMAIL = process.env.FROM_EMAIL || '';
+export const ADMIN_EMAIL = process.env.ADMIN_EMAIL || '';
