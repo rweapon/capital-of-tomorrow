@@ -2,8 +2,12 @@ import * as React from 'react';
 
 import { cn } from '@/lib/utils';
 
-const Input = React.forwardRef<HTMLInputElement, React.ComponentProps<'input'>>(
-  ({ className, type, title, id, ...props }, ref) => {
+interface InputProps extends React.ComponentProps<'input'> {
+  error?: string;
+}
+
+const Input = React.forwardRef<HTMLInputElement, InputProps>(
+  ({ className, type, title, id, error, ...props }, ref) => {
     return (
       <div className='flex flex-col gap-3 sm:gap-4'>
         {title && (
@@ -27,6 +31,7 @@ const Input = React.forwardRef<HTMLInputElement, React.ComponentProps<'input'>>(
           ref={ref}
           {...props}
         />
+
         {type === 'file' && (
           <label
             htmlFor={id}
@@ -35,6 +40,7 @@ const Input = React.forwardRef<HTMLInputElement, React.ComponentProps<'input'>>(
             Choose a file
           </label>
         )}
+        {error && <p className='font-mont text-red-500 text-sm'>{error}</p>}
       </div>
     );
   }
