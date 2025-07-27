@@ -26,90 +26,68 @@ export interface EmailTemplateData
   submissionId: string;
 }
 
-// Функция для конвертации File в Buffer для Resend
-async function fileToBuffer(file: File): Promise<Buffer> {
-  const arrayBuffer = await file.arrayBuffer();
-  return Buffer.from(arrayBuffer);
+// Функция для извлечения данных из FormData
+function extractFormData(formData: FormData): EmailTemplateData {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const data: any = {};
+
+  // Извлекаем все поля из FormData
+  for (const [key, value] of Array.from(formData.entries())) {
+    // Пропускаем файлы - они обрабатываются отдельно
+    if (key === 'photo' || key === 'passport') continue;
+
+    if (typeof value === 'string') {
+      // Пытаемся распарсить JSON строки
+      try {
+        data[key] = JSON.parse(value);
+      } catch {
+        data[key] = value;
+      }
+    } else {
+      data[key] = value;
+    }
+  }
+
+  return data as EmailTemplateData;
 }
 
-// Функция для получения файлов из IndexedDB (исправленная версия)
-async function getFileFromIndexedDB(fileName: string): Promise<File | null> {
-  return new Promise((resolve, reject) => {
-    const request = indexedDB.open('ApplicationFiles', 1);
-
-    request.onerror = () => reject(request.error);
-
-    request.onsuccess = () => {
-      const db = request.result;
-
-      // Проверяем, существует ли object store
-      if (!db.objectStoreNames.contains('files')) {
-        console.warn('Object store "files" не найден');
-        resolve(null);
-        return;
-      }
-
-      const transaction = db.transaction(['files'], 'readonly');
-      const store = transaction.objectStore('files');
-      const getRequest = store.get(fileName);
-
-      getRequest.onsuccess = () => {
-        const result = getRequest.result;
-        resolve(result ? result.file : null);
-      };
-
-      getRequest.onerror = () => {
-        console.error('Ошибка получения файла:', getRequest.error);
-        resolve(null); // Возвращаем null вместо reject для продолжения работы
-      };
-    };
-
-    request.onupgradeneeded = () => {
-      const db = request.result;
-      if (!db.objectStoreNames.contains('files')) {
-        db.createObjectStore('files');
-      }
-    };
-  });
-}
-
-// Функция для подготовки вложений
-async function prepareAttachments(data: EmailTemplateData) {
+// Функция для подготовки вложений из FormData
+async function prepareAttachments(
+  formData: FormData,
+  emailData: EmailTemplateData
+) {
   const attachments = [];
 
   try {
-    // Получаем фото
-    if (data.hasPhoto && data.photoName) {
-      console.log(`Получение фото: ${data.photoName}`);
-      const photoFile = await getFileFromIndexedDB(data.photoName);
-      if (photoFile) {
-        const buffer = await fileToBuffer(photoFile);
-        attachments.push({
-          filename: data.photoName,
-          content: buffer,
-          // Убираем contentType - Resend определит автоматически или используем type
-        });
-        console.log(`Фото успешно подготовлено: ${data.photoName}`);
-      } else {
-        console.warn(`Фото не найдено: ${data.photoName}`);
-      }
+    // Обрабатываем фото
+    const photoFile = formData.get('photo') as File | null;
+    if (photoFile && emailData.hasPhoto) {
+      console.log(`Подготовка фото: ${photoFile.name}`);
+      const arrayBuffer = await photoFile.arrayBuffer();
+      attachments.push({
+        filename: photoFile.name,
+        content: Buffer.from(arrayBuffer),
+      });
+      console.log(
+        `Фото успешно подготовлено: ${photoFile.name} (${photoFile.size} bytes)`
+      );
     }
 
-    // Получаем паспорт
-    if (data.hasPassport && data.passportName) {
-      console.log(`Получение паспорта: ${data.passportName}`);
-      const passportFile = await getFileFromIndexedDB(data.passportName);
-      if (passportFile) {
-        const buffer = await fileToBuffer(passportFile);
-        attachments.push({
-          filename: data.passportName,
-          content: buffer,
-        });
-        console.log(`Паспорт успешно подготовлен: ${data.passportName}`);
-      } else {
-        console.warn(`Паспорт не найден: ${data.passportName}`);
-      }
+    // Обрабатываем паспорт
+    const passportFile = formData.get('passport') as File | null;
+    if (passportFile && emailData.hasPassport) {
+      console.log(`Подготовка паспорта: ${passportFile.name}`);
+      const arrayBuffer = await passportFile.arrayBuffer();
+      attachments.push({
+        filename: passportFile.name,
+        content: Buffer.from(arrayBuffer),
+      });
+      console.log(
+        `Паспорт успешно подготовлен: ${passportFile.name} (${passportFile.size} bytes)`
+      );
     }
+
+    console.log(`Всего подготовлено вложений: ${attachments.length}`);
   } catch (error) {
     console.error('Ошибка при подготовке вложений:', error);
   }
@@ -120,17 +98,22 @@ async function prepareAttachments(data: EmailTemplateData) {
 // Основная функция отправки писем
 export async function POST(request: Request) {
   try {
-    const formData = await request.json();
+    // Получаем FormData из запроса
+    const formData = await request.formData();
 
-    // Добавляем метаинформацию
-    const emailData: EmailTemplateData = {
-      ...formData,
-      submissionDate: new Date().toISOString(),
-      submissionId: `APP-${Date.now()}`,
-    };
+    // Извлекаем данные формы
+    const emailData: EmailTemplateData = extractFormData(formData);
 
-    // Подготавливаем вложения
-    // const attachments = await prepareAttachments(emailData);
+    // Если нет submissionDate и submissionId, добавляем их
+    if (!emailData.submissionDate) {
+      emailData.submissionDate = new Date().toISOString();
+    }
+    if (!emailData.submissionId) {
+      emailData.submissionId = `APP-${Date.now()}`;
+    }
+
+    // Подготавливаем вложения из FormData
+    const attachments = await prepareAttachments(formData, emailData);
 
     // Email для администратора с вложениями
     const adminEmail = {
@@ -138,18 +121,21 @@ export async function POST(request: Request) {
       to: ADMIN_EMAIL,
       subject: `Новая заявка - ${emailData.submissionId} - ${emailData.full_name}`,
       html: generateAdminEmailTemplate(emailData),
-      // attachments: attachments.length > 0 ? attachments : undefined,
+      text: generateAdminEmailText(emailData),
+      attachments: attachments.length > 0 ? attachments : undefined,
     };
+
     // Email подтверждения пользователю (без вложений)
     const userEmail = {
       from: FROM_EMAIL,
       to: [emailData.email],
       subject: 'Заявка получена - Спасибо!',
       html: generateUserConfirmationTemplate(emailData),
+      text: generateUserConfirmationText(emailData),
     };
 
     // Отправляем письма
-    console.log('Отправка писем...');
+    console.log(`Отправка писем для заявки ${emailData.submissionId}...`);
     const results = await Promise.allSettled([
       resend.emails.send(adminEmail),
       resend.emails.send(userEmail),
@@ -175,13 +161,38 @@ export async function POST(request: Request) {
     const hasErrors =
       adminResult.status === 'rejected' || userResult.status === 'rejected';
 
+    // Получаем информацию о файлах для ответа
+    const photoFile = formData.get('photo') as File | null;
+    const passportFile = formData.get('passport') as File | null;
+
     return Response.json({
       success: !hasErrors,
       message: hasErrors
         ? 'Заявка отправлена, но возникли проблемы с отправкой некоторых писем'
         : 'Заявка и письма отправлены успешно!',
       details: {
-        // attachmentsCount: attachments.length,
+        submissionId: emailData.submissionId,
+        attachmentsCount: attachments.length,
+        filesReceived: {
+          photo: !!photoFile,
+          passport: !!passportFile,
+        },
+        fileInfo: {
+          photo: photoFile
+            ? {
+                name: photoFile.name,
+                size: photoFile.size,
+                type: photoFile.type,
+              }
+            : null,
+          passport: passportFile
+            ? {
+                name: passportFile.name,
+                size: passportFile.size,
+                type: passportFile.type,
+              }
+            : null,
+        },
         adminEmailStatus: adminResult.status,
         userEmailStatus: userResult.status,
         emailIds: {
@@ -579,8 +590,6 @@ function generateAdminEmailTemplate(data: EmailTemplateData) {
     </html>
     `;
 }
-
-// Email template для пользователя (без изменений)
 function generateUserConfirmationTemplate(data: EmailTemplateData) {
   return `
     <!DOCTYPE html>
@@ -641,4 +650,78 @@ function generateUserConfirmationTemplate(data: EmailTemplateData) {
     </body>
     </html>
     `;
+}
+
+// Plain text version for admin email
+function generateAdminEmailText(data: EmailTemplateData) {
+  return `
+Новая заявка
+ID заявки: ${data.submissionId}
+Дата подачи: ${formatDate(data.submissionDate)}
+
+Личная информация:
+ФИО: ${data.full_name}
+Дата рождения: ${new Date(data.birthday).toLocaleDateString('ru-RU')}
+Email: ${data.email}
+Телефон: ${data.number}
+Пол: ${data.gender}
+Национальность: ${data.nationality}
+Страна: ${data.country}
+Город отправления: ${data.depart}
+
+Детали заявки:
+Нужна виза: ${data.visa ? 'Да' : 'Нет'}
+Согласие на обработку данных: ${data.personal_data ? 'Да' : 'Нет'}
+Источник: ${data.source || 'Не указан'}
+Социальные сети: ${data.socials || 'Не указаны'}
+Декларация: ${data.declaration ? 'Принята' : 'Не принята'}
+
+Дополнительная информация:
+Опыт: ${data.experience || 'Не указан'}
+Мотивация: ${data.motivation || 'Не указана'}
+Будущие цели: ${data.future_goals || 'Не указаны'}
+
+Платежная информация:
+Имя на карте: ${data.full_name_card || 'Не указано'}
+Номер карты: ${
+    data.card_number ? formatCardNumber(data.card_number) : 'Не указан'
+  }
+Срок действия: ${data.expiry || 'Не указан'}
+Согласие на оплату: ${data.payment_consent ? 'Да' : 'Нет'}
+
+Загруженные файлы:
+Фото профиля: ${data.hasPhoto ? data.photoName || 'Загружено' : 'Не загружено'}
+Паспорт/ID: ${
+    data.hasPassport ? data.passportName || 'Загружен' : 'Не загружен'
+  }
+
+Это письмо было автоматически сгенерировано системой подачи заявок.
+Время генерации: ${new Date().toLocaleString('ru-RU')}
+`;
+}
+
+// Plain text version for user confirmation email
+function generateUserConfirmationText(data: EmailTemplateData) {
+  return `
+Заявка получена!
+
+Спасибо, ${data.full_name}!
+
+Что дальше?
+- Наша команда рассмотрит вашу заявку в течение 2-3 рабочих дней
+- Вы получите email с обновлением статуса заявки
+- При необходимости мы свяжемся с вами по номеру ${data.number}
+
+Сводка заявки:
+ФИО: ${data.full_name}
+Email: ${data.email}
+Город отправления: ${data.depart}
+Нужна виза: ${data.visa ? 'Да' : 'Нет'}
+Дата подачи: ${new Date(data.submissionDate).toLocaleDateString('ru-RU')}
+ID заявки: ${data.submissionId}
+
+Если у вас есть вопросы, не стесняйтесь обращаться к нам.
+С наилучшими пожеланиями,
+Команда по работе с заявками
+`;
 }

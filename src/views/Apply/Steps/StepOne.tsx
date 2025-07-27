@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable no-console */
 import { zodResolver } from '@hookform/resolvers/zod';
 import React, { useEffect } from 'react';
@@ -24,10 +25,11 @@ const StepOne = ({
     control,
     handleSubmit,
     setValue,
+    trigger,
     formState: { isValid },
   } = useForm<StepOneData>({
     resolver: zodResolver(stepOneSchema),
-    mode: 'onSubmit',
+    mode: 'onChange',
     defaultValues: {
       full_name: '',
       birthday: '',
@@ -77,6 +79,8 @@ const StepOne = ({
         }
       } catch (error) {
         console.error('Error loading saved files:', error);
+      } finally {
+        trigger();
       }
     };
 
