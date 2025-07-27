@@ -378,5 +378,5 @@ export const qAData: AccordionItem[] = [
   },
 ];
 
-export const PHOTO_KEY = 'stepOne_photo';
-export const PASSPORT_KEY = 'stepOne_passport';
+export const PHOTO_KEY = 'uploaded_photo';
+export const PASSPORT_KEY = 'uploaded_passport';

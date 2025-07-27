@@ -22,7 +22,7 @@ const StepThree = ({
     formState: { isValid },
   } = useForm<StepThreeData>({
     resolver: zodResolver(stepThreeSchema),
-    mode: 'onSubmit',
+    mode: 'onChange',
     defaultValues: {
       declaration: false,
       ...defaultValues,

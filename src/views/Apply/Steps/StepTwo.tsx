@@ -20,11 +20,10 @@ const StepTwo = ({
     control,
     handleSubmit,
     formState: { isValid },
-
     watch,
   } = useForm<StepTwoData>({
     resolver: zodResolver(stepTwoSchema),
-    mode: 'onSubmit',
+    mode: 'onChange',
     defaultValues: {
       experience: '',
       motivation: '',
