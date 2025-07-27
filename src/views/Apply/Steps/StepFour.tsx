@@ -23,7 +23,7 @@ const StepFour = ({
     formState: { isValid },
   } = useForm<StepFourData>({
     resolver: zodResolver(stepFourSchema),
-    mode: 'onSubmit',
+    mode: 'onChange',
     defaultValues: {
       full_name_card: '',
       card_number: '',

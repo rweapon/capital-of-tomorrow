@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 /* eslint-disable react-hooks/exhaustive-deps */
 'use client';
 
@@ -5,7 +6,7 @@ import dynamic from 'next/dynamic';
 import { useRouter } from 'next/navigation';
 import React, { useCallback, useEffect, useState } from 'react';
 
-import { clearSavedData } from '@/lib/utils';
+import { clearSavedData, formDataGenerator } from '@/lib/utils';
 
 import {
   StepFourData,
@@ -13,7 +14,9 @@ import {
   StepThreeData,
   StepTwoData,
 } from '@/app/apply/[step]/types';
+import { PASSPORT_KEY, PHOTO_KEY } from '@/constant/data';
 import { ProgressBar, progressStep } from '@/views/Apply/ProgressBar';
+import { getFile } from '@/views/Apply/Steps/fileUtils';
 
 const StepOne = dynamic(
   () => import('@/views/Apply/Steps/StepOne').then((res) => res.default),
@@ -44,7 +47,13 @@ type ApplyClientProps = {
   numStep: number;
 };
 
-// Form data interface
+export interface FileData {
+  name: string;
+  type: string;
+  size: number;
+  data: string; // base64 encoded
+}
+
 interface FormData {
   stepOne?: StepOneData;
   stepTwo?: StepTwoData;
@@ -71,6 +80,7 @@ const ApplyClient: React.FC<ApplyClientProps> = ({ numStep }) => {
       ...{ stepFour: JSON.parse(stepFourData) },
     } as FormData;
   };
+
   // Load saved form data from localStorage on component mount
   useEffect(() => {
     const savedData = restartData();
@@ -78,9 +88,7 @@ const ApplyClient: React.FC<ApplyClientProps> = ({ numStep }) => {
     if (savedData) {
       try {
         setFormData(savedData);
-        // setFormData(JSON.parse(savedData));
       } catch (error) {
-        // eslint-disable-next-line no-console
         console.error('Error loading saved form data:', error);
       }
     }
@@ -97,45 +105,82 @@ const ApplyClient: React.FC<ApplyClientProps> = ({ numStep }) => {
   const sendEmail = async (data: FormData) => {
     try {
       setIsLoading(true);
+
+      // Собираем все данные формы
       const completeFormData = {
         ...data.stepOne,
         ...data.stepTwo,
         ...data.stepThree,
         ...data.stepFour,
         submissionDate: new Date().toISOString(),
-        submissionId: `APP-${Date.now()}`, // Generate unique ID
+        submissionId: `APP-${Date.now()}`,
       };
 
-      // const requestDataArr = Object.entries(completeFormData);
-      // const formData = formDataGenerator(requestDataArr);
-      // const savedPhoto = await getFile(PHOTO_KEY);
-      // const savedPassport = await getFile(PASSPORT_KEY);
+      // Конвертируем объект в массив пар ключ-значение для formDataGenerator
+      const requestDataArr = Object.entries(completeFormData).map(
+        ([key, value]) => {
+          // Если значение - объект, преобразуем в строку
+          if (typeof value === 'object' && value !== null) {
+            return [key, JSON.stringify(value)] as [string, string];
+          }
+          return [key, value] as [string, string | number | undefined | null];
+        }
+      );
 
-      // formData.append('photo', savedPhoto || '');
-      // formData.append('passport', savedPassport || '');
+      // Создаем FormData используя вашу утилиту
+      const formDataToSend = formDataGenerator(requestDataArr);
+
+      // Получаем файлы из IndexedDB и добавляем их в FormData
+      const savedPhoto = await getFile(PHOTO_KEY);
+      const savedPassport = await getFile(PASSPORT_KEY);
+
+      if (savedPhoto) {
+        formDataToSend.append('photo', savedPhoto);
+        console.log('Photo added to FormData:', savedPhoto.name);
+      }
+
+      if (savedPassport) {
+        formDataToSend.append('passport', savedPassport);
+        console.log('Passport added to FormData:', savedPassport.name);
+      }
+
+      console.log('Отправляем FormData с файлами:', {
+        hasPhoto: !!savedPhoto,
+        hasPassport: !!savedPassport,
+        photoName: savedPhoto?.name,
+        passportName: savedPassport?.name,
+      });
 
       const response = await fetch('/api/submit-form', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          // 'Content-Type': 'multipart/form-data',
-        },
-        body: JSON.stringify(completeFormData),
+        body: formDataToSend, // Отправляем FormData (не JSON!)
       });
 
       const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.message || 'Ошибка при отправке данных');
+      }
+
       if (result.success) {
-        clearSavedData();
+        await clearSavedData();
+        alert('Данные успешно отправлены!');
+        console.log('Результат отправки:', result.details);
+
+        // Redirect to success page
+        router.replace('/');
+      } else {
+        throw new Error(result.message || 'Неизвестная ошибка');
       }
     } catch (error) {
-      // eslint-disable-next-line no-console
-      alert(error);
       console.error('Error saving form data:', error);
+      alert(
+        `Ошибка при отправке: ${
+          error instanceof Error ? error.message : 'Неизвестная ошибка'
+        }`
+      );
     } finally {
       setIsLoading(false);
-      alert('Данные успешно отправлены!');
-      // Redirect to success page or show success message
-      router.replace('/');
     }
   };
 
@@ -195,7 +240,6 @@ const ApplyClient: React.FC<ApplyClientProps> = ({ numStep }) => {
 
       router.push(`/apply/${redirectStep}`);
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [numStep, formData, isLoading, router]);
 
   if (isLoading) {

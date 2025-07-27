@@ -1,7 +1,17 @@
-// IndexedDB utility functions
+/* eslint-disable no-console */
 const DB_NAME = 'FormFilesDB';
 const DB_VERSION = 1;
 const STORE_NAME = 'files';
+
+// Функция для конвертации File в base64
+export const fileToBase64 = (file: File): Promise<string> => {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = () => resolve(reader.result as string);
+    reader.onerror = (error) => reject(error);
+  });
+};
 
 export const openDB = (): Promise<IDBDatabase> => {
   return new Promise((resolve, reject) => {
