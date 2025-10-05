@@ -1,15 +1,14 @@
 import { zodResolver } from '@hookform/resolvers/zod';
-import React from 'react';
 import { Controller, useForm } from 'react-hook-form';
 
 import { Input, Textarea } from '@/components';
 
-import { FormButtons } from '@/app/apply/[step]/components';
+import { FormButtons } from '@/app/[locale]/apply/[step]/components';
 import {
   StepComponentProps,
   StepTwoData,
   stepTwoSchema,
-} from '@/app/apply/[step]/types';
+} from '@/app/[locale]/apply/[step]/types';
 
 const StepTwo = ({
   onNext,

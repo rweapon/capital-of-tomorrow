@@ -2,8 +2,8 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 'use client';
 
+import { useRouter } from 'i18n/navigation';
 import dynamic from 'next/dynamic';
-import { useRouter } from 'next/navigation';
 import React, { useCallback, useEffect, useState } from 'react';
 
 import { clearSavedData, formDataGenerator } from '@/lib/utils';
@@ -13,7 +13,7 @@ import {
   StepOneData,
   StepThreeData,
   StepTwoData,
-} from '@/app/apply/[step]/types';
+} from '@/app/[locale]/apply/[step]/types';
 import { PASSPORT_KEY, PHOTO_KEY } from '@/constant/data';
 import { ProgressBar, progressStep } from '@/views/Apply/ProgressBar';
 import { getFile } from '@/views/Apply/Steps/fileUtils';

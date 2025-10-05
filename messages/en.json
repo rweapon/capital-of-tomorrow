@@ -1,0 +1,298 @@
+{
+  "site": {
+    "title": "Capital of Tomorrow",
+    "description": "Landing Page"
+  },
+  "navigation": {
+    "about": "ABOUT US",
+    "participate": "PARTICIPATE",
+    "event": "EVENT",
+    "partners": "PARTNERS",
+    "home": "HOME"
+  },
+  "home": {
+    "hero": {
+      "title": "CAPITAL OF TOMORROW",
+      "description": "A forum for young entrepreneurs ready to dream big, take action, and grow in a community of doers.",
+      "location": "DUBAI",
+      "month": "NOVEMBER",
+      "year": "2025",
+      "button": "APPLY NOW"
+    },
+    "scroll": "grant grant grant grant grant grant grant grant grant grant grant grant grant grant grant grant grant grant grant grant grant grant grant grant grant grant",
+    "mission": {
+      "title": "OUR MISSION",
+      "description": {
+        "one": "Capital of Tomorrow is not just a typical business event - it's an event where young entrepreneurs can develop pitching and public speaking skills, acquire knowledge of and experience new approaches to international business, as well as find partners and investors. As part of this project, experienced entrepreneurs can become mentors and try their hand at business instruction, invest in bright and bold young projects and see young people’s fresh vision of domestic and international business. In addition, they will have an opportunity to present their projects and engage young audience, which will be done on the international level and face no limits.",
+        "two": "Those who are on the verge of creating their own business and wish to get away from the hackneyed recruitment are offered a unique opportunity to touch the world of entrepreneurship and come to realize that nothing is impossible."
+      },
+      "adaptiveDescription": "Capital of Tomorrow is where young entrepreneurs grow ideas, pitch to investors, and explore global business. Mentors can guide, invest, and connect with the next generation. For future founders, it’s a bold step into real entrepreneurship — no limits, just opportunities.",
+      "smallDescription": {
+        "one": "Capital of Tomorrow is where young entrepreneurs grow ideas, pitch to investors, and explore global business. ",
+        "two": "Mentors can guide, invest, and connect with the next generation. For future founders, it’s a bold step into real entrepreneurship — no limits, just opportunities."
+      },
+      "goals": {
+        "one": "Learn to think big",
+        "two": "Open access for global networking",
+        "three": "Support the best projects",
+        "four": "Create a community of like-minded people"
+      }
+    },
+    "accordions": {
+      "program": {
+        "title": "PROGRAM OF THE FORUM",
+        "data": {
+          "one": {
+            "title": "Access to online course",
+            "content": "Capital of Tomorrow is a new generation forum for young entrepreneurs, startups, and those who have ever thought about creating their own business. It is a space of support, real action, and networking where ideas are transformed into projects."
+          },
+          "two": {
+            "title": "Pitch session (Grant Included)",
+            "content": "For people in business, beginners, startups, freelancers, students, young professionals, social entrepreneurs, mentors, investors, and anyone who wants to make a name for themselves and develop their own business. The best idea will receive a grant and mentoring support."
+          },
+          "three": {
+            "title": "Penal talk",
+            "content": "Yes, each participant has the opportunity to present their idea on the Global Pitch stage. You will hear success stories and approaches to realizing various international businesses from experienced business people."
+          },
+          "four": {
+            "title": "Group workshops",
+            "content": "We will devide you into groups and give an opportunity to pump up your business mindset by working on improving projects."
+          },
+          "five": {
+            "title": "Informal networking during exploring new culture.",
+            "content": "No, it is enough to have an idea or a desire to start a business. The forum is for those who are just starting out."
+          },
+          "six": {
+            "title": "Awarding ceremony.",
+            "content": "Participants will be able to sign up for a consultation on the development of ideas and projects after the forum if they wish to do so."
+          },
+          "seven": {
+            "title": "Counseling.",
+            "content": "Participants will be able to sign up for a consultation on the development of ideas and projects after the forum if they wish to do so."
+          }
+        }
+      },
+      "qa": {
+        "title": "Q&A",
+        "data": {
+          "one": {
+            "title": "What is Capital of Tomorrow?",
+            "content": "Capital of Tomorrow is a new generation forum for young entrepreneurs, startups, and those who want to create their own business. It is a space of support, real action, and networking where ideas are transformed into projects."
+          },
+          "two": {
+            "title": "Who is this forum for?",
+            "content": "For beginners in business, startups, freelancers, students, young professionals, social entrepreneurs, mentors, investors, and anyone who wants to make a name for themselves and develop their own business."
+          },
+          "three": {
+            "title": "Can I present my project?",
+            "content": "Yes, each participant has the opportunity to present their idea on the Pitch stage. The best idea will receive a grant and mentoring support."
+          },
+          "four": {
+            "title": "How to become a partner?",
+            "content": "We are open to partnerships and invite companies, investors, and foundations to join us. Contact us to receive a partnership package."
+          },
+          "five": {
+            "title": "Do I need to have a ready-made business to participate?",
+            "content": "No, it is enough to have an idea or a desire to start a business. The forum is for those who are just starting out."
+          },
+          "six": {
+            "title": "What language will the forum be held in?",
+            "content": "The main language is English."
+          },
+          "seven": {
+            "title": "Will I receive a certificate?",
+            "content": "Yes, all participants will receive a certificate of participation."
+          },
+          "eight": {
+            "title": "How does the grant idea competition work?",
+            "content": "Participants present their idea to the jury. The jury takes into account innovation, benefit, and potential for implementation."
+          },
+          "nine": {
+            "title": "What happens if my visa is refused? Am I eligible for a refund?",
+            "content": "Please note that there is no refund for payments made. However, the organisation provides an opportunity to receive an electronic voucher that can be used to participate in one of the following events.\n\nFor participants with a self-funded package:\n\nIn case of visa refusal, you will receive an electronic voucher for participation in a future event. The cost of issuing the invitation and VAT will be deducted from the payment amount. The remaining amount will be provided in the form of a voucher.\n\nIf you ordered only an exclusive invitation letter:\n\nIn this case, no refund or voucher will be issued, as this service is non-refundable once it is issued."
+          },
+          "ten": {
+            "title": "What if I do not have a passport?",
+            "content": "Applicants are strongly advised to hold a valid passport for travel. However, you may apply by uploading your National/Student ID in the passport section and ensure your passport is secured before the event date."
+          }
+        }
+      }
+    },
+    "blocks": {
+      "smallBlocks": {
+        "one": "You're seeking like-minded support",
+        "two": "You strive to make your business international",
+        "three": "You have an idea but don't know where to begin",
+        "four": "You crave freedom from the 9-to-5"
+      },
+      "largeBlocks": {
+        "one": "OUR FORUM IS DEFINITELY FOR YOU IF",
+        "two": "YOU WANT TO MASTER SELF-PRESENTATION AND BUSINESS SKILLS"
+      }
+    },
+    "timeline": {
+      "title": "APPLICATION TIMELINE",
+      "steps": {
+        "one": {
+          "number": "1",
+          "title": "APPLICATION SUBMISSION",
+          "description": "Complete the online application form and pay the required application fee to confirm your submission."
+        },
+        "two": {
+          "number": "2",
+          "title": "EVALUATION AND SELECTION",
+          "description": "Applications will be reviewed by an independent selection committee considering leadership potential, impact, and alignment with the summit’s vision."
+        },
+        "three": {
+          "number": "3",
+          "title": "RESULTS DISTRIBUTION",
+          "description": "Shortlisted candidates will be notified via email with further details on their selection and next steps."
+        }
+      }
+    },
+    "tickets": {
+      "title": "Explore Flexible Participation Categories",
+      "fullyAndPartlyFunded": {
+        "title": "FULLY AND PARTLY FUNDED",
+        "listItems": {
+          "one": "Everything from self-funded +",
+          "two": "Accommodation and meals are provided both for fully and partly funded",
+          "three": "Reimbursement of flight expenses for fully funded in amount of no more 250 USD",
+          "four": "Priority on the pitch stage",
+          "five": "Opportunity to perform on the global stage"
+        }
+      },
+      "selfFunded": {
+        "title": "SELF FUNDED",
+        "listItems": {
+          "one": "Participation in the forum",
+          "two": "Twin accommodation",
+          "three": "Breakfasts and dinners",
+          "four": "Certificate, merch",
+          "five": "Visa support",
+          "six": "Idea presentation",
+          "seven": "Networking with mentors"
+        }
+      },
+      "invitationLetter": {
+        "title": "INVITATION LETTER",
+        "listItems": {
+          "one": "Official invitation",
+          "two": "Confirmation of participation for the embassy",
+          "three": "Visa support",
+          "four": "Travel planning recommendations",
+          "five": "! No accommodations and meals"
+        }
+      },
+      "vip": {
+        "title": "VIP",
+        "listItems": {
+          "one": "All self-funded +",
+          "two": "Single room (superior)",
+          "three": "Priority registration",
+          "four": "Airport VIP transfer",
+          "five": "Individual consultations",
+          "six": "Premium merch",
+          "seven": "All-stage support",
+          "eight": "Expert consultations for six months after the forum"
+        }
+      }
+    },
+    "partnership": {
+      "advantages": {
+        "title": "PARTNERSHIP ADVANTAGES",
+        "one": {
+          "title": "Increased brand awareness.",
+          "text": "Your brand will gain visibility in front of the target audience through all communication channels of the event - from social media to offline space."
+        },
+        "two": {
+          "title": "Access to the audience of young entrepreneurs and startups.",
+          "text": "This is a chance to interact directly with ambitious founders, innovators, and future business leaders - those who are shaping the next generation economy."
+        },
+        "three": {
+          "title": "Stand out among colleagues and competitors.",
+          "text": "Participation in the forums program gives you the opportunity to declare yourself as a brand that supports development, innovation, and progress."
+        },
+        "four": {
+          "title": "Direct interaction with participants.",
+          "text": "You will be able to present your products, get feedback, network and find new customers or partners."
+        }
+      },
+      "tiers": {
+        "title": "Conditions of Partnership",
+        "one": {
+          "title": "VISIBILITY PARTNER",
+          "price": "1500",
+          "listItems": {
+            "one": "Logo on the website and printed materials",
+            "two": "Roll-up in the welcome area",
+            "three": "Partner certificate ",
+            "four": "Access to photo and video materials",
+            "five": "Access to the chats",
+            "six": "Brochure stand in the ballroom, 3 posts in social media"
+          }
+        },
+        "two": {
+          "title": "COLLABORATION PARTNER",
+          "price": "3000",
+          "listItems": {
+            "one": "Everything from the Official package",
+            "two": "Own area for networking/branding ",
+            "three": "Stand table with company representative and merchandising",
+            "four": "5 posts on social media and 1 vertical video about the company; company brochure added to participants' merchandise"
+          }
+        },
+        "three": {
+          "title": "IMPACT PARTNER",
+          "price": "7000",
+          "listItems": {
+            "one": "Everything from the Collaboration package",
+            "two": "Logo of the company will be provided on our landing and event page forever",
+            "three": "Opening and during breaks",
+            "four": "Presentation of the grant to the participant",
+            "five": "Mention of your logo and slogan in every video on our social media channels for the entire period before the project and 1 month afterwards",
+            "six": "Thank-you speech from the head of Vostochnik Events"
+          }
+        }
+      }
+    }
+  },
+  "apply": {
+    "steps": {
+      "personalDataAgreement": "I agree to the processing of my personal data",
+      "uploadPhoto": "Upload your profile photo *",
+      "uploadPassport": "Upload your passport/ID *",
+      "fullName": "Full Name (as per Passport)",
+      "dateOfBirth": "Date of birth *",
+      "contactNumber": "Contact number *",
+      "nationality": "Nationality *",
+      "email": "Email address *",
+      "departureCity": "Departure city *"
+    }
+  },
+  "footer": {
+    "navigation": {
+      "title": "Navigation:"
+    },
+    "contacts": {
+      "title": "Contacts:",
+      "data": {
+        "mail": "vostochnik.solution@gmail.com"
+      }
+    },
+    "information": {
+      "title": "Information:",
+      "data": [
+        "Bol'shaya Yushun'skaya street №1A, b. 3,",
+        "Moscow, Russian Federation, 117303",
+        "Individual Entrepreneur Ositkovskii Dmitrii Sergeevich",
+        "TIN: 780721528372"
+      ]
+    },
+    "legal": {
+      "publicOffer": "Public Offer",
+      "privacyPolicy": "PRIVACY POLICY",
+      "copyright": "2025, VOSTOCHNIK. ALL RIGHTS RESERVED."
+    }
+  }
+}

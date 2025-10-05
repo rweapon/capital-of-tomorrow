@@ -1,4 +1,9 @@
+import { Locale, routing } from 'i18n/routing';
 import { Metadata } from 'next';
+import { notFound } from 'next/navigation';
+import { hasLocale } from 'next-intl';
+import { NextIntlClientProvider } from 'next-intl';
+import { setRequestLocale } from 'next-intl/server';
 import * as React from 'react';
 
 import './globals.css';
@@ -11,6 +16,21 @@ import { BlobsParallaxGroup, Footer, Navbar } from '@/components';
 import { siteConfig } from '@/constant/config';
 import { blobs } from '@/constant/data';
 import { basePath, isProd } from '@/constant/env';
+
+// export async function generateMetadata(
+//   props: Omit<LayoutProps<'/[locale]'>, 'children'>
+// ) {
+//   const {locale} = await props.params;
+
+//   const t = await getTranslations({
+//     locale: locale as Locale,
+//     namespace: 'LocaleLayout'
+//   });
+
+//   return {
+//     title: t('title')
+//   };
+// }
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -36,9 +56,26 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({ children }: React.PropsWithChildren) {
+type LocaleLayoutProps = Readonly<{
+  children: React.ReactNode;
+  params: Promise<{ locale: Locale }>;
+}>;
+
+export default async function LocaleLayout({
+  children,
+  params,
+}: LocaleLayoutProps) {
+  // Ensure that the incoming `locale` is valid
+  const { locale } = await params;
+
+  if (!hasLocale(routing.locales, locale)) {
+    notFound();
+  }
+
+  setRequestLocale(locale);
+
   return (
-    <html lang='en' suppressHydrationWarning>
+    <html suppressHydrationWarning>
       <body
         className={cn(
           'relative box-border min-h-screen overflow-x-hidden flex flex-col gap-8 md:gap-12 lg:gap-20 ',
@@ -47,10 +84,16 @@ export default function RootLayout({ children }: React.PropsWithChildren) {
         )}
       >
         {isProd && <BlobsParallaxGroup blobs={blobs} />}
-        <Navbar />
-        {children}
-        <Footer />
+        <NextIntlClientProvider>
+          <Navbar />
+          {children}
+          <Footer />
+        </NextIntlClientProvider>
       </body>
     </html>
   );
+}
+
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
 }
