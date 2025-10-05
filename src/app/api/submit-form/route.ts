@@ -3,16 +3,16 @@
 import { Resend } from 'resend';
 
 import {
-  formatCardNumber,
-  formatDate,
-  truncateText,
-} from '@/app/api/submit-form/utils';
-import {
   StepFourData,
   StepOneData,
   StepThreeData,
   StepTwoData,
-} from '@/app/apply/[step]/types';
+} from '@/app/[locale]/apply/[step]/types';
+import {
+  formatCardNumber,
+  formatDate,
+  truncateText,
+} from '@/app/api/submit-form/utils';
 import { ADMIN_EMAIL, FROM_EMAIL, RESEND_API_KEY } from '@/constant/env';
 
 const resend = new Resend(RESEND_API_KEY);

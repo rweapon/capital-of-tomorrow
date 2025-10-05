@@ -1,3 +1,4 @@
+import { useTranslations } from 'next-intl';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -5,51 +6,53 @@ import 'swiper/css/pagination';
 import Card from '@/components/Card/Card';
 import { IPartnershipTier } from '@/components/Card/types';
 
-const partnershipTiers: IPartnershipTier[] = [
-  {
-    title: 'VISIBILITY PARTNER',
-    price: '1500',
-    listItems: [
-      'Logo on the website and printed materials',
-      'Roll-up in the welcome area',
-      'Partner certificate ',
-      'Access to photo and video materials',
-      'Access to the chats',
-      'Brochure stand in the ballroom, 3 posts in social media',
-    ],
-    link: '/',
-  },
-  {
-    title: 'COLLABORATION PARTNER',
-    price: '3000',
-    listItems: [
-      'Everything from the Official package',
-      'Own area for networking/branding ',
-      'Stand table with company representative and merchandising',
-      "5 posts on social media and 1 vertical video about the company; company brochure added to participants' merchandise",
-    ],
-    link: '/',
-  },
-  {
-    title: 'IMPACT PARTNER',
-    price: '7000',
-    listItems: [
-      'Everything from the Collaboration package',
-      'Logo of the company will be provided on our landing and event page forever',
-      'Opening and during breaks',
-      'Presentation of the grant to the participant',
-      'Mention of your logo and slogan in every video on our social media channels for the entire period before the project and 1 month afterwards',
-      'Thank-you speech from the head of Vostochnik Events',
-    ],
-    link: '/',
-  },
-];
-
 export const PartnershipCards = () => {
+  const t = useTranslations('home.partnership.tiers');
+
+  const partnershipTiers: IPartnershipTier[] = [
+    {
+      title: t('one.title'),
+      price: t('one.price'),
+      listItems: [
+        t('one.listItems.one'),
+        t('one.listItems.two'),
+        t('one.listItems.three'),
+        t('one.listItems.four'),
+        t('one.listItems.five'),
+        t('one.listItems.six'),
+      ],
+      link: '/',
+    },
+    {
+      title: t('two.title'),
+      price: t('two.price'),
+      listItems: [
+        t('two.listItems.one'),
+        t('two.listItems.two'),
+        t('two.listItems.three'),
+        t('two.listItems.four'),
+      ],
+      link: '/',
+    },
+    {
+      title: t('three.title'),
+      price: t('three.price'),
+      listItems: [
+        t('three.listItems.one'),
+        t('three.listItems.two'),
+        t('three.listItems.three'),
+        t('three.listItems.four'),
+        t('three.listItems.five'),
+        t('three.listItems.six'),
+      ],
+      link: '/',
+    },
+  ];
+
   return (
     <section className='py-12  lg:px-8'>
       <h2 className='font-akira py-12 text-center text-3xl font-extrabold text-[#f8f7f5] md:text-4xl lg:text-5xl'>
-        Conditions of Partnership
+        {t('title')}
       </h2>
 
       <div className='mx-auto hidden max-w-[1440px] flex-wrap justify-center gap-8 md:flex'>

@@ -1,6 +1,6 @@
 'use client'; // Error components must be Client Components
 
-import { Link } from 'lucide-react';
+import { Link } from 'i18n/navigation';
 import * as React from 'react';
 
 export default function Error({

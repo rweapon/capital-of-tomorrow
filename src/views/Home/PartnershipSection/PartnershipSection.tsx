@@ -1,15 +1,38 @@
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 import React from 'react';
 
 import { cn } from '@/lib/utils';
 
 import { basePath, imagePrefix } from '@/constant/env';
-import {
-  partnerLogos,
-  partnershipContent,
-} from '@/views/Home/PartnershipSection/data';
+import { partnerLogos } from '@/views/Home/PartnershipSection/data';
+import { IPartnershipContent } from '@/views/Home/PartnershipSection/types';
 
 export const PartnershipSection: React.FC = () => {
+  const t = useTranslations('home.partnership.advantages');
+
+  const partnershipContent: IPartnershipContent = {
+    title: t('title'),
+    advantages: [
+      {
+        title: t('one.title'),
+        text: t('one.text'),
+      },
+      {
+        title: t('two.title'),
+        text: t('two.text'),
+      },
+      {
+        title: t('three.title'),
+        text: t('three.text'),
+      },
+      {
+        title: t('four.title'),
+        text: t('four.text'),
+      },
+    ],
+  };
+
   return (
     <section className='flex w-full items-center justify-center px-3 sm:px-12 xl:px-24'>
       <div

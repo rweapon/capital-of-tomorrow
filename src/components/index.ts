@@ -7,7 +7,6 @@ export * from './ImageSlider/ImageSlider';
 export * from './Input/Input';
 export * from './MissionSection/MissionSection';
 export * from './Navbar/Navbar';
-export * from './NextImage';
 export * from './RadioGroup/radio-group';
 export * from './SimpleTextBlocks/SimpleTextBlocks';
 export * from './Skeleton';

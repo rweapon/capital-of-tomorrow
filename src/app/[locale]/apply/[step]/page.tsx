@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation';
 
-import ApplyClient from '@/app/apply/[step]/ApplyClient';
+import ApplyClient from '@/app/[locale]/apply/[step]/ApplyClient';
 
 type Props = {
   params: { step: string };

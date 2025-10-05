@@ -1,4 +1,5 @@
 'use client';
+import { useTranslations } from 'next-intl';
 import { useEffect, useRef } from 'react';
 
 import { isLocal } from '@/constant/env';
@@ -9,6 +10,7 @@ export function Scroll() {
   const animationRef = useRef<number | null>(null);
   const positionRef = useRef(0);
   const scrollSpeedRef = useRef(2); // Скорость прокрутки (можно настроить)
+  const t = useTranslations('home');
 
   useEffect(() => {
     const text = textRef.current;
@@ -50,9 +52,7 @@ export function Scroll() {
         ref={textRef}
         className='font-akira sm:leading-20 whitespace-nowrap py-[2px] text-[20px] font-bold text-white will-change-transform sm:py-2 sm:text-5xl'
       >
-        grant grant grant grant grant grant grant grant grant grant grant grant
-        grant grant grant grant grant grant grant grant grant grant grant grant
-        grant grant
+        {t('scroll')}
       </div>
     </div>
   );

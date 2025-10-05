@@ -1,18 +1,18 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable no-console */
 import { zodResolver } from '@hookform/resolvers/zod';
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 
 import { Input } from '@/components';
 import { Checkbox } from '@/components/Сheckbox/Сheckbox';
 
-import { FormButtons } from '@/app/apply/[step]/components';
+import { FormButtons } from '@/app/[locale]/apply/[step]/components';
 import {
   StepComponentProps,
   StepOneData,
   stepOneSchema,
-} from '@/app/apply/[step]/types';
+} from '@/app/[locale]/apply/[step]/types';
 import { PASSPORT_KEY, PHOTO_KEY } from '@/constant/data';
 import { getFile, storeFile } from '@/views/Apply/Steps/fileUtils';
 

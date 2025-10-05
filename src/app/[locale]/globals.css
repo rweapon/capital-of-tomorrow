@@ -58,7 +58,7 @@
   }
 
   .local {
-    --missionUrl: url(../../public/images/our__mission.jpg);
+    --missionUrl: url(../../../public/images/our__mission.jpg);
   }
   .prod {
     --towerUrl: url(/images/tower_test.svg);

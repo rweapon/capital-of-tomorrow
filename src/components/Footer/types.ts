@@ -9,4 +9,9 @@ export default interface IFooterData {
   navigation: FooterCol<INavigationItem[]>;
   contacts: FooterCol<INavigationItem[]>;
   information: FooterCol<string[]>;
+  legal: {
+    publicOffer: string;
+    privacyPolicy: string;
+    copyright: string;
+  };
 }
