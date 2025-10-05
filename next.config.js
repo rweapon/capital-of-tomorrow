@@ -5,6 +5,9 @@ const withNextIntl = createNextIntlPlugin();
 
 const nextConfig = {
   basePath: '',
+  output: 'export',
+  distDir: 'out',
+  trailingSlash: true,
   eslint: {
     ignoreDuringBuilds: true,
     dirs: ['src'],
