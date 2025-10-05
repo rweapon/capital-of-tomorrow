@@ -1,23 +1,25 @@
+import { Link } from 'i18n/navigation';
 import Image from 'next/image';
-import Link from 'next/link';
+import { useTranslations } from 'next-intl';
 import React from 'react';
 
 import { Button } from '@/components';
 
 import { basePath, imagePrefix } from '@/constant/env';
 import { FlipClock } from '@/views/Home/FlipClock/FlipClock';
-import { buttonContent, eventInfo, heroContent } from '@/views/Home/Hero/data';
 
 export const HomeHero = () => {
+  const t = useTranslations('home.hero');
+
   return (
     <section className='flex w-full flex-col px-4 sm:px-6 md:px-8 lg:px-12 xl:px-24 mb-2 sm:mb-20 md:mb-22 overflow-hidden sm:overflow-visible'>
       <div className='relative flex w-full flex-col justify-between gap-4 sm:flex-row xl:gap-20 xl:px-10'>
         <div className='flex flex-col gap-2 md:gap-5 max-w-80 sm:max-w-sm md:max-w-md xl:max-w-2xl'>
           <h1 className='font-akira text-4xl font-bold tracking-[-0.26px] text-[#f8f7f5] sm:text-5xl sm:font-extrabold sm:tracking-normal xl:text-[64px]'>
-            {heroContent.title}
+            {t('title')}
           </h1>
           <p className='font-monda text-base font-normal tracking-[-1.20px] text-[#ffffffc2] md:text-lg lg:text-xl'>
-            {heroContent.description}
+            {t('description')}
           </p>
           <FlipClock />
         </div>
@@ -32,16 +34,16 @@ export const HomeHero = () => {
         </div>
         <div className='flex flex-col gap-14 sm:gap-4 md:gap-10 flex-shrink-0'>
           <p className='w-fit leading-normal  font-mont sm:font-akira text-base sm:font-bold tracking-[-0.16px] text-[#f8f7f5] sm:text-2xl md:text-3xl lg:4xl sm:!leading-[120%] md:!leading-[140%]'>
-            {eventInfo.location}
+            {t('location')}
             <br />
-            {eventInfo.month}
+            {t('month')}
             <br />
-            {eventInfo.year}
+            {t('year')}
           </p>
 
           <Link as='/apply/1' href='/apply/1'>
             <Button className='w-full tracking-tight text-lg'>
-              {buttonContent.label}
+              {t('button')}
             </Button>
           </Link>
         </div>

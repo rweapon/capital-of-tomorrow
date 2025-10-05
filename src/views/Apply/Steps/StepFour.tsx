@@ -1,16 +1,15 @@
 import { zodResolver } from '@hookform/resolvers/zod';
-import React from 'react';
 import { Controller, useForm } from 'react-hook-form';
 
 import { Input } from '@/components';
 import { Checkbox } from '@/components/Сheckbox/Сheckbox';
 
-import { FormButtons } from '@/app/apply/[step]/components';
+import { FormButtons } from '@/app/[locale]/apply/[step]/components';
 import {
   StepComponentProps,
   StepFourData,
   stepFourSchema,
-} from '@/app/apply/[step]/types';
+} from '@/app/[locale]/apply/[step]/types';
 
 const StepFour = ({
   onNext,

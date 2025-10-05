@@ -1,37 +1,56 @@
-import Link from 'next/link';
+import { Link } from 'i18n/navigation';
+import { useTranslations } from 'next-intl';
 import React from 'react';
 
 import IFooterData from '@/components/Footer/types';
-import { navigationItems } from '@/components/Navbar/data';
 
 import { basePath } from '@/constant/env';
 
-export const footerData: IFooterData = {
-  navigation: {
-    title: 'Navigation:',
-    data: navigationItems,
-  },
-  contacts: {
-    title: 'Contacts:',
-    data: [
-      {
-        href: 'mailto:vostochnik.solution@gmail.com',
-        label: 'vostochnik.solution@gmail.com',
-        id: 'mail',
-      },
-    ],
-  },
-  information: {
-    title: 'Information:',
-    data: [
-      "Bol'shaya Yushun'skaya street №1A, b. 3,",
-      'Moscow, Russian Federation, 117303',
-      'Individual Entrepreneur Ositkovskii Dmitrii Sergeevich',
-      'TIN: 780721528372',
-    ],
-  },
-};
 export function Footer() {
+  const t = useTranslations('footer');
+  const navigation = useTranslations('navigation');
+
+  const footerData: IFooterData = {
+    navigation: {
+      title: t('navigation.title'),
+      data: [
+        { id: 'about', label: navigation('about'), href: '/' },
+        {
+          id: 'participate',
+          label: navigation('participate'),
+          href: '/apply',
+        },
+        { id: 'event', label: navigation('event'), href: '/' },
+        { id: 'partners', label: navigation('partners'), href: '/' },
+        { id: 'home', label: navigation('home'), href: '/' },
+      ],
+    },
+    contacts: {
+      title: t('contacts.title'),
+      data: [
+        {
+          href: 'mailto:vostochnik.solution@gmail.com',
+          label: t('contacts.data.mail'),
+          id: 'mail',
+        },
+      ],
+    },
+    information: {
+      title: t('information.title'),
+      data: [
+        t('information.data.0'),
+        t('information.data.1'),
+        t('information.data.2'),
+        t('information.data.3'),
+      ],
+    },
+    legal: {
+      publicOffer: t('legal.publicOffer'),
+      privacyPolicy: t('legal.privacyPolicy'),
+      copyright: t('legal.copyright'),
+    },
+  };
+
   return (
     <footer className='bg-[#1E1E1E]/70 text-white/70 sm:mt-20 pt-6 font-monda uppercase'>
       <section className='container pb-4'>
@@ -85,15 +104,15 @@ export function Footer() {
             className='hover:text-blue-500 font-semibold order-2 md:order-[unset]'
             target='_blank'
           >
-            Public Offer
+            {t('legal.publicOffer')}
           </Link>
-          <p className='text-base'>2025, VOSTOCHNIK. ALL RIGHTS RESERVED.</p>
+          <p className='text-base'>{t('legal.copyright')}</p>
           <Link
             href={`${basePath}/Privacy_Policy.pdf`}
             className='hover:text-blue-500 font-semibold'
             target='_blank'
           >
-            PRIVACY POLICY
+            {t('legal.privacyPolicy')}
           </Link>
         </div>
       </section>

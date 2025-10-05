@@ -1,7 +1,7 @@
-import Link from 'next/link';
+import { Link } from 'i18n/navigation';
+import { useTranslations } from 'next-intl';
 
 import { Button } from '@/components/Button/button';
-import { navigationItems } from '@/components/Navbar/data';
 import {
   Dialog,
   DialogClose,
@@ -13,6 +13,20 @@ import {
 } from '@/components/ui/dialog';
 
 export const MobileMenu = ({ className }: { className?: string }) => {
+  const navigation = useTranslations('navigation');
+
+  const navigationItems = [
+    { id: 'about', label: navigation('about'), href: '/' },
+    {
+      id: 'participate',
+      label: navigation('participate'),
+      href: '/apply',
+    },
+    { id: 'event', label: navigation('event'), href: '/' },
+    { id: 'partners', label: navigation('partners'), href: '/' },
+    { id: 'home', label: navigation('home'), href: '/' },
+  ];
+
   return (
     <Dialog>
       <DialogTrigger asChild>

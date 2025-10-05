@@ -1,12 +1,11 @@
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 import React from 'react';
 
 import { basePath, imagePrefix } from '@/constant/env';
 
 export interface IMissionContent {
-  title: string;
   description: string[];
-  adaptiveDescription: string;
   smallDescription: string[];
 }
 
@@ -14,28 +13,21 @@ export interface IMissionGoals {
   items: string[];
 }
 
-const missionContent: IMissionContent = {
-  title: 'OUR MISSION',
-  description: [
-    "Capital of Tomorrow is not just a typical business event - it's an event where young entrepreneurs can develop pitching and public speaking skills, acquire knowledge of and experience new approaches to international business, as well as find partners and investors. As part of this project, experienced entrepreneurs can become mentors and try their hand at business instruction, invest in bright and bold young projects and see young people’s fresh vision of domestic and international business. In addition, they will have an opportunity to present their projects and engage young audience, which will be done on the international level and face no limits.",
-    'Those who are on the verge of creating their own business and wish to get away from the hackneyed recruitment are offered a unique opportunity to touch the world of entrepreneurship and come to realize that nothing is impossible.',
-  ],
-  adaptiveDescription:
-    'Capital of Tomorrow is where young entrepreneurs grow ideas, pitch to investors, and explore global business. Mentors can guide, invest, and connect with the next generation. For future founders, it’s a bold step into real entrepreneurship — no limits, just opportunities.',
-  smallDescription: [
-    'Capital of Tomorrow is where young entrepreneurs grow ideas, pitch to investors, and explore global business. ',
-    'Mentors can guide, invest, and connect with the next generation. For future founders, it’s a bold step into real entrepreneurship — no limits, just opportunities.',
-  ],
-};
-
-const missionGoals = [
-  'Learn to think big',
-  'Open access for global networking',
-  'Support the best projects',
-  'Create a community of like-minded people',
-];
-
 export const MissionSection: React.FC = () => {
+  const t = useTranslations('home.mission');
+
+  const missionContent: IMissionContent = {
+    description: [t('description.one'), t('description.two')],
+    smallDescription: [t('smallDescription.one'), t('smallDescription.two')],
+  };
+
+  const missionGoals = [
+    t('goals.one'),
+    t('goals.two'),
+    t('goals.three'),
+    t('goals.four'),
+  ];
+
   return (
     <div className='flex w-full items-center justify-center px-4 sm:px-6 md:px-8 xl:px-24'>
       <div
@@ -72,14 +64,14 @@ export const MissionSection: React.FC = () => {
 
           <div className='flex w-full flex-col p-8 pr-2 md:pl-[unset] text-white md:p-14 lg:p-16'>
             <h1 className='font-akira mb-2 text-lg font-extrabold sm:mb-4 sm:text-3xl md:mb-5 md:text-[40px]'>
-              {missionContent.title}
+              {t('title')}
             </h1>
             <p className='hidden lg:block font-mont line-clamp-[9] text-sm font-normal leading-[13px] text-[#F8F7F5E5]/70 lg:line-clamp-[none]  sm:space-y-5 md:text-base'>
               {missionContent.description[0]}
               <br /> {missionContent.description[1]}
             </p>
             <p className='hidden sm:block lg:hidden font-mont text-base text-[#F8F7F5E5]/90   '>
-              {missionContent.adaptiveDescription}
+              {t('adaptiveDescription')}
             </p>
             <div className='block sm:hidden font-mont text-base text-[#F8F7F5E5]/90'>
               <p className='w-[220px]'>{missionContent.smallDescription[0]}</p>

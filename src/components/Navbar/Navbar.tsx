@@ -1,9 +1,23 @@
-import Link from 'next/link';
+import { Link } from 'i18n/navigation';
+import { useTranslations } from 'next-intl';
 
-import { navigationItems } from '@/components/Navbar/data';
 import { MobileMenu } from '@/components/Navbar/MobileMenu/MobileMenu';
 
 export const Navbar = () => {
+  const navigation = useTranslations('navigation');
+
+  const navigationItems = [
+    { id: 'about', label: navigation('about'), href: '/' },
+    {
+      id: 'participate',
+      label: navigation('participate'),
+      href: '/apply',
+    },
+    { id: 'event', label: navigation('event'), href: '/' },
+    { id: 'partners', label: navigation('partners'), href: '/' },
+    { id: 'home', label: navigation('home'), href: '/' },
+  ];
+
   return (
     <header className='relative flex items-center justify-end md:justify-betwen w-full md:flex-col px-2 sm:px-4 md:px-8 lg:px-12 xl:px-24 mt-4'>
       <nav className='hidden md:block h-16 w-full border-b border-primarytext-primary-foreground/50 '>

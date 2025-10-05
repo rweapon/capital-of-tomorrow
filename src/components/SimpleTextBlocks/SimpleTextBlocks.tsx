@@ -1,11 +1,14 @@
+import { useTranslations } from 'next-intl';
 import React from 'react';
 
 import {
-  blockContent,
   blockStyles,
   gradientBorderStyles,
 } from '@/components/SimpleTextBlocks/data';
-import { IBlockProps } from '@/components/SimpleTextBlocks/types';
+import {
+  IBlockContent,
+  IBlockProps,
+} from '@/components/SimpleTextBlocks/types';
 
 function Block({ text, size = 'small', className = '' }: IBlockProps) {
   const isLarge = size === 'large';
@@ -56,6 +59,18 @@ function Block({ text, size = 'small', className = '' }: IBlockProps) {
 }
 
 export function SimpleTextBlocks() {
+  const t = useTranslations('home.blocks');
+
+  const blockContent: IBlockContent = {
+    smallBlocks: [
+      t('smallBlocks.one'),
+      t('smallBlocks.two'),
+      t('smallBlocks.three'),
+      t('smallBlocks.four'),
+    ],
+    largeBlocks: [t('largeBlocks.one'), t('largeBlocks.two')],
+  };
+
   return (
     <div className='w-full'>
       <div className='mx-auto max-w-7xl space-y-4 md:space-y-6 xl:space-y-0'>

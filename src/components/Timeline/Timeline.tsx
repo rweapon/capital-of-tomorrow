@@ -1,10 +1,10 @@
 'use client';
+import { useTranslations } from 'next-intl';
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 
-import { timelineSteps } from '@/components/Timeline/data';
 import { TimelineStep } from '@/components/Timeline/types';
 
 interface TimelineSectionProps {
@@ -34,15 +34,35 @@ const TimelineSection: React.FC<TimelineSectionProps> = ({ step }) => {
 };
 
 export const Timeline: React.FC = () => {
+  const t = useTranslations('home.timeline');
+
   const dotClass =
     'hidden md:block w-[38px] h-[38px] bg-white rounded-full z-20 ';
+
+  const timelineSteps: TimelineStep[] = [
+    {
+      number: t('steps.one.number'),
+      title: t('steps.one.title'),
+      description: t('steps.one.description'),
+    },
+    {
+      number: t('steps.two.number'),
+      title: t('steps.two.title'),
+      description: t('steps.two.description'),
+    },
+    {
+      number: t('steps.three.number'),
+      title: t('steps.three.title'),
+      description: t('steps.three.description'),
+    },
+  ];
 
   return (
     <section className='flex w-full justify-center px-10 lg:px-24 overflow-hidden'>
       <div className='w-full max-w-7xl'>
         <div className='text-center md:mb-20'>
           <h1 className='font-akira font-bold text-white text-2xl sm:text-3xl md:mb-12 md:text-4xl lg:text-5xl'>
-            APPLICATION TIMELINE
+            {t('title')}
           </h1>
         </div>
 
