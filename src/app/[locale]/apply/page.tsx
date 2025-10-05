@@ -9,7 +9,7 @@ type ApplyPageProps = {
 export default function ApplyPage({ params }: ApplyPageProps) {
   const { locale } = params;
   setRequestLocale(locale);
-  redirect({ href: { pathname: '/apply/1' }, locale });
+  redirect({ href: '/apply/1', locale });
 }
 
 export function generateStaticParams() {

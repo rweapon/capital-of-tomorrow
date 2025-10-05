@@ -5,10 +5,12 @@ const withNextIntl = createNextIntlPlugin();
 
 const nextConfig = {
   basePath: '',
+  distDir: 'out',
   eslint: {
     ignoreDuringBuilds: true,
     dirs: ['src'],
   },
+  images: { unoptimized: true },
 
   reactStrictMode: true,
   swcMinify: true,

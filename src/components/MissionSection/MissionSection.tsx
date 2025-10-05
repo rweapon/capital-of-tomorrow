@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import React from 'react';
 
-import { basePath, imagePrefix } from '@/constant/env';
+import { imagePrefix } from '@/constant/env';
 
 export interface IMissionContent {
   description: string[];
@@ -54,7 +54,7 @@ export const MissionSection: React.FC = () => {
         <div className='relative flex flex-row-reverse sm:flex-row min-h-80'>
           <div className='absolute right-0 top-0 sm:static min-h-auto w-1/2 sm:w-full max-w-lg'>
             <Image
-              src={`${basePath}${imagePrefix}/our__mission.jpg`}
+              src={`${imagePrefix}/our__mission.jpg`}
               alt='Dmitry'
               width={488}
               height={256}

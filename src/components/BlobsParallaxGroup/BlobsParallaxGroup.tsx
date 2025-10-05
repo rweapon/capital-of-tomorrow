@@ -4,7 +4,7 @@ import gsap from 'gsap';
 import Image from 'next/image';
 import React, { useEffect, useRef, useState } from 'react';
 
-import { basePath, imagePrefix } from '@/constant/env';
+import { imagePrefix } from '@/constant/env';
 
 export interface BlobData {
   img: string;
@@ -191,7 +191,7 @@ export const BlobsParallaxGroup: React.FC<BlobsParallaxGroupProps> = ({
               ref={(el) => {
                 if (el) blobRefs.current[blob.img] = el;
               }}
-              src={`${basePath}${imagePrefix}${blob.img}`}
+              src={`${imagePrefix}${blob.img}`}
               alt=''
               style={positionStyles}
               width={width}

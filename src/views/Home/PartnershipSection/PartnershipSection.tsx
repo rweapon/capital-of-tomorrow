@@ -4,7 +4,7 @@ import React from 'react';
 
 import { cn } from '@/lib/utils';
 
-import { basePath, imagePrefix } from '@/constant/env';
+import { imagePrefix } from '@/constant/env';
 import { partnerLogos } from '@/views/Home/PartnershipSection/data';
 import { IPartnershipContent } from '@/views/Home/PartnershipSection/types';
 
@@ -59,7 +59,7 @@ export const PartnershipSection: React.FC = () => {
         <div className='relative contents sm:flex min-h-[400px] flex-col sm:min-h-[450px] md:min-h-[500px] lg:min-h-[500px] lg:flex-row-reverse'>
           <div className='sm:content self-end'>
             <Image
-              src={`${basePath}${imagePrefix}/Partnership__advantages.jpg`}
+              src={`${imagePrefix}/Partnership__advantages.jpg`}
               alt='Daria'
               width={557}
               height={561}
@@ -110,7 +110,7 @@ export const PartnershipSection: React.FC = () => {
                 }`}
               >
                 <Image
-                  src={`${basePath}${imagePrefix}/${logo.type}.svg`}
+                  src={`${imagePrefix}/${logo.type}.svg`}
                   alt='Partner logo'
                   width={logo.height * 2}
                   height={logo.height}

@@ -5,7 +5,7 @@ import React from 'react';
 
 import { Button } from '@/components';
 
-import { basePath, imagePrefix } from '@/constant/env';
+import { imagePrefix } from '@/constant/env';
 import { FlipClock } from '@/views/Home/FlipClock/FlipClock';
 
 export const HomeHero = () => {
@@ -25,7 +25,7 @@ export const HomeHero = () => {
         </div>
         <div className='absolute right-4 top-0 sm:right-[unset] sm:relative sm:w-full min-w-10 md:max-w-32 xl:max-w-52'>
           <Image
-            src={`${basePath}${imagePrefix}/tower_test.svg`}
+            src={`${imagePrefix}/tower_test.svg`}
             alt='Burj Khalifa'
             width={237}
             height={929}

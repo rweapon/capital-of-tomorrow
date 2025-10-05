@@ -1,14 +1,19 @@
 import { Link } from 'i18n/navigation';
+import { Locale } from 'i18n/routing';
 import { useTranslations } from 'next-intl';
+import { setRequestLocale } from 'next-intl/server';
 import React from 'react';
 
 import IFooterData from '@/components/Footer/types';
 
-import { basePath } from '@/constant/env';
+type FooterProps = {
+  locale: Locale;
+};
 
-export function Footer() {
+export const Footer = ({ locale }: FooterProps) => {
   const t = useTranslations('footer');
   const navigation = useTranslations('navigation');
+  setRequestLocale(locale);
 
   const footerData: IFooterData = {
     navigation: {
@@ -63,6 +68,7 @@ export function Footer() {
               <Link
                 key={link.id}
                 href={link.href}
+                locale={locale}
                 className='text-sm transition-colors hover:text-blue-500 sm:text-base'
               >
                 {link.label}
@@ -78,6 +84,7 @@ export function Footer() {
               <Link
                 key={link.id}
                 href={link.href}
+                locale={locale}
                 className='text-sm transition-colors hover:text-blue-500 sm:text-base'
               >
                 {link.label}
@@ -100,17 +107,19 @@ export function Footer() {
       <section className='bg-black/30 py-4'>
         <div className='container text-white  text-sm sm:text-base  flex flex-col md:flex-row md:items-center justify-between gap-2'>
           <Link
-            href={`${basePath}/Public_Offer.pdf`}
+            href='/Public_Offer.pdf'
             className='hover:text-blue-500 font-semibold order-2 md:order-[unset]'
             target='_blank'
+            locale={locale}
           >
             {t('legal.publicOffer')}
           </Link>
           <p className='text-base'>{t('legal.copyright')}</p>
           <Link
-            href={`${basePath}/Privacy_Policy.pdf`}
+            href='/Privacy_Policy.pdf'
             className='hover:text-blue-500 font-semibold'
             target='_blank'
+            locale={locale}
           >
             {t('legal.privacyPolicy')}
           </Link>
@@ -118,4 +127,4 @@ export function Footer() {
       </section>
     </footer>
   );
-}
+};

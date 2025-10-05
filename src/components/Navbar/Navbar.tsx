@@ -1,10 +1,17 @@
 import { Link } from 'i18n/navigation';
+import { Locale } from 'i18n/routing';
 import { useTranslations } from 'next-intl';
+import { setRequestLocale } from 'next-intl/server';
 
 import { MobileMenu } from '@/components/Navbar/MobileMenu/MobileMenu';
 
-export const Navbar = () => {
+type NavbarProps = {
+  locale: Locale;
+};
+
+export const Navbar = ({ locale }: NavbarProps) => {
   const navigation = useTranslations('navigation');
+  setRequestLocale(locale);
 
   const navigationItems = [
     { id: 'about', label: navigation('about'), href: '/' },
@@ -27,6 +34,7 @@ export const Navbar = () => {
               <Link
                 href={item.href}
                 className='flex size-full items-center justify-center text-center text-base font-bold tracking-[-0.96px] text-primary-foreground hover:text-blue-500'
+                locale={locale}
               >
                 {item.label}
               </Link>
@@ -34,7 +42,10 @@ export const Navbar = () => {
           ))}
         </ul>
       </nav>
-      <MobileMenu className='block md:hidden relative p-0 w-12 aspect-square bg-transparent border-none cursor-pointer burger-button burger-button_after' />
+      <MobileMenu
+        locale={locale}
+        className='block md:hidden relative p-0 w-12 aspect-square bg-transparent border-none cursor-pointer burger-button burger-button_after'
+      />
     </header>
   );
 };
