@@ -5,8 +5,6 @@ export const showLogger = isLocal
   ? true
   : process.env.NEXT_PUBLIC_SHOW_LOGGER === 'true' || false;
 
-export const basePath = '';
-
 export const imagePrefix = '/images';
 
 export const RESEND_API_KEY = process.env.RESEND_API_KEY || '';

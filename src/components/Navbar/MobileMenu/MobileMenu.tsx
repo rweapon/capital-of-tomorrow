@@ -1,5 +1,7 @@
 import { Link } from 'i18n/navigation';
+import { Locale } from 'i18n/routing';
 import { useTranslations } from 'next-intl';
+import { setRequestLocale } from 'next-intl/server';
 
 import { Button } from '@/components/Button/button';
 import {
@@ -12,8 +14,14 @@ import {
   DialogTrigger,
 } from '@/components/ui/dialog';
 
-export const MobileMenu = ({ className }: { className?: string }) => {
+type MobileMenuProps = {
+  locale: Locale;
+  className?: string;
+};
+
+export const MobileMenu = ({ locale, className }: MobileMenuProps) => {
   const navigation = useTranslations('navigation');
+  setRequestLocale(locale);
 
   const navigationItems = [
     { id: 'about', label: navigation('about'), href: '/' },
@@ -50,6 +58,7 @@ export const MobileMenu = ({ className }: { className?: string }) => {
                 <Link
                   href={item.href}
                   className='flex size-full items-center justify-center text-center text-xl font-bold text-primary-foreground'
+                  locale={locale}
                 >
                   {item.label}
                 </Link>

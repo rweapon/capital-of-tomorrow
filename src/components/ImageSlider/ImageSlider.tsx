@@ -5,7 +5,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Swiper as SwiperType } from 'swiper/types';
 import 'swiper/css';
 
-import { basePath, imagePrefix } from '@/constant/env';
+import { imagePrefix } from '@/constant/env';
 
 export interface ISlide {
   id: number;
@@ -145,7 +145,7 @@ export const ImageSlider = () => {
               aria-label={`View slide ${index + 1}: ${slide.alt}`}
             >
               <Image
-                src={`${basePath}${imagePrefix}/slides/${slide.src}`}
+                src={`${imagePrefix}/slides/${slide.src}`}
                 alt={slide.alt}
                 width={300}
                 height={300}

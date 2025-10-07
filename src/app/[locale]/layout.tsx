@@ -15,7 +15,7 @@ import { BlobsParallaxGroup, Footer, Navbar } from '@/components';
 
 import { siteConfig } from '@/constant/config';
 import { blobs } from '@/constant/data';
-import { basePath, isProd } from '@/constant/env';
+import { isProd } from '@/constant/env';
 
 // export async function generateMetadata(
 //   props: Omit<LayoutProps<'/[locale]'>, 'children'>
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
   },
   description: siteConfig.description,
   robots: { index: true, follow: true },
-  manifest: `${basePath}/favicon/site.webmanifest`,
+  manifest: `/favicon/site.webmanifest`,
   openGraph: {
     url: siteConfig.url,
     title: siteConfig.title,
@@ -85,9 +85,9 @@ export default async function LocaleLayout({
       >
         {isProd && <BlobsParallaxGroup blobs={blobs} />}
         <NextIntlClientProvider>
-          <Navbar />
+          <Navbar locale={locale} />
           {children}
-          <Footer />
+          <Footer locale={locale} />
         </NextIntlClientProvider>
       </body>
     </html>
