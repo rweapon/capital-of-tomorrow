@@ -5,6 +5,7 @@ import React from 'react';
 
 import { Button } from '@/components';
 
+import { NavigationKeys } from '@/constant/data';
 import { imagePrefix } from '@/constant/env';
 import { FlipClock } from '@/views/Home/FlipClock/FlipClock';
 
@@ -41,8 +42,8 @@ export const HomeHero = () => {
             {t('year')}
           </p>
 
-          <Link as='/apply/1' href='/apply/1'>
-            <Button className='w-full tracking-tight text-lg'>
+          <Link href={`#${NavigationKeys.PARTICIPATE}`}>
+            <Button className='w-full tracking-tight ' size='lg'>
               {t('button')}
             </Button>
           </Link>

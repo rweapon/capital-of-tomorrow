@@ -14,6 +14,8 @@ import {
   DialogTrigger,
 } from '@/components/ui/dialog';
 
+import { flatNavigationItems } from '@/constant/data';
+
 type MobileMenuProps = {
   locale: Locale;
   className?: string;
@@ -23,17 +25,10 @@ export const MobileMenu = ({ locale, className }: MobileMenuProps) => {
   const navigation = useTranslations('navigation');
   setRequestLocale(locale);
 
-  const navigationItems = [
-    { id: 'about', label: navigation('about'), href: '/' },
-    {
-      id: 'participate',
-      label: navigation('participate'),
-      href: '/apply',
-    },
-    { id: 'event', label: navigation('event'), href: '/' },
-    { id: 'partners', label: navigation('partners'), href: '/' },
-    { id: 'home', label: navigation('home'), href: '/' },
-  ];
+  const navigationItems = flatNavigationItems.map((item) => ({
+    ...item,
+    label: navigation(item.id),
+  }));
 
   return (
     <Dialog>

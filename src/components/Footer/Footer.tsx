@@ -6,6 +6,8 @@ import React from 'react';
 
 import IFooterData from '@/components/Footer/types';
 
+import { flatNavigationItems } from '@/constant/data';
+
 type FooterProps = {
   locale: Locale;
 };
@@ -18,17 +20,10 @@ export const Footer = ({ locale }: FooterProps) => {
   const footerData: IFooterData = {
     navigation: {
       title: t('navigation.title'),
-      data: [
-        { id: 'about', label: navigation('about'), href: '/' },
-        {
-          id: 'participate',
-          label: navigation('participate'),
-          href: '/apply',
-        },
-        { id: 'event', label: navigation('event'), href: '/' },
-        { id: 'partners', label: navigation('partners'), href: '/' },
-        { id: 'home', label: navigation('home'), href: '/' },
-      ],
+      data: flatNavigationItems.map((item) => ({
+        ...item,
+        label: navigation(item.id),
+      })),
     },
     contacts: {
       title: t('contacts.title'),
