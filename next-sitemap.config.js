@@ -10,5 +10,6 @@ module.exports = {
   robotsTxtOptions: {
     policies: [{ userAgent: '*', allow: '/' }],
   },
-  outDir: './out'
+  outDir: './out',
+  sourceDir: 'out'
 };
