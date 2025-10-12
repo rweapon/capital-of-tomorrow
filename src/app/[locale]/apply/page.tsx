@@ -2,6 +2,8 @@ import { redirect } from 'i18n/navigation';
 import { Locale, routing } from 'i18n/routing';
 import { setRequestLocale } from 'next-intl/server';
 
+import { NavigationKeys } from '@/constant/data';
+
 type ApplyPageProps = {
   params: { locale: Locale };
 };
@@ -9,7 +11,7 @@ type ApplyPageProps = {
 export default function ApplyPage({ params }: ApplyPageProps) {
   const { locale } = params;
   setRequestLocale(locale);
-  redirect({ href: '/apply/1', locale });
+  redirect({ href: `/${NavigationKeys.APPLY}/1`, locale });
 }
 
 export function generateStaticParams() {

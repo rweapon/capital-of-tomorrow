@@ -1,3 +1,4 @@
+import { Locale } from 'i18n/routing';
 import { useTranslations } from 'next-intl';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
@@ -5,9 +6,12 @@ import 'swiper/css/pagination';
 
 import Card, { ICardProps } from '@/components/Card/Card';
 
-export const TicketCards = () => {
-  const t = useTranslations('home.tickets');
+import { NavigationKeys } from '@/constant/data';
 
+type TicketCardsProps = { locale: Locale };
+
+export const TicketCards = ({ locale }: TicketCardsProps) => {
+  const t = useTranslations('home.tickets');
   const tickets: ICardProps[] = [
     {
       title: t('fullyAndPartlyFunded.title'),
@@ -26,19 +30,20 @@ export const TicketCards = () => {
       buttonTextColor: '#D4AF37',
       borderColor: '#1e1e1e',
       shadow: '0 4px 4px 0 rgba(0, 0, 0, 0.25)',
-      link: '/apply/1',
+      link: `/${NavigationKeys.APPLY}/1`,
+      locale,
     },
     {
-      title: t('selfFunded.title'),
+      title: t('scoutingProject.title'),
       opacity: 0.3,
       listItems: [
-        t('selfFunded.listItems.one'),
-        t('selfFunded.listItems.two'),
-        t('selfFunded.listItems.three'),
-        t('selfFunded.listItems.four'),
-        t('selfFunded.listItems.five'),
-        t('selfFunded.listItems.six'),
-        t('selfFunded.listItems.seven'),
+        t('scoutingProject.listItems.one'),
+        t('scoutingProject.listItems.two'),
+        t('scoutingProject.listItems.three'),
+        t('scoutingProject.listItems.four'),
+        t('scoutingProject.listItems.five'),
+        t('scoutingProject.listItems.six'),
+        t('scoutingProject.listItems.seven'),
       ],
       backgroundType: 'overlay-gradient',
       backgroundColor: '#2D2D2D',
@@ -48,7 +53,8 @@ export const TicketCards = () => {
       buttonBackgroundColor: '#E3AF64',
       buttonTextColor: '#1e1e1e',
       borderColor: '#c7c1c1',
-      link: '/apply/1',
+      link: `/${NavigationKeys.APPLY}/1`,
+      locale,
     },
     {
       title: t('invitationLetter.title'),
@@ -68,7 +74,8 @@ export const TicketCards = () => {
       buttonBackgroundColor: '#E3AF64',
       buttonTextColor: '#1e1e1e',
       borderColor: '#c7c1c1',
-      link: '/apply/1',
+      link: `/${NavigationKeys.APPLY}/1`,
+      locale,
     },
     {
       title: t('vip.title'),
@@ -89,12 +96,16 @@ export const TicketCards = () => {
       buttonTextColor: '#1e1e1e',
       borderColor: '#D4AF37',
       shadow: '0 8px 32px rgba(212, 175, 55, 0.3)',
-      link: '/apply/1',
+      link: `/${NavigationKeys.APPLY}/1`,
+      locale,
     },
   ];
 
   return (
-    <section className='relative mx-auto w-svw md:w-[unset] md:max-w-[1440px] overflow-hidden py-8 md:px-6 lg:px-8'>
+    <section
+      className='relative mx-auto w-svw md:w-[unset] md:max-w-[1440px] overflow-hidden py-8 md:px-6 lg:px-8'
+      id={NavigationKeys.PARTICIPATE}
+    >
       <h2 className='font-akira mb-8 text-center text-2xl leading-snug text-[#f8f7f5] sm:text-3xl md:mb-12 md:text-4xl lg:text-5xl'>
         {t('title')}
       </h2>

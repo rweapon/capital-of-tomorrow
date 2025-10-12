@@ -4,7 +4,7 @@ import React from 'react';
 import '@leenguyen/react-flip-clock-countdown/dist/index.css';
 
 export const FlipClock = () => {
-  const to = new Date().getTime() + 24 * 3600 * 1000 + 5000;
+  const to = new Date('2026-01-01').getTime();
   return (
     <FlipClockCountdown
       to={to}

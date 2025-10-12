@@ -3,6 +3,7 @@
 'use client';
 
 import { useRouter } from 'i18n/navigation';
+import { Locale } from 'i18n/routing';
 import dynamic from 'next/dynamic';
 import React, { useCallback, useEffect, useState } from 'react';
 
@@ -14,7 +15,7 @@ import {
   StepThreeData,
   StepTwoData,
 } from '@/app/[locale]/apply/[step]/types';
-import { PASSPORT_KEY, PHOTO_KEY } from '@/constant/data';
+import { NavigationKeys, PASSPORT_KEY, PHOTO_KEY } from '@/constant/data';
 import { ProgressBar, progressStep } from '@/views/Apply/ProgressBar';
 import { getFile } from '@/views/Apply/Steps/fileUtils';
 
@@ -45,6 +46,7 @@ const StepFour = dynamic(
 
 type ApplyClientProps = {
   numStep: number;
+  locale: Locale;
 };
 
 export interface FileData {
@@ -61,7 +63,7 @@ interface FormData {
   stepFour?: StepFourData;
 }
 
-const ApplyClient: React.FC<ApplyClientProps> = ({ numStep }) => {
+const ApplyClient: React.FC<ApplyClientProps> = ({ numStep, locale }) => {
   const router = useRouter();
 
   // State to store form data from all steps
@@ -168,7 +170,7 @@ const ApplyClient: React.FC<ApplyClientProps> = ({ numStep }) => {
         console.log('Результат отправки:', result.details);
 
         // Redirect to success page
-        router.replace('/');
+        router.replace('/', { locale });
       } else {
         throw new Error(result.message || 'Неизвестная ошибка');
       }
@@ -196,20 +198,20 @@ const ApplyClient: React.FC<ApplyClientProps> = ({ numStep }) => {
 
       // Navigate to next step
       if (currentStep < 4) {
-        router.push(`/apply/${currentStep + 1}`);
+        router.push(`/${NavigationKeys.APPLY}/${currentStep + 1}`, { locale });
       } else {
         sendEmail(updatedFormData);
       }
     },
-    [formData, router]
+    [formData, router, locale]
   );
 
   // Handle navigation to previous step
   const handlePrevious = useCallback(() => {
     if (numStep > 1) {
-      router.push(`/apply/${numStep - 1}`);
+      router.push(`/${NavigationKeys.APPLY}/${numStep - 1}`, { locale });
     }
-  }, [numStep]);
+  }, [numStep, locale]);
 
   // Check if user can access current step (has completed previous steps)
   const canAccessStep = (step: number): boolean => {
@@ -238,9 +240,9 @@ const ApplyClient: React.FC<ApplyClientProps> = ({ numStep }) => {
       if (formData.stepTwo) redirectStep = 3;
       if (formData.stepThree) redirectStep = 4;
 
-      router.push(`/apply/${redirectStep}`);
+      router.push(`/${NavigationKeys.APPLY}/${redirectStep}`, { locale });
     }
-  }, [numStep, formData, isLoading, router]);
+  }, [numStep, formData, isLoading, router, locale]);
 
   if (isLoading) {
     return (
