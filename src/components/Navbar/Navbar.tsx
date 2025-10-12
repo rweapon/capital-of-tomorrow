@@ -5,6 +5,8 @@ import { setRequestLocale } from 'next-intl/server';
 
 import { MobileMenu } from '@/components/Navbar/MobileMenu/MobileMenu';
 
+import { flatNavigationItems } from '@/constant/data';
+
 type NavbarProps = {
   locale: Locale;
 };
@@ -13,17 +15,10 @@ export const Navbar = ({ locale }: NavbarProps) => {
   const navigation = useTranslations('navigation');
   setRequestLocale(locale);
 
-  const navigationItems = [
-    { id: 'about', label: navigation('about'), href: '/' },
-    {
-      id: 'participate',
-      label: navigation('participate'),
-      href: '/apply',
-    },
-    { id: 'event', label: navigation('event'), href: '/' },
-    { id: 'partners', label: navigation('partners'), href: '/' },
-    { id: 'home', label: navigation('home'), href: '/' },
-  ];
+  const navigationItems = flatNavigationItems.map((item) => ({
+    ...item,
+    label: navigation(item.id),
+  }));
 
   return (
     <header className='relative flex items-center justify-end md:justify-betwen w-full md:flex-col px-2 sm:px-4 md:px-8 lg:px-12 xl:px-24 mt-4'>

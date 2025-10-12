@@ -1,3 +1,4 @@
+import { Locale } from 'i18n/routing';
 import { useTranslations } from 'next-intl';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
@@ -6,7 +7,11 @@ import 'swiper/css/pagination';
 import Card from '@/components/Card/Card';
 import { IPartnershipTier } from '@/components/Card/types';
 
-export const PartnershipCards = () => {
+import { NavigationKeys } from '@/constant/data';
+
+type PartnershipCardsProps = { locale: Locale };
+
+export const PartnershipCards = ({ locale }: PartnershipCardsProps) => {
   const t = useTranslations('home.partnership.tiers');
 
   const partnershipTiers: IPartnershipTier[] = [
@@ -22,6 +27,7 @@ export const PartnershipCards = () => {
         t('one.listItems.six'),
       ],
       link: '/',
+      locale,
     },
     {
       title: t('two.title'),
@@ -33,6 +39,7 @@ export const PartnershipCards = () => {
         t('two.listItems.four'),
       ],
       link: '/',
+      locale,
     },
     {
       title: t('three.title'),
@@ -46,11 +53,12 @@ export const PartnershipCards = () => {
         t('three.listItems.six'),
       ],
       link: '/',
+      locale,
     },
   ];
 
   return (
-    <section className='py-12  lg:px-8'>
+    <section className='py-12  lg:px-8' id={NavigationKeys.PARTNERS}>
       <h2 className='font-akira py-12 text-center text-3xl font-extrabold text-[#f8f7f5] md:text-4xl lg:text-5xl'>
         {t('title')}
       </h2>
@@ -77,6 +85,7 @@ export const PartnershipCards = () => {
             buttonWidth='280px'
             buttonHeight='50px'
             opacity={0.3}
+            locale={locale}
           />
         ))}
       </div>
@@ -116,6 +125,7 @@ export const PartnershipCards = () => {
                 buttonWidth='280px'
                 buttonHeight='50px'
                 opacity={0.3}
+                locale={locale}
               />
             </SwiperSlide>
           ))}
