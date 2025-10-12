@@ -10,7 +10,11 @@ const nextConfig = {
     ignoreDuringBuilds: true,
     dirs: ['src'],
   },
-  images: { unoptimized: true },
+  assetPrefix: '',
+  images: {
+    unoptimized: true,
+    path: '/',
+  },
 
   reactStrictMode: true,
   swcMinify: true,

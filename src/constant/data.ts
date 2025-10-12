@@ -287,5 +287,20 @@ export const blobs: BlobElement[] = [
   },
 ];
 
+export const enum NavigationKeys {
+  ABOUT = 'about',
+  PARTICIPATE = 'participate',
+  EVENT = 'event',
+  PARTNERS = 'partners',
+  APPLY = 'apply',
+}
+
+export const flatNavigationItems = [
+  { id: NavigationKeys.ABOUT, href: '/' },
+  { id: NavigationKeys.PARTICIPATE, href: `#${NavigationKeys.PARTICIPATE}` },
+  { id: NavigationKeys.EVENT, href: '/' },
+  { id: NavigationKeys.PARTNERS, href: `#${NavigationKeys.PARTNERS}` },
+];
+
 export const PHOTO_KEY = 'uploaded_photo';
 export const PASSPORT_KEY = 'uploaded_passport';

@@ -1,5 +1,6 @@
 'use client';
 import { Link } from 'i18n/navigation';
+import { Locale } from 'i18n/routing';
 import React from 'react';
 
 import { GRADIENTS } from '@/components/Card/data';
@@ -27,6 +28,7 @@ export interface ICardProps {
   price?: string;
   buttonText?: string;
   link: string;
+  locale: Locale;
 }
 
 const Gradient: React.FC<IGradientProps> = ({
@@ -118,6 +120,7 @@ const Card: React.FC<ICardProps> = ({
   listTextColor,
   buttonText = 'Get started',
   link,
+  locale,
 }) => {
   const numericWidth = parseInt(width);
   const numericHeight = parseInt(height);
@@ -293,7 +296,7 @@ const Card: React.FC<ICardProps> = ({
               style={{ mixBlendMode: 'color' }}
             />
           </svg>
-          <Link as={link} href={link}>
+          <Link href={link} locale={locale}>
             <button
               className={`font-mont  relative z-10 size-full bg-transparent font-bold ${borderRadiusClass} transition-all duration-200 hover:scale-105`}
               style={buttonStyle}
@@ -306,7 +309,7 @@ const Card: React.FC<ICardProps> = ({
     }
 
     return (
-      <Link as={link} href={link}>
+      <Link href={link} locale={locale}>
         <button
           className={`font-mont font-bold  ${borderRadiusClass} transition-all duration-200 hover:scale-105`}
           style={{ ...buttonStyle, background: buttonBackgroundColor }}
