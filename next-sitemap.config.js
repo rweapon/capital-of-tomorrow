@@ -11,5 +11,5 @@ module.exports = {
     policies: [{ userAgent: '*', allow: '/' }],
   },
   outDir: './out',
-  sourceDir: '.next'
+  sourceDir: 'out'
 };
