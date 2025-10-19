@@ -1,4 +1,4 @@
-import { Locale } from "i18n/routing";
+import { Locale } from 'i18n/routing';
 
 export interface IGradientStop {
   offset: string;
@@ -24,7 +24,8 @@ export interface IPartnershipTier {
   listItems: string[];
   price: string;
   link: string;
-  locale: Locale
+  buttonText: string;
+  locale: Locale;
 }
 
 export type BackgroundType = 'solid' | 'gold-gradient' | 'overlay-gradient';
