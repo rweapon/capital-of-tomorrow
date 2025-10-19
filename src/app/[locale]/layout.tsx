@@ -74,12 +74,16 @@ export default async function LocaleLayout({
 
   setRequestLocale(locale);
 
+  const modifiedFonts = fonts
+    .filter((font) => !font.style.fontFamily.toLowerCase().includes('akira'))
+    .map((font) => font.variable);
+
   return (
     <html suppressHydrationWarning>
       <body
         className={cn(
           'relative box-border min-h-screen overflow-x-hidden flex flex-col gap-8 md:gap-12 lg:gap-20 ',
-          fonts,
+          locale === 'ru' ? modifiedFonts : fonts,
           isProd ? 'prod' : 'local'
         )}
       >
