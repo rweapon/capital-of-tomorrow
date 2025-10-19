@@ -19,7 +19,7 @@
       "year": "2025",
       "button": "APPLY NOW"
     },
-    "scroll": "grant grant grant grant grant grant grant grant grant grant grant grant grant grant grant grant grant grant grant grant grant grant grant grant grant grant",
+    "scroll": "GRANT GRANT GRANT GRANT GRANT GRANT GRANT GRANT GRANT GRANT GRANT GRANT GRANT GRANT GRANT GRANT GRANT GRANT GRANT GRANT GRANT GRANT GRANT GRANT GRANT GRANT",
     "mission": {
       "title": "OUR MISSION",
       "description": {
@@ -153,7 +153,8 @@
     "tickets": {
       "title": "Explore Flexible Participation Categories",
       "fullyAndPartlyFunded": {
-        "title": "FULLY AND PARTLY FUNDED",
+        "title": "FUNDED ACCESS",
+        "buttonText": "Get started",
         "listItems": {
           "one": "Everything from self-funded +",
           "two": "Accommodation and meals are provided both for fully and partly funded",
@@ -164,6 +165,7 @@
       },
       "scoutingProject": {
         "title": "SCOUTING PROJECT",
+        "buttonText": "Get started",
         "listItems": {
           "one": "Participation in the forum",
           "two": "Twin accommodation",
@@ -176,6 +178,7 @@
       },
       "invitationLetter": {
         "title": "INVITATION LETTER",
+        "buttonText": "Get started",
         "listItems": {
           "one": "Official invitation",
           "two": "Confirmation of participation for the embassy",
@@ -186,6 +189,7 @@
       },
       "vip": {
         "title": "VIP",
+        "buttonText": "Get started",
         "listItems": {
           "one": "All self-funded +",
           "two": "Single room (superior)",
@@ -223,6 +227,7 @@
         "one": {
           "title": "VISIBILITY PARTNER",
           "price": "1500",
+          "buttonText": "Get started",
           "listItems": {
             "one": "Logo on the website and printed materials",
             "two": "Roll-up in the welcome area",
@@ -235,6 +240,7 @@
         "two": {
           "title": "COLLABORATION PARTNER",
           "price": "3000",
+          "buttonText": "Get started",
           "listItems": {
             "one": "Everything from the Official package",
             "two": "Own area for networking/branding ",
@@ -245,6 +251,7 @@
         "three": {
           "title": "IMPACT PARTNER",
           "price": "7000",
+          "buttonText": "Get started",
           "listItems": {
             "one": "Everything from the Collaboration package",
             "two": "Logo of the company will be provided on our landing and event page forever",

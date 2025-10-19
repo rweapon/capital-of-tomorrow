@@ -19,7 +19,7 @@
       "year": "2025",
       "button": "ПОДАТЬ ЗАЯВКУ"
     },
-    "scroll": "grant grant grant grant grant grant grant grant grant grant grant grant grant grant grant grant grant grant grant grant grant grant grant grant grant grant",
+    "scroll": "ГРАНТ ГРАНТ ГРАНТ ГРАНТ ГРАНТ ГРАНТ ГРАНТ ГРАНТ ГРАНТ ГРАНТ ГРАНТ ГРАНТ ГРАНТ ГРАНТ ГРАНТ ГРАНТ ГРАНТ ГРАНТ ГРАНТ ГРАНТ ГРАНТ ГРАНТ ГРАНТ ГРАНТ ГРАНТ ГРАНТ",
     "mission": {
       "title": "НАША МИССИЯ",
       "description": {
@@ -154,6 +154,7 @@
       "title": "Изучите гибкие категории участия",
       "fullyAndPartlyFunded": {
         "title": "ПОЛНОСТЬЮ И ЧАСТИЧНО ФИНАНСИРУЕМЫЕ",
+        "buttonText": "Начать",
         "listItems": {
           "one": "Всё из self-funded +",
           "two": "Предоставляются проживание и питание для полностью и частично финансируемых участников",
@@ -164,6 +165,7 @@
       },
       "scoutingProject": {
         "title": "SELF FUNDED",
+        "buttonText": "Начать",
         "listItems": {
           "one": "Участие в форуме",
           "two": "Двухместное проживание",
@@ -176,6 +178,7 @@
       },
       "invitationLetter": {
         "title": "ПРИГЛАСИТЕЛЬНОЕ ПИСЬМО",
+        "buttonText": "Начать",
         "listItems": {
           "one": "Официальное приглашение",
           "two": "Подтверждение участия для посольства",
@@ -186,6 +189,7 @@
       },
       "vip": {
         "title": "VIP",
+        "buttonText": "Начать",
         "listItems": {
           "one": "Всё self-funded +",
           "two": "Одноместное размещение (Superior)",
@@ -223,6 +227,7 @@
         "one": {
           "title": "ПАРТНЕР ПО ВИДИМОСТИ",
           "price": "1500",
+          "buttonText": "Начать",
           "listItems": {
             "one": "Логотип на сайте и печатных материалах",
             "two": "Ролл-ап в зоне приветствия",
@@ -235,6 +240,7 @@
         "two": {
           "title": "ПАРТНЕР ПО СОТРУДНИЧЕСТВУ",
           "price": "3000",
+          "buttonText": "Начать",
           "listItems": {
             "one": "Всё из официального пакета",
             "two": "Собственная зона для нетворкинга/брендинга",
@@ -245,7 +251,8 @@
         "three": {
           "title": "ПАРТНЕР ПО ВЛИЯНИЮ",
           "price": "7000",
-          "listItems": {
+          "buttonText": "Начать",
+          "listItems": {  
             "one": "Всё из пакета Collaboration",
             "two": "Логотип компании будет размещен на нашем лендинге и странице мероприятия навсегда",
             "three": "Открытие и перерывы",

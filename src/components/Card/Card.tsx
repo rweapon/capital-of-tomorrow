@@ -26,7 +26,7 @@ export interface ICardProps {
   buttonFontSize?: string;
   layout?: string;
   price?: string;
-  buttonText?: string;
+  buttonText: string;
   link: string;
   locale: Locale;
 }
@@ -118,7 +118,7 @@ const Card: React.FC<ICardProps> = ({
   layout = 'default',
   price,
   listTextColor,
-  buttonText = 'Get started',
+  buttonText,
   link,
   locale,
 }) => {

@@ -18,6 +18,7 @@ export const PartnershipCards = ({ locale }: PartnershipCardsProps) => {
     {
       title: t('one.title'),
       price: t('one.price'),
+      buttonText: t('one.buttonText'),
       listItems: [
         t('one.listItems.one'),
         t('one.listItems.two'),
@@ -32,6 +33,7 @@ export const PartnershipCards = ({ locale }: PartnershipCardsProps) => {
     {
       title: t('two.title'),
       price: t('two.price'),
+      buttonText: t('two.buttonText'),
       listItems: [
         t('two.listItems.one'),
         t('two.listItems.two'),
@@ -44,6 +46,7 @@ export const PartnershipCards = ({ locale }: PartnershipCardsProps) => {
     {
       title: t('three.title'),
       price: t('three.price'),
+      buttonText: t('three.buttonText'),
       listItems: [
         t('three.listItems.one'),
         t('three.listItems.two'),
@@ -72,6 +75,7 @@ export const PartnershipCards = ({ locale }: PartnershipCardsProps) => {
             price={tier.price}
             listItems={tier.listItems}
             link={tier.link}
+            buttonText={tier.buttonText}
             width='360px'
             height='524px'
             backgroundType='overlay-gradient'
@@ -112,6 +116,7 @@ export const PartnershipCards = ({ locale }: PartnershipCardsProps) => {
                 price={tier.price}
                 listItems={tier.listItems}
                 link={tier.link}
+                buttonText={tier.buttonText}
                 width='360px'
                 height='524px'
                 backgroundType='overlay-gradient'
