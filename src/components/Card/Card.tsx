@@ -365,7 +365,7 @@ const Card: React.FC<ICardProps> = ({
           </header>
 
           <div className='flex-1 px-6 py-8'>
-            <ul className='font-mont text-[13px] leading-none '>
+            <ul className='font-mont text-[14px] leading-none '>
               {listItems.map((item, index) => (
                 <li key={index} className='flex items-start'>
                   <span className='mr-3 mt-1 text-xs leading-none text-[#E3AF64]'>
@@ -394,7 +394,7 @@ const Card: React.FC<ICardProps> = ({
           </h2>
         </header>
         <ul
-          style={{ fontSize: buttonFontSize || '16px' }}
+          style={{ fontSize: buttonFontSize || '14px' }}
           className='font-mont max-h-[280px] overflow-y-auto px-4 text-base leading-[1.3]'
         >
           {listItems.map((item, index) => (

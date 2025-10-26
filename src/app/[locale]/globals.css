@@ -8,6 +8,21 @@
     font-size: 16px;
   }
 
+  .not-akira .font-akira {
+    font-family: var(--font-mont) !important;
+    font-weight: 800;
+  }
+
+  /* предотвращает скачки при открытии/закрытии диалога */
+  body:has([data-state='open']) {
+    overflow: hidden;
+  }
+
+  /* плавный скролл для якорных ссылок */
+  html {
+    scroll-behavior: smooth;
+  }
+
   :root {
     --background: 0 0% 100%;
     --foreground: 0 0% 3.9%;
