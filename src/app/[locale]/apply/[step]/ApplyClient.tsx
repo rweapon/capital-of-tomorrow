@@ -5,6 +5,7 @@
 import { useRouter } from 'i18n/navigation';
 import { Locale } from 'i18n/routing';
 import dynamic from 'next/dynamic';
+import { useTranslations } from 'next-intl';
 import React, { useCallback, useEffect, useState } from 'react';
 
 import { clearSavedData, formDataGenerator } from '@/lib/utils';
@@ -16,7 +17,7 @@ import {
   StepTwoData,
 } from '@/app/[locale]/apply/[step]/types';
 import { NavigationKeys, PASSPORT_KEY, PHOTO_KEY } from '@/constant/data';
-import { ProgressBar, progressStep } from '@/views/Apply/ProgressBar';
+import { ProgressBar } from '@/views/Apply/ProgressBar';
 import { getFile } from '@/views/Apply/Steps/fileUtils';
 
 const StepOne = dynamic(
@@ -64,6 +65,8 @@ interface FormData {
 }
 
 const ApplyClient: React.FC<ApplyClientProps> = ({ numStep, locale }) => {
+  const t = useTranslations('apply');
+
   const router = useRouter();
 
   // State to store form data from all steps
@@ -247,7 +250,7 @@ const ApplyClient: React.FC<ApplyClientProps> = ({ numStep, locale }) => {
   if (isLoading) {
     return (
       <section className='font-monda text-lg text-white container flex items-center justify-center min-h-[400px]'>
-        <div className='text-center'>Loading...</div>
+        <div className='text-center'>{t('loading')}</div>
       </section>
     );
   }
@@ -290,7 +293,7 @@ const ApplyClient: React.FC<ApplyClientProps> = ({ numStep, locale }) => {
 
   return (
     <section className='container flex flex-col gap-8 md:gap-12 sm:gap-20'>
-      <ProgressBar step={numStep as keyof typeof progressStep} />
+      <ProgressBar step={numStep as 2 | 1 | 3 | 4} />
       {stepComponent[numStep]}
     </section>
   );

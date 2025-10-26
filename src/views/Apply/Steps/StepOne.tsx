@@ -1,6 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable no-console */
 import { zodResolver } from '@hookform/resolvers/zod';
+import { useTranslations } from 'next-intl';
 import { useEffect } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 
@@ -21,6 +22,8 @@ const StepOne = ({
   defaultValues,
   ...buttonProps
 }: StepComponentProps<StepOneData>) => {
+  const t = useTranslations('apply.steps.one');
+
   const {
     control,
     handleSubmit,
@@ -128,7 +131,7 @@ const StepOne = ({
             render={({ field, fieldState: { error } }) => (
               <Input
                 {...field}
-                title='Full Name (as per Passport)'
+                title={t('full_name')}
                 id='full_name'
                 autoComplete='name webauthn'
                 error={error?.message}
@@ -142,7 +145,7 @@ const StepOne = ({
             render={({ field, fieldState: { error } }) => (
               <Input
                 {...field}
-                title='Date of birth *'
+                title={t('birthday')}
                 id='birthday'
                 type='date'
                 autoComplete='bday-day webauthn'
@@ -157,7 +160,7 @@ const StepOne = ({
             render={({ field, fieldState: { error } }) => (
               <Input
                 {...field}
-                title='Contact number *'
+                title={t('tel')}
                 id='number'
                 type='tel'
                 autoComplete='tel webauthn'
@@ -172,7 +175,7 @@ const StepOne = ({
             render={({ field, fieldState: { error } }) => (
               <Input
                 {...field}
-                title='Country of residence *'
+                title={t('country')}
                 id='country'
                 autoComplete='country webauthn'
                 error={error?.message}
@@ -191,7 +194,7 @@ const StepOne = ({
                   onCheckedChange={onChange}
                 />
                 <label htmlFor='visa' className='cursor-pointer'>
-                  I need visa
+                  {t('visa')}
                 </label>
               </div>
             )}
@@ -209,7 +212,7 @@ const StepOne = ({
                     onCheckedChange={onChange}
                   />
                   <label htmlFor='personal_data' className='cursor-pointer'>
-                    I agree to the processing of my personal data
+                    {t('personal_data')}
                   </label>
                 </div>
                 {error && (
@@ -229,7 +232,7 @@ const StepOne = ({
             render={({ field, fieldState: { error } }) => (
               <Input
                 {...field}
-                title='Gender *'
+                title={t('gender')}
                 id='gender'
                 error={error?.message}
               />
@@ -242,7 +245,7 @@ const StepOne = ({
             render={({ field, fieldState: { error } }) => (
               <Input
                 {...field}
-                title='Nationality *'
+                title={t('nationality')}
                 id='nationality'
                 error={error?.message}
               />
@@ -255,7 +258,7 @@ const StepOne = ({
             render={({ field, fieldState: { error } }) => (
               <Input
                 {...field}
-                title='Email address *'
+                title={t('email')}
                 id='email'
                 type='email'
                 autoComplete='email webauthn'
@@ -270,7 +273,7 @@ const StepOne = ({
             render={({ field, fieldState: { error } }) => (
               <Input
                 {...field}
-                title='Departure city *'
+                title={t('depart')}
                 id='depart'
                 error={error?.message}
               />
@@ -286,7 +289,7 @@ const StepOne = ({
             }) => (
               <div>
                 <Input
-                  title='Upload your profile photo *'
+                  title={t('photo')}
                   id='photo'
                   name={name}
                   type='file'
@@ -295,7 +298,7 @@ const StepOne = ({
                 />
                 {value?.[0] && (
                   <p className='font-mont text-green-600 text-sm mt-1'>
-                    File selected: {value[0].name}
+                    {t('photoNotif')} {value[0].name}
                   </p>
                 )}
                 {error && (
@@ -316,7 +319,7 @@ const StepOne = ({
             }) => (
               <div>
                 <Input
-                  title='Upload your passport/ID *'
+                  title={t('passport')}
                   id='passport'
                   name={name}
                   type='file'
@@ -325,7 +328,7 @@ const StepOne = ({
                 />
                 {value?.[0] && (
                   <p className='font-mont text-green-600 text-sm mt-1'>
-                    File selected: {value[0].name}
+                    {t('passportNotif')} {value[0].name}
                   </p>
                 )}
                 {error && (

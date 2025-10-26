@@ -53,7 +53,6 @@ export const PartnershipCards = ({ locale }: PartnershipCardsProps) => {
         t('three.listItems.three'),
         t('three.listItems.four'),
         t('three.listItems.five'),
-        t('three.listItems.six'),
       ],
       link: '/',
       locale,

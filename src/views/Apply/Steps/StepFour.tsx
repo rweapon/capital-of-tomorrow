@@ -1,4 +1,5 @@
 import { zodResolver } from '@hookform/resolvers/zod';
+import { useTranslations } from 'next-intl';
 import { Controller, useForm } from 'react-hook-form';
 
 import { Input } from '@/components';
@@ -16,6 +17,8 @@ const StepFour = ({
   defaultValues,
   ...buttonProps
 }: StepComponentProps<StepFourData>) => {
+  const t = useTranslations('apply.steps.four');
+
   const {
     control,
     handleSubmit,
@@ -49,7 +52,7 @@ const StepFour = ({
             render={({ field, fieldState: { error } }) => (
               <Input
                 {...field}
-                title='Full Name (as per Card)'
+                title={t('full_name_card')}
                 id='full_name_card'
                 autoComplete='name webauthn'
                 error={error?.message}
@@ -63,7 +66,7 @@ const StepFour = ({
             render={({ field, fieldState: { error } }) => (
               <Input
                 {...field}
-                title='Credit/Debit card *'
+                title={t('card_number')}
                 id='card_number'
                 placeholder='1234 5678 9012 3456'
                 autoComplete='cc-number'
@@ -80,9 +83,9 @@ const StepFour = ({
             render={({ field, fieldState: { error } }) => (
               <Input
                 {...field}
-                title='Expiry *'
+                title={t('expiry')}
                 id='expiry'
-                placeholder='MM/YY'
+                placeholder={t('expiryPlaceholder')}
                 autoComplete='cc-exp'
                 error={error?.message}
               />
@@ -95,7 +98,7 @@ const StepFour = ({
             render={({ field, fieldState: { error } }) => (
               <Input
                 {...field}
-                title='CVC *'
+                title={t('cvc')}
                 id='cvc'
                 placeholder='123'
                 autoComplete='cc-csc'
@@ -106,7 +109,7 @@ const StepFour = ({
         </div>
 
         <h3 className='font-mont font-extrabold text-2xl text-primary-foreground'>
-          Application fee £ 19
+          {t('fee')}
         </h3>
 
         <Controller
@@ -121,8 +124,7 @@ const StepFour = ({
                   onCheckedChange={onChange}
                 />
                 <label htmlFor='payment_consent' className='cursor-pointer'>
-                  I agree to the processing of my personal data and payment
-                  information
+                  {t('payment_consent')}
                 </label>
               </div>
               {error && (

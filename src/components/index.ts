@@ -5,6 +5,7 @@ export * from './Card/Card';
 export * from './Footer/Footer';
 export * from './ImageSlider/ImageSlider';
 export * from './Input/Input';
+export * from './LanguageSwitcher/LanguageSwitcher';
 export * from './MissionSection/MissionSection';
 export * from './Navbar/Navbar';
 export * from './RadioGroup/radio-group';
