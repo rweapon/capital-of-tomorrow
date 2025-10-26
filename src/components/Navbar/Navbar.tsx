@@ -1,8 +1,10 @@
-import { Link } from 'i18n/navigation';
+'use client';
+
+import { Link, usePathname, useRouter } from 'i18n/navigation';
 import { Locale } from 'i18n/routing';
 import { useTranslations } from 'next-intl';
-import { setRequestLocale } from 'next-intl/server';
 
+import { LanguageSwitcher } from '@/components/LanguageSwitcher/LanguageSwitcher';
 import { MobileMenu } from '@/components/Navbar/MobileMenu/MobileMenu';
 
 import { flatNavigationItems } from '@/constant/data';
@@ -13,13 +15,24 @@ type NavbarProps = {
 
 export const Navbar = ({ locale }: NavbarProps) => {
   const navigation = useTranslations('navigation');
-  setRequestLocale(locale);
+  const router = useRouter();
+  const pathname = usePathname();
 
   const navigationItems = flatNavigationItems.map((item) => ({
     ...item,
     label: navigation(item.id),
   }));
+  const isLanguageSwitcherChecked = locale === 'ru';
+  const onChangeLanguage = (value: boolean) => {
+    const newLocale = value ? 'ru' : 'en';
 
+    router.push(
+      {
+        pathname,
+      },
+      { locale: newLocale }
+    );
+  };
   return (
     <header className='relative flex items-center justify-end md:justify-betwen w-full md:flex-col px-2 sm:px-4 md:px-8 lg:px-12 xl:px-24 mt-4'>
       <nav className='hidden md:block h-16 w-full border-b border-primarytext-primary-foreground/50 '>
@@ -35,11 +48,17 @@ export const Navbar = ({ locale }: NavbarProps) => {
               </Link>
             </li>
           ))}
+          <LanguageSwitcher
+            checked={isLanguageSwitcherChecked}
+            onChangeLanguage={onChangeLanguage}
+          />
         </ul>
       </nav>
       <MobileMenu
         locale={locale}
         className='block md:hidden relative p-0 w-12 aspect-square bg-transparent border-none cursor-pointer burger-button burger-button_after'
+        isLanguageSwitcherChecked={isLanguageSwitcherChecked}
+        onChangeLanguage={onChangeLanguage}
       />
     </header>
   );

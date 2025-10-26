@@ -1,17 +1,19 @@
+import { useTranslations } from 'next-intl';
 import React from 'react';
-
-export const progressStep = {
-  1: 'Personal Information',
-  2: 'Motivation & Goals',
-  3: 'Terms & Conditions',
-  4: 'Payment',
-};
 
 type ProgressBarProps = {
   step: 1 | 2 | 3 | 4;
 };
 
 export const ProgressBar = ({ step }: ProgressBarProps) => {
+  const t = useTranslations('apply.progress');
+
+  const progressStep = {
+    1: t('one'),
+    2: t('two'),
+    3: t('three'),
+    4: t('four'),
+  };
   return (
     <div className='w-full max-w-4xl mx-auto p-8 text-primary-foreground'>
       <div className='flex items-center justify-center mb-6 md:mb-12'>

@@ -1,4 +1,5 @@
 import { zodResolver } from '@hookform/resolvers/zod';
+import { useTranslations } from 'next-intl';
 import { Controller, useForm } from 'react-hook-form';
 
 import { Checkbox } from '@/components/Сheckbox/Сheckbox';
@@ -15,6 +16,8 @@ const StepThree = ({
   defaultValues,
   ...buttonProps
 }: StepComponentProps<StepThreeData>) => {
+  const t = useTranslations('apply.steps.three');
+
   const {
     control,
     handleSubmit,
@@ -49,12 +52,8 @@ const StepThree = ({
                   onCheckedChange={onChange}
                 />
                 <label htmlFor='declaration' className='cursor-pointer'>
-                  <strong>Declaration:</strong> I declare that the information
-                  provided in this application is true and accurate to the best
-                  of my knowledge. I hereby consent & agree to abide by the
-                  aforementioned terms and conditions. I understand that any
-                  false information may result in disqualification from the
-                  scholarship.
+                  <strong>{t('declaration.strong')}</strong>{' '}
+                  {t('declaration.content')}
                 </label>
               </div>
               {error && (
@@ -66,66 +65,18 @@ const StepThree = ({
           )}
         />
 
-        <div className='mt-4'>
-          <h4 className='font-bold text-xl sm:text-2xl mb-4 text-primary-foreground'>
-            Terms and Conditions:
-          </h4>
-          <ul className='font-inherit list-disc *:mb-2 text-sm sm:text-base lg:text-lg leading-relaxed pl-6'>
-            <li>
-              The application fee is mandatory, non-refundable under any
-              circumstances, and applies to this category as it covers the
-              associated costs of event participation as a self-funded delegate.
-              Incomplete applications will not be considered for evaluation or
-              selection.
-            </li>
-            <li>
-              After submission, applicants will be notified via email and must
-              confirm their participation within the specified timeframe.
-              Failure to confirm within the given period may result in the
-              forfeiture of the opportunity.
-            </li>
-            <li>
-              By submitting an application, participants grant the organisers of
-              Capital of Tomorrow 2025 the right to use their name, biography,
-              and submitted materials for promotional purposes related to the
-              event.
-            </li>
-            <li>
-              Personal information provided in the application will be used
-              solely for the purpose of evaluation and event organisation. The
-              organisers will handle personal data in compliance with applicable
-              data protection laws and regulations.
-            </li>
-            <li>
-              Delegate selection will be conducted by an independent panel of
-              judges, including high-profile board members from European
-              countries. All selection outcomes are final and non-negotiable.
-            </li>
-            <li>
-              Vostocnik Solution is not liable for any loss, injury, damage, or
-              theft during the event.
-            </li>
-            <li>
-              Attendees are responsible for their personal belongings and must
-              adhere to safety regulations and instructions. The organising team
-              will be available to provide assistance when needed.
-            </li>
-            <li>
-              By participating, attendees agree not to pursue legal action
-              against the organisation regarding application fee refunds.
-            </li>
-            <li>
-              Participants also commit to refraining from any oral, visual, or
-              auditory defamation of the organisation, particularly if they
-              disagree with their assigned category. Any violation of this
-              provision will lead to legal consequences.
-            </li>
-            <li>
-              By submitting an application, participants acknowledge that they
-              have read, understood, and agreed to these terms and conditions.
-            </li>
-          </ul>
-        </div>
+        <ul className='font-inherit list-disc *:mb-2 text-sm sm:text-base lg:text-lg leading-relaxed pl-6 ml-12'>
+          <li>{t('terms.one')}</li>
+          <li>{t('terms.two')}</li>
+          <li>{t('terms.three')}</li>
+          <li>{t('terms.four')}</li>
+          <li>{t('terms.five')}</li>
+          <li>{t('terms.six')}</li>
+          <li>{t('terms.seven')}</li>
+          <li>{t('terms.eight')}</li>
+          <li>{t('terms.nine')}</li>
+          <li>{t('terms.ten')}</li>
+        </ul>
       </form>
       <FormButtons
         numStep={3}

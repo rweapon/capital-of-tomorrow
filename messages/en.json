@@ -1,6 +1,6 @@
 {
   "site": {
-    "title": "Capital of Tomorrow",
+    "title": "CAPITAL OF TOMORROW",
     "description": "Landing Page"
   },
   "navigation": {
@@ -15,8 +15,8 @@
       "title": "CAPITAL OF TOMORROW",
       "description": "A forum for young entrepreneurs ready to dream big, take action, and grow in a community of doers.",
       "location": "DUBAI",
-      "month": "NOVEMBER",
-      "year": "2025",
+      "month": "JANUARY",
+      "year": "2026",
       "button": "APPLY NOW"
     },
     "scroll": "GRANT GRANT GRANT GRANT GRANT GRANT GRANT GRANT GRANT GRANT GRANT GRANT GRANT GRANT GRANT GRANT GRANT GRANT GRANT GRANT GRANT GRANT GRANT GRANT GRANT GRANT",
@@ -44,31 +44,31 @@
         "data": {
           "one": {
             "title": "Access to online course",
-            "content": "Capital of Tomorrow is a new generation forum for young entrepreneurs, startups, and those who have ever thought about creating their own business. It is a space of support, real action, and networking where ideas are transformed into projects."
+            "content": "Two weeks prior to the event, you will get access to the online course to receive useful tips on starting your business."
           },
           "two": {
             "title": "Pitch session (Grant Included)",
-            "content": "For people in business, beginners, startups, freelancers, students, young professionals, social entrepreneurs, mentors, investors, and anyone who wants to make a name for themselves and develop their own business. The best idea will receive a grant and mentoring support."
+            "content": "Participants present their business ideas to experts and investors. The best project will receive a development grant. This is a chance to express yourself and take the first step towards the implementation of your idea."
           },
           "three": {
-            "title": "Penal talk",
-            "content": "Yes, each participant has the opportunity to present their idea on the Global Pitch stage. You will hear success stories and approaches to realizing various international businesses from experienced business people."
+            "title": "Panel discussion",
+            "content": "An open conversation with experienced entrepreneurs, investors, and opinion leaders. Topics includeexperiences, lessons learnt, best practices, and motivation for success. Participants can ask questions and get reliable answers."
           },
           "four": {
             "title": "Group workshops",
-            "content": "We will devide you into groups and give an opportunity to pump up your business mindset by working on improving projects."
+            "content": "We will put you into groups and give you an opportunity to pump up your business mindset by working on project improvement."
           },
           "five": {
-            "title": "Informal networking during exploring new culture.",
-            "content": "No, it is enough to have an idea or a desire to start a business. The forum is for those who are just starting out."
+            "title": "Informal networking during exploring new culture",
+            "content": "A cultural event: exploring local cultures through music, interaction, cross-cultural communication, informal networking and friendly atmosphere."
           },
           "six": {
-            "title": "Awarding ceremony.",
-            "content": "Participants will be able to sign up for a consultation on the development of ideas and projects after the forum if they wish to do so."
+            "title": "Award ceremony",
+            "content": "Partake in the most moving forum’s moment – the announcement of winners, awarding certificates and grants to the best ideas presented during the forum. Enjoy the festive atmosphere, recognize the participants’ achievements, take pride in and inspiration from others."
           },
           "seven": {
             "title": "Counseling.",
-            "content": "Participants will be able to sign up for a consultation on the development of ideas and projects after the forum if they wish to do so."
+            "content": "Sign up for consultation (eligibility check required) on developing projects and ideas after the forum if you’re striving for international business."
           }
         }
       },
@@ -265,17 +265,79 @@
     }
   },
   "apply": {
+    "hero": {
+      "title": "APPLICATION FORM",
+      "content": "We invite bold dreamers and creators to Capital of Tomorrow, a forum for the next generation of entrepreneurs to be held in Dubai on November 26-28, 2025. If you are a startup, future entrepreneur, visionary, or social innovator, this is the place for you. This is not just a forum, but a place where ambitions meet support and ideas become action. It's time to act - your idea, your voice, your path starts here."
+    },
+    "progress": {
+      "one": "Personal Information",
+      "two": "Motivation & Goals",
+      "three": "Terms & Conditions",
+      "four": "Payment"
+    },
     "steps": {
-      "personalDataAgreement": "I agree to the processing of my personal data",
-      "uploadPhoto": "Upload your profile photo *",
-      "uploadPassport": "Upload your passport/ID *",
-      "fullName": "Full Name (as per Passport)",
-      "dateOfBirth": "Date of birth *",
-      "contactNumber": "Contact number *",
-      "nationality": "Nationality *",
-      "email": "Email address *",
-      "departureCity": "Departure city *"
-    }
+      "buttons": {
+        "back": "Previous",
+        "next": "Next",
+        "pay": "Pay & submit"
+      },
+      "one": {
+        "full_name": "Full Name (as per Passport)",
+        "birthday": "Date of birth *",
+        "tel": "Contact number *",
+        "country": "Country of residence *",
+        "visa": "I need visa",
+        "personal_data": "I agree to the processing of my personal data",
+        "gender": "Gender *",
+        "nationality": "Nationality *",
+        "email": "Email address *",
+        "depart": "Departure city *",
+        "photo": "Upload your profile photo *",
+        "photoNotif": "File selected:",
+        "passport": "Upload your passport/ID *",
+        "passportNotif": "File selected:"
+      },
+      "two": {
+        "words": "/250 words",
+        "char": "characters",
+        "experience": "Can you provide a brief overview of your background, including your education, professional or business experience? (250 words or less) *",
+        "motivation": "What motivates you to join the event (250 words or less) *",
+        "future_goals": "Describe your future goals (250 words or less) *",
+        "add_info": "Additional Information",
+        "socials": "Facebook/LinkedIn Profile link (optional)",
+        "source": "Where did you hear about Capital of Tomorrow? *",
+        "sourcePlaceholder": "e.g., Social media, friend, website, etc."
+      },
+      "three": {
+        "declaration": {
+          "strong": "Declaration:",
+          "content": "I declare that the information provided in this application is true and accurate to the best of my knowledge. I hereby consent & agree to abide by the aforementioned terms and conditions. I understand that any false information may result in disqualification from the scholarship."
+        },
+        "terms": {
+          "title": "Terms and Conditions:",
+          "one": "The application fee is mandatory, non-refundable under any circumstances, and applies to this category as it covers the associated costs of event participation as a self-funded delegate. Incomplete applications will not be considered for evaluation or selection.",
+          "two": "After submission, applicants will be notified via email and must confirm their participation within the specified timeframe. Failure to confirm within the given period may result in the forfeiture of the opportunity.",
+          "three": "By submitting an application, participants grant the organisers of Capital of Tomorrow 2025 the right to use their name, biography, and submitted materials for promotional purposes related to the event.",
+          "four": "Personal information provided in the application will be used solely for the purpose of evaluation and event organisation. The organisers will handle personal data in compliance with applicable data protection laws and regulations.",
+          "five": "Delegate selection will be conducted by an independent panel of judges, including high-profile board members from European countries. All selection outcomes are final and non-negotiable.",
+          "six": "Vostocnik Solution is not liable for any loss, injury, damage, or theft during the event.",
+          "seven": "Attendees are responsible for their personal belongings and must adhere to safety regulations and instructions. The organising team will be available to provide assistance when needed.",
+          "eight": "By participating, attendees agree not to pursue legal action against the organisation regarding application fee refunds.",
+          "nine": "Participants also commit to refraining from any oral, visual, or auditory defamation of the organisation, particularly if they disagree with their assigned category. Any violation of this provision will lead to legal consequences.",
+          "ten": "By submitting an application, participants acknowledge that they have read, understood, and agreed to these terms and conditions."
+        }
+      },
+      "four": {
+        "full_name_card": "Full Name (as per Card)",
+        "card_number": "Credit/Debit card *",
+        "expiry": "Expiry *",
+        "expiryPlaceholder": "MM/YY",
+        "cvc": "CVC *",
+        "fee": "Application fee £ 19",
+        "payment_consent": "I agree to the processing of my personal data and payment information"
+      }
+    },
+    "loading": "Loading..."
   },
   "footer": {
     "navigation": {

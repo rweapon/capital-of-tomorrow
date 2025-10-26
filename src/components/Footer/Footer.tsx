@@ -64,7 +64,7 @@ export const Footer = ({ locale }: FooterProps) => {
                 key={link.id}
                 href={link.href}
                 locale={locale}
-                className='text-sm transition-colors hover:text-blue-500 sm:text-base'
+                className='text-sm transition-colors hover:text-blue-500 '
               >
                 {link.label}
               </Link>
@@ -80,7 +80,7 @@ export const Footer = ({ locale }: FooterProps) => {
                 key={link.id}
                 href={link.href}
                 locale={locale}
-                className='text-sm transition-colors hover:text-blue-500 sm:text-base'
+                className='text-sm transition-colors hover:text-blue-500 '
               >
                 {link.label}
               </Link>
@@ -92,7 +92,7 @@ export const Footer = ({ locale }: FooterProps) => {
               {footerData.information.title}
             </h4>
             {footerData.information.data.map((line, index) => (
-              <p key={index} className='text-sm sm:text-base'>
+              <p key={index} className='text-sm '>
                 {line}
               </p>
             ))}
@@ -100,7 +100,7 @@ export const Footer = ({ locale }: FooterProps) => {
         </div>
       </section>
       <section className='bg-black/30 py-4'>
-        <div className='container text-white  text-sm sm:text-base  flex flex-col md:flex-row md:items-center justify-between gap-2'>
+        <div className='container text-white  text-sm   flex flex-col md:flex-row md:items-center justify-between gap-2'>
           <Link
             href='/Public_Offer.pdf'
             className='hover:text-blue-500 font-semibold order-2 md:order-[unset]'

@@ -25,4 +25,8 @@ const fontAkira = localFont({
   variable: '--font-akira',
 });
 
-export const fonts = [fontMonda, fontAkira, fontMont];
+export const fonts = [
+  fontMonda.variable,
+  fontAkira.variable,
+  fontMont.variable,
+];
