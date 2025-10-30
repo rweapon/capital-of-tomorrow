@@ -92,21 +92,37 @@ export const PartnershipCards = ({ locale }: PartnershipCardsProps) => {
           />
         ))}
       </div>
-      <div className='relative flex h-[560px] w-full justify-center md:hidden'>
+      <div className='relative flex h-[476px] w-full justify-center md:hidden'>
         <Swiper
           slidesPerView='auto'
           className='timeline-swiper'
           breakpoints={{
-            0: { slidesOffsetBefore: 0, slidesOffsetAfter: 0 },
-            420: { slidesOffsetBefore: 30, slidesOffsetAfter: 30 },
-            560: { slidesOffsetBefore: 100, slidesOffsetAfter: 100 },
-            640: { slidesOffsetBefore: 150, slidesOffsetAfter: 150 },
+            0: {
+              slidesOffsetBefore: 20,
+              slidesOffsetAfter: 0,
+              spaceBetween: 20,
+            },
+            420: {
+              slidesOffsetBefore: 30,
+              slidesOffsetAfter: 30,
+              spaceBetween: 20,
+            },
+            560: {
+              slidesOffsetBefore: 100,
+              slidesOffsetAfter: 100,
+              spaceBetween: 20,
+            },
+            640: {
+              slidesOffsetBefore: 150,
+              slidesOffsetAfter: 150,
+              spaceBetween: 20,
+            },
           }}
         >
           {partnershipTiers.map((tier, index) => (
             <SwiperSlide
               key={index}
-              className='flex h-full items-center justify-center !w-[380px] p-2'
+              className='flex h-full items-center justify-center !w-[320px] p-2'
             >
               <Card
                 key={tier.title}
@@ -116,8 +132,8 @@ export const PartnershipCards = ({ locale }: PartnershipCardsProps) => {
                 listItems={tier.listItems}
                 link={tier.link}
                 buttonText={tier.buttonText}
-                width='360px'
-                height='524px'
+                width='320px'
+                height='476px'
                 backgroundType='overlay-gradient'
                 backgroundColor='#2D2D2D'
                 textColor='#FFFFFF'

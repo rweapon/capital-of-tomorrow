@@ -5,6 +5,8 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 
+import { cn } from '@/lib/utils';
+
 import { TimelineStep } from '@/components/Timeline/types';
 
 interface TimelineSectionProps {
@@ -18,7 +20,7 @@ const TimelineSection: React.FC<TimelineSectionProps> = ({ step }) => {
 
   return (
     <div className='w-72 text-center md:w-auto'>
-      <div className='relative z-10 max-h-[120px] md:max-h-[unset] md:h-auto'>
+      <div className='relative z-10 md:h-auto'>
         <div className='relative inline-block'>
           <h3 className='font-mont relative z-10 mb-4 text-lg font-normal tracking-tighter text-white md:text-xl md:font-bold'>
             {step.title}
@@ -59,7 +61,7 @@ export const Timeline: React.FC = () => {
 
   return (
     <section className='flex w-full justify-center px-10 lg:px-24 overflow-hidden'>
-      <div className='w-full max-w-7xl'>
+      <div className='w-full max-w-7xl flex flex-col min-[400px]:block '>
         <div className='text-center md:mb-20'>
           <h1 className='font-akira font-bold text-white text-2xl sm:text-3xl md:mb-12 md:text-4xl lg:text-5xl'>
             {t('title')}
@@ -90,17 +92,18 @@ export const Timeline: React.FC = () => {
             >
               {timelineSteps.map((step, index) => (
                 <SwiperSlide key={index}>
-                  <div className='flex items-end justify-center px-8 py-6 h-[150px] md:h-full'>
+                  <div className='flex items-end justify-center px-8 py-6 h-44 min-[360px]:h-[150px] md:h-full'>
                     <TimelineSection step={step} />
                   </div>
                   <div
-                    className={`absolute bottom-0 ${
-                      index == 2 ? 'left-0 w-1/2' : ''
-                    } ${index == 1 ? 'w-full' : ''} ${
-                      index == 0 ? 'right-0 w-1/2' : ''
-                    } z-10 h-[2px]    bg-white/60`}
+                    className={cn(
+                      'absolute  z-10 h-[2px] bg-white/60 -bottom-2 min-[480px]:bottom-0',
+                      index == 0 && 'right-0 w-1/2',
+                      index == 1 && 'w-full',
+                      index == 2 && 'left-0 w-1/2'
+                    )}
                   ></div>
-                  <div className='absolute -bottom-2 right-[48%] z-20 size-[15px]  rounded-full bg-white'></div>
+                  <div className='absolute -bottom-4 min-[480px]:-bottom-2 right-[48%] z-20 size-[15px]  rounded-full bg-white'></div>
                 </SwiperSlide>
               ))}
             </Swiper>
