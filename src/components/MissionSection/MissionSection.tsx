@@ -54,10 +54,10 @@ export const MissionSection: React.FC = () => {
         <div className='relative flex flex-row-reverse sm:flex-row min-h-80'>
           <div className='absolute right-0 top-0 sm:static min-h-auto w-1/2 sm:w-full max-w-lg'>
             <Image
-              src={`${imagePrefix}/our__mission.jpg`}
+              src={`${imagePrefix}/our__mission.png`}
               alt='Dmitry'
-              width={488}
-              height={256}
+              width={502}
+              height={415}
               className='h-auto lg:max-w-xs xl:max-w-lg clip-image'
             />
           </div>
