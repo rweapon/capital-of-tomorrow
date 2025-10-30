@@ -80,8 +80,7 @@ export default async function LocaleLayout({
         className={cn(
           'relative box-border min-h-screen overflow-x-hidden flex flex-col gap-8 md:gap-12 lg:gap-20 ',
           locale === 'ru' && 'not-akira',
-          fonts,
-          isProd ? 'prod' : 'local'
+          fonts
         )}
       >
         {isProd && <BlobsParallaxGroup blobs={blobs} />}
