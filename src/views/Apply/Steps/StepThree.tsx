@@ -14,9 +14,10 @@ import {
 const StepThree = ({
   onNext,
   defaultValues,
+  isVip,
   ...buttonProps
 }: StepComponentProps<StepThreeData>) => {
-  const t = useTranslations('apply.steps.three');
+  const t = useTranslations(`${isVip ? 'apply_vip' : 'apply'}.steps.three`);
 
   const {
     control,
@@ -65,23 +66,42 @@ const StepThree = ({
           )}
         />
 
-        <ul className='font-inherit list-disc *:mb-2 text-sm sm:text-base lg:text-lg leading-relaxed pl-6 ml-12'>
-          <li>{t('terms.one')}</li>
-          <li>{t('terms.two')}</li>
-          <li>{t('terms.three')}</li>
-          <li>{t('terms.four')}</li>
-          <li>{t('terms.five')}</li>
-          <li>{t('terms.six')}</li>
-          <li>{t('terms.seven')}</li>
-          <li>{t('terms.eight')}</li>
-          <li>{t('terms.nine')}</li>
-          <li>{t('terms.ten')}</li>
-        </ul>
+        <div className='font-inherit text-sm sm:text-base lg:text-lg leading-relaxed ml-12'>
+          {isVip && (
+            <strong className='text-base sm:text-lg lg:text-xl'>
+              The VIP package includes:
+            </strong>
+          )}
+          <ul className='list-disc *:mb-2 pl-6 mb-4'>
+            <li>{t('terms.one')}</li>
+            <li>{t('terms.two')}</li>
+            <li>{t('terms.three')}</li>
+            <li>{t('terms.four')}</li>
+            <li>{t('terms.five')}</li>
+            <li>{t('terms.six')}</li>
+            <li>{t('terms.seven')}</li>
+            <li>{t('terms.eight')}</li>
+            <li>{t('terms.nine')}</li>
+            {!isVip && <li>{t('terms.ten')}</li>}
+          </ul>
+          <div>
+            <p>{t('note.one')}</p>
+            <p>{t('note.two')}</p>
+            <p>{t('note.three')}</p>
+            <p>{t('note.four')}</p>
+            <p>{t('note.five')}</p>
+            <p>{t('note.six')}</p>
+            <p>{t('note.seven')}</p>
+            <p>{t('note.eight')}</p>
+            <p>{t('note.nine')}</p>
+          </div>
+        </div>
       </form>
       <FormButtons
         numStep={3}
         onNext={handleSubmit(onSubmit)}
         isValid={isValid}
+        isVip={isVip}
         {...buttonProps}
       />
     </>

@@ -7,7 +7,6 @@ import React from 'react';
 import {
   Accordion,
   AccordionItem,
-  ImageSlider,
   MissionSection,
   SimpleTextBlocks,
   Timeline,
@@ -114,7 +113,7 @@ export const HomeContents = ({ locale }: HomeContentsProps) => {
       <Scroll />
       <PartnershipSection />
       <PartnershipCards locale={locale} />
-      <ImageSlider />
+      {/* <ImageSlider /> */}
       <Accordion title={t('qa.title')} items={qAData} />
     </>
   );

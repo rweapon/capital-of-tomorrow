@@ -1,8 +1,12 @@
 import { useTranslations } from 'next-intl';
 import React from 'react';
 
-export function ApplyHero() {
-  const t = useTranslations('apply.hero');
+type ApplyHeroProps = {
+  page: string;
+};
+
+export function ApplyHero({ page }: ApplyHeroProps) {
+  const t = useTranslations(`${page}.hero`);
 
   return (
     <section className='container text-primary-foreground'>

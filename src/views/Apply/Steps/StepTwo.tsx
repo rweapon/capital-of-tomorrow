@@ -14,6 +14,7 @@ import {
 const StepTwo = ({
   onNext,
   defaultValues,
+  isVip,
   ...buttonProps
 }: StepComponentProps<StepTwoData>) => {
   const t = useTranslations('apply.steps.two');
@@ -59,56 +60,58 @@ const StepTwo = ({
     <>
       <form className='flex flex-col sm:items-start justify-between gap-7 sm:gap-24'>
         <div className='contents sm:flex flex-col gap-9 w-full'>
-          <Controller
-            name='experience'
-            control={control}
-            render={({ field, fieldState: { error } }) => (
-              <div>
-                <Textarea
-                  {...field}
-                  title={t('experience')}
-                  id='experience'
-                  rows={6}
-                  error={error?.message}
-                />
-                <div className='flex justify-between items-center mt-2 text-sm text-gray-500'>
-                  <span>
-                    {countWords(experienceValue)}
-                    {t('words')}
-                  </span>
-                  <span>
-                    {experienceValue.length} {t('char')}
-                  </span>
+          {!isVip && (
+            <Controller
+              name='experience'
+              control={control}
+              render={({ field, fieldState: { error } }) => (
+                <div>
+                  <Textarea
+                    {...field}
+                    title={t('experience')}
+                    id='experience'
+                    rows={6}
+                    error={error?.message}
+                  />
+                  <div className='flex justify-between items-center mt-2 text-sm text-gray-500'>
+                    <span>
+                      {countWords(experienceValue)}
+                      {t('words')}
+                    </span>
+                    <span>
+                      {experienceValue.length} {t('char')}
+                    </span>
+                  </div>
                 </div>
-              </div>
-            )}
-          />
-
-          <Controller
-            name='motivation'
-            control={control}
-            render={({ field, fieldState: { error } }) => (
-              <div>
-                <Textarea
-                  {...field}
-                  title={t('motivation')}
-                  id='motivation'
-                  rows={6}
-                  error={error?.message}
-                />
-                <div className='flex justify-between items-center mt-2 text-sm text-gray-500'>
-                  <span>
-                    {countWords(motivationValue)}
-                    {t('words')}
-                  </span>
-                  <span>
-                    {motivationValue.length} {t('char')}
-                  </span>
+              )}
+            />
+          )}
+          {!isVip && (
+            <Controller
+              name='motivation'
+              control={control}
+              render={({ field, fieldState: { error } }) => (
+                <div>
+                  <Textarea
+                    {...field}
+                    title={t('motivation')}
+                    id='motivation'
+                    rows={6}
+                    error={error?.message}
+                  />
+                  <div className='flex justify-between items-center mt-2 text-sm text-gray-500'>
+                    <span>
+                      {countWords(motivationValue)}
+                      {t('words')}
+                    </span>
+                    <span>
+                      {motivationValue.length} {t('char')}
+                    </span>
+                  </div>
                 </div>
-              </div>
-            )}
-          />
-
+              )}
+            />
+          )}
           <Controller
             name='future_goals'
             control={control}
@@ -176,6 +179,7 @@ const StepTwo = ({
         numStep={2}
         onNext={handleSubmit(onSubmit)}
         isValid={isValid}
+        isVip={isVip}
         {...buttonProps}
       />
     </>

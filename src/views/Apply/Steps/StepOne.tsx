@@ -5,7 +5,7 @@ import { useTranslations } from 'next-intl';
 import { useEffect } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 
-import { Input } from '@/components';
+import { Input, RadioGroup, RadioGroupItem } from '@/components';
 import { Checkbox } from '@/components/Сheckbox/Сheckbox';
 
 import { FormButtons } from '@/app/[locale]/apply/[step]/components';
@@ -20,6 +20,7 @@ import { getFile, storeFile } from '@/views/Apply/Steps/fileUtils';
 const StepOne = ({
   onNext,
   defaultValues,
+  isVip,
   ...buttonProps
 }: StepComponentProps<StepOneData>) => {
   const t = useTranslations('apply.steps.one');
@@ -229,13 +230,40 @@ const StepOne = ({
           <Controller
             name='gender'
             control={control}
-            render={({ field, fieldState: { error } }) => (
-              <Input
+            render={({ field }) => (
+              <RadioGroup
+                required
                 {...field}
-                title={t('gender')}
-                id='gender'
-                error={error?.message}
-              />
+                onValueChange={(v) => field.onChange(v)}
+              >
+                <label className='font-mont text-lg md:text-xl text-primary-foreground'>
+                  {t('gender')}
+                </label>
+                <div className='flex gap-3'>
+                  <RadioGroupItem value='M' id='gender_m' />
+                  <label
+                    htmlFor='gender_m'
+                    className='font-mont text-lg md:text-xl text-primary-foreground'
+                  >
+                    {t('gender_m')}
+                  </label>
+                </div>
+                <div className='flex gap-3'>
+                  <RadioGroupItem value='F' id='gender_f' />
+                  <label
+                    htmlFor='gender_f'
+                    className='font-mont text-lg md:text-xl text-primary-foreground'
+                  >
+                    {t('gender_f')}
+                  </label>
+                </div>
+              </RadioGroup>
+              // <Input
+              //   {...field}
+              //   title={t('gender')}
+              //   id='gender'
+              //   error={error?.message}
+              // />
             )}
           />
 
@@ -345,6 +373,7 @@ const StepOne = ({
         numStep={1}
         onNext={handleSubmit(onSubmit)}
         isValid={isValid}
+        isVip={isVip}
         {...buttonProps}
       />
     </>

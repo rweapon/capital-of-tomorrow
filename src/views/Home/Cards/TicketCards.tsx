@@ -100,7 +100,7 @@ export const TicketCards = ({ locale }: TicketCardsProps) => {
       buttonText: t('vip.buttonText'),
       borderColor: '#D4AF37',
       shadow: '0 8px 32px rgba(212, 175, 55, 0.3)',
-      link: `/${NavigationKeys.APPLY}/1`,
+      link: `/${NavigationKeys.APPLY}/vip/1`,
       locale,
     },
   ];
