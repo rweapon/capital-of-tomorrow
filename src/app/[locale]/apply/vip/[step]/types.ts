@@ -118,5 +118,4 @@ export type StepComponentProps<T> = {
   onNext: (data: T) => void;
   onPrevious: VoidFunction;
   defaultValues?: Partial<T>;
-  isVip?: boolean;
 };

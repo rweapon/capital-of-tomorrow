@@ -12,10 +12,16 @@ export interface IAccordionProps {
   title: string;
   items: AccordionItem[];
   extraContent?: ReactNode;
+  initialActives?: number[];
 }
 
-export const Accordion = ({ title, items, extraContent }: IAccordionProps) => {
-  const [activeIndices, setActiveIndices] = useState<number[]>([]);
+export const Accordion = ({
+  title,
+  items,
+  extraContent,
+  initialActives = [],
+}: IAccordionProps) => {
+  const [activeIndices, setActiveIndices] = useState<number[]>(initialActives);
 
   const toggleAccordion = (index: number) => {
     setActiveIndices((prev) =>
