@@ -8,12 +8,13 @@ import { Button } from '@/components';
 export type FormButtonsProps = {
   numStep: number;
   isValid: boolean;
+  isVip?: boolean;
   onPrevious: VoidFunction;
   onNext: VoidFunction;
 };
 
 export const FormButtons = memo(
-  ({ numStep, onPrevious, onNext, isValid }: FormButtonsProps) => {
+  ({ numStep, onPrevious, onNext, isValid, isVip }: FormButtonsProps) => {
     const t = useTranslations('apply.steps.buttons');
 
     return (
@@ -24,21 +25,37 @@ export const FormButtons = memo(
         )}
       >
         {numStep > 1 && (
-          <Button
-            variant='secondary'
-            className='font-semibold !text-base sm:!text-xl p-3 md:p-5 lg:py-5 lg:px-14'
-            onClick={onPrevious}
-          >
-            {t('back')}
-          </Button>
+          <div className='flex relative'>
+            <Button
+              variant='secondary'
+              className={cn(
+                'font-semibold !text-base sm:!text-xl p-3 md:p-5 lg:py-5 lg:px-14',
+                isVip && 'previous-button text-foreground z-10'
+              )}
+              onClick={onPrevious}
+            >
+              {t('back')}
+            </Button>
+            {isVip && (
+              <div className='absolute left-0 top-1  h-full w-full previous-button-bg rounded-3xl'></div>
+            )}
+          </div>
         )}
-        <Button
-          className='font-semibold !text-base sm:!text-xl p-3 md:p-5 lg:py-5 lg:px-14 !tracking-normal'
-          onClick={onNext}
-          disabled={!isValid}
-        >
-          {numStep !== 4 ? t('next') : t('pay')}
-        </Button>
+        <div className='flex relative'>
+          <Button
+            className={cn(
+              'font-semibold !text-base sm:!text-xl p-3 md:p-5 lg:py-5 lg:px-14',
+              isVip && 'next-button text-foreground z-10'
+            )}
+            onClick={onNext}
+            disabled={!isValid}
+          >
+            {numStep !== 4 ? t('next') : t('pay')}
+          </Button>
+          {isVip && (
+            <div className='absolute left-0 top-1  h-full w-full next-button-bg rounded-3xl'></div>
+          )}
+        </div>
       </div>
     );
   }

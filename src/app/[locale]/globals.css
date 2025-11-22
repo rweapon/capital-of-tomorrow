@@ -210,6 +210,119 @@
       @apply -rotate-45;
     }
   }
+
+  .next-button-bg {
+    box-shadow: -1px 9px 46px -6px rgba(174, 113, 41, 0.8),
+      0 20px 60px 0 rgba(232, 205, 110, 0.2),
+      -15px -14px 38px 0 rgba(211, 70, 155, 0.4),
+      inset 0 0 20px 0 rgba(255, 255, 255, 0.6);
+    background: radial-gradient(
+        178.09% 220.16% at 94.89% -132.81%,
+        #ff7a00 67.59%,
+        rgba(255, 199, 0, 0.38) 100%
+      ),
+      radial-gradient(
+        137.51% 118.3% at 32.95% 0%,
+        rgba(255, 137, 137, 0.92) 21.25%,
+        rgba(255, 169, 106, 0.57) 88.62%
+      ),
+      radial-gradient(
+        182.56% 55.34% at 5.68% 100%,
+        rgba(246, 251, 34, 0.51) 0%,
+        rgba(255, 158, 69, 0) 100%
+      ),
+      radial-gradient(
+        238.39% 44.19% at 96.59% 31.25%,
+        #fff 0%,
+        rgba(255, 255, 255, 0) 100%
+      ),
+      #fff500 !important;
+  }
+
+  .next-button {
+    @apply hover:opacity-80;
+
+    &:hover .next-button-bg {
+      @apply hover:opacity-80;
+    }
+
+    box-shadow: -1px 9px 46px -6px rgba(174, 113, 41, 0.8),
+      0 20px 60px 0 rgba(232, 205, 110, 0.2),
+      -15px -14px 38px 0 rgba(211, 70, 155, 0.4),
+      inset 0 0 20px 0 rgba(255, 255, 255, 0.6);
+    background: radial-gradient(
+        178.09% 220.16% at 94.89% -132.81%,
+        #ff7a00 67.59%,
+        rgba(219, 255, 0, 0.38) 100%
+      ),
+      radial-gradient(
+        112.91% 147.56% at 43.75% -31.25%,
+        rgba(255, 137, 137, 0.92) 21.25%,
+        rgba(255, 169, 106, 0.57) 88.62%
+      ),
+      radial-gradient(
+        56.27% 117.62% at 37.5% 100%,
+        rgba(255, 255, 255, 0.73) 0%,
+        rgba(255, 255, 255, 0.12) 100%
+      ),
+      #fff500;
+  }
+  .previous-button-bg {
+    background: radial-gradient(
+        132.71% 129.73% at 63.64% -12.5%,
+        rgb(133, 40, 251) 0%,
+        rgb(86, 84, 74) 100%
+      ),
+      radial-gradient(
+        189.21% 70.1% at 15.34% 39.06%,
+        rgb(131, 113, 243) 0%,
+        rgb(69, 156, 236) 100%
+      ),
+      radial-gradient(
+        51.42% 94.92% at 19.32% 40.62%,
+        rgb(24, 100, 183) 0%,
+        rgb(23, 61, 102) 100%
+      ),
+      radial-gradient(
+        23.21% 114.66% at 43.75% -31.25%,
+        rgb(24, 17, 24) 21.246936917304993%,
+        rgb(0, 0, 0) 100%
+      ),
+      #030303;
+    box-shadow: 10px 20px 80px 0 rgba(122, 33, 237, 0.3),
+      -20px -20px 50px 0 rgba(42, 94, 142, 0.5),
+      0 20px 30px 0 rgba(64, 100, 228, 0.3),
+      inset 0 0 30px 0 rgba(255, 255, 255, 0.3);
+  }
+
+  .previous-button {
+    @apply hover:opacity-80;
+
+    &:hover .previous-button-bg {
+      @apply hover:opacity-80;
+    }
+
+    background: radial-gradient(
+        132.71% 129.73% at 63.64% -12.5%,
+        rgb(133, 40, 251) 0%,
+        rgb(86, 84, 74) 100%
+      ),
+      radial-gradient(
+        189.21% 70.1% at 15.34% 39.06%,
+        rgb(131, 113, 243) 0%,
+        rgb(69, 156, 236) 100%
+      ),
+      radial-gradient(
+        51.42% 94.92% at 19.32% 40.62%,
+        rgb(24, 100, 183) 0%,
+        rgb(23, 61, 102) 100%
+      ),
+      #030303;
+    box-shadow: 10px 20px 80px 0 rgba(122, 33, 237, 0.3),
+      -20px -20px 50px 0 rgba(42, 94, 142, 0.5),
+      0 20px 30px 0 rgba(64, 100, 228, 0.3),
+      inset 0 0 30px 0 rgba(255, 255, 255, 0.3);
+  }
 }
 
 @layer base {

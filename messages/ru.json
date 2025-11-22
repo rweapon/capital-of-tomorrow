@@ -288,6 +288,8 @@
         "visa": "Нужна ли вам виза?",
         "personal_data": "Я согласен на обработку моих персональных данных",
         "gender": "Пол *",
+        "gender_m": "Мужской",
+        "gender_w": "Женский",
         "nationality": "Гражданство *",
         "email": "Адрес электронной почты *",
         "depart": "Город вылета *",
@@ -323,6 +325,131 @@
           "eight": "Принимая участие в мероприятии, участники обязуются не подавать судебные иски против организации по поводу возврата заявочного взноса.",
           "nine": "Участники также обязуются воздерживаться от любой устной, визуальной или слуховой диффамации организации, особенно если они не согласны с назначенной им категорией. Любое нарушение этого положения повлечет за собой юридические последствия.",
           "ten": "Подавая заявку, участники подтверждают, что они прочитали, поняли и согласились с этими условиями."
+        }
+      },
+      "four": {
+        "full_name_card": "Полное имя (с карты)",
+        "card_number": "Кредитная/дебетовая карта *",
+        "expiry": "Срок действия *",
+        "expiryPlaceholder": "М/Г",
+        "cvc": "CVC *",
+        "fee": "Регистрационный сбор: 19 £",
+        "payment_consent": "Я согласен на обработку моих персональных данных"
+      }
+    },
+    "loading": "Загрузка..."
+  },
+  "apply_vip": {
+    "hero": {
+      "title": "ПОДАЧА ЗАЯВКИ",
+      "content": "Мы приглашаем смелых мечтателей и новаторов в « Capital of Tomorrow», форум для следующего нового поколения предпринимателей, который пройдет в Дубае 26-28 ноября 2025 года. Если вы стартапер, будущий предприниматель, новатор или социальный активист, это место для вас. Это не просто форум, а место, где амбиции встречают поддержку, а идеи превращаются в действия. Пришло время действовать - ваша идея, ваш голос, ваш путь начинаются здесь."
+    },
+    "vipData": {
+      "title": "",
+      "paragraph": "VIP is more than access — it’s influence, insight, and investment in your success.",
+      "one": {
+        "title": "Premium Accommodation",
+        "content": "Enjoy your stay in a Superior Lux single room — a spacious, elegantly appointed suite that offers complete privacy, comfort, and a refined atmosphere ideal for rest and preparation."
+      },
+      "two": {
+        "title": "VIP Airport Transfer",
+        "content": "Travel in style with a personal airport transfer in a Mercedes V-Class with captain seats or a vehicle of equivalent luxury. Your arrival is seamless, private, and entirely stress-free. "
+      },
+      "three": {
+        "title": "Priority Registration",
+        "content": "Priority Registration."
+      },
+      "four": {
+        "title": "Exclusive One-on-One Consultations",
+        "content": "Gain direct access to leading experts through individual consultations tailored to your personal or business objectives. This is your opportunity to discuss real challenges and find actionable insights. "
+      },
+      "five": {
+        "title": "Extended Expert Support",
+        "content": "Your forum experience doesn't end when the event does. VIP participants receive six months of post-forum expert guidance to support implementation and long-term impact."
+      },
+      "six": {
+        "title": "Premium Merchandise Package",
+        "content": "Receive an exclusive VIP gift set — carefully curated, high-quality items that reflect the prestige of your participation."
+      },
+      "seven": {
+        "title": "Full-Service Support at Every Stage",
+        "content": "From pre-event planning to on-site assistance and post-event follow-up, VIP guests receive dedicated support to ensure a smooth and optimized experience."
+      },
+      "eight": {
+        "title": "Strategic Forum Benefits",
+        "content": "From pre-event planning to on-site assistance and post-event follow-up, VIP guests receive dedicated support to ensure a smooth and optimized experience."
+      },
+      "nine": {
+        "title": "Strategic Forum Benefits",
+        "content": "As a VIP, you'll have greater opportunities to network with key speakers, decision-makers, and high-level attendees. You gain access to rooms and moments where real partnerships begin."
+      }
+    },
+    "progress": {
+      "one": "Личная информация",
+      "two": "Мотивация и цели ",
+      "three": "Условия и положения",
+      "four": "Данные об оплате"
+    },
+    "steps": {
+      "buttons": {
+        "back": "Обратно",
+        "next": "Дальше",
+        "pay": "Оплатить и закончить"
+      },
+      "one": {
+        "full_name": "Полное имя (по паспорту) ",
+        "birthday": "Дата рождения *",
+        "tel": "Контактный телефон * ",
+        "country": "Страна проживания *",
+        "visa": "Нужна ли вам виза?",
+        "personal_data": "Я согласен на обработку моих персональных данных",
+        "gender": "Пол *",
+        "nationality": "Гражданство *",
+        "email": "Адрес электронной почты *",
+        "depart": "Город вылета *",
+        "photo": "Загрузите фотографию профиля *",
+        "photoNotif": "Выбранные файлы:",
+        "passport": "Загрузите паспорт/идентификатор *",
+        "passportNotif": "Выбранные файлы:"
+      },
+      "two": {
+        "words": "/250 слов",
+        "char": "символов",
+        "experience": "Можете ли вы кратко рассказать о своей биографии, включая образование, профессиональный или деловой опыт? (250 слов или меньше) *",
+        "motivation": "Что побуждает вас принять участие в мероприятии (250 слов или меньше) *",
+        "future_goals": "Опишите ваши будущие цели (250 слов или меньше) *",
+        "add_info": "Дополнительная информация",
+        "socials": "Ссылка на профиль Facebook/LinkedIn (необязательно)",
+        "source": "Где вы узнали о « Capital of Tomorrow»? *",
+        "sourcePlaceholder": "напр., социальные сети, друг, веб-сайт и т.д."
+      },
+      "three": {
+        "declaration": {
+          "strong": "Заявление:",
+          "content": "Я заявляю, что информация, предоставленная в этой заявке, является правдивой и точной насколько мне известно. Я настоящим даю согласие и обязуюсь соблюдать условия, изложенные ниже. Я понимаю, что любая ложная информация может привести к дисквалификации от участия."
+        },
+        "terms": {
+          "title": "Положения и условия:",
+          "one": "Помощь на каждом этапе — до, во время и после мероприятия",
+          "two": "VIP-трансферы из/в аэропорт",
+          "three": "Одноместный номер ( Superior Class)",
+          "four": "Трансферы до официальных мест проведения мероприятия и обратно",
+          "five": "Полный доступ ко всем событиям и сессиям форума",
+          "six": "Питание покрывается на официальной площадке или в партнерских локациях",
+          "seven": "Презентуйте свою бизнес-идею международной аудитории и инвесторам",
+          "eight": "Признание вашего участия + эксклюзивная продукция форума",
+          "nine": "Продолжающийся доступ к экспертным советам и бизнес-консультациям после форума"
+        },
+        "note": {
+          "one": "Обратите внимание: участники несут единоличную ответственность за получение своих собственных проездных документов, включая визы. Организаторы не несут ответственности за отказы или задержки. В случае принятия участником решения об отзыве заявки или если он не сможет присутствовать (в том числе из-за отказа в визе), возврату подлежит только 50% от общей стоимости заказа.",
+          "two": "Незавершенные заявки не будут рассматриваться для оценки или участия. После подачи заявители будут уведомлены по электронной почте и должны подтвердить свое участие в установленные сроки. Несвоевременное подтверждение может привести к утрате возможности стать VIP-делегатом.",
+          "three": "Подавая эту заявку, участники предоставляют организаторам Capital of Tomorrow 2025 право использовать их имя, биографию и любые предоставленные материалы в целях продвижения мероприятия.",
+          "four": "Персональная информация, предоставленная в заявке, будет использоваться исключительно для целей оценки и организации мероприятия. Организаторы будут обращаться с персональными данными в соответствии с применимыми законами и нормативными актами о защите данных.",
+          "five": "Отбор делегатов будет проводиться независимой комиссией судей, включая влиятельных членов правления из европейских стран. Все результаты отбора являются окончательными и не подлежат обсуждению.",
+          "six": "Vostocnik Solution не несет ответственности за любые убытки, травмы, повреждения или кражи во время мероприятия. От участников ожидается, что они будут обеспечивать сохранность своих вещей и соблюдать все протоколы безопасности мероприятия. При необходимости будет доступна помощь со стороны организационной команды.",
+          "seven": "Участвуя, attendees отказываются от права на предъявление юридических претензий к организации, связанных со сборами за подачу заявки или частичными возвратами средств.",
+          "eight": "Участники также обязуются воздерживаться от любых устных, визуальных или слуховых клеветнических высказываний в адрес организации, особенно в случае несогласия с назначенной им категорией. Любое нарушение этого положения повлечет за собой юридические последствия.",
+          "nine": "Подавая эту заявку, участники подтверждают, что они прочитали, поняли и согласны с данными положениями и условиями."
         }
       },
       "four": {

@@ -289,6 +289,8 @@
         "visa": "I need visa",
         "personal_data": "I agree to the processing of my personal data",
         "gender": "Gender *",
+        "gender_m": "Male",
+        "gender_f": "Female",
         "nationality": "Nationality *",
         "email": "Email address *",
         "depart": "Departure city *",
@@ -329,6 +331,131 @@
       },
       "four": {
         "full_name_card": "Full Name (as per Card)",
+        "card_number": "Credit/Debit card *",
+        "expiry": "Expiry *",
+        "expiryPlaceholder": "MM/YY",
+        "cvc": "CVC *",
+        "fee": "Application fee £ 19",
+        "payment_consent": "I agree to the processing of my personal data and payment information"
+      }
+    },
+    "loading": "Loading..."
+  },
+  "apply_vip": {
+    "hero": {
+      "title": "VIP PACKAGE",
+      "content": "The VIP package is designed for discerning participants who value comfort, privacy, and high-level connections. It provides not only enhanced service and luxury, but also strategic advantages throughout your forum journey."
+    },
+    "vipData": {
+      "title": "",
+      "paragraph": "VIP is more than access — it’s influence, insight, and investment in your success.",
+      "one": {
+        "title": "Premium Accommodation",
+        "content": "Enjoy your stay in a Superior Lux single room — a spacious, elegantly appointed suite that offers complete privacy, comfort, and a refined atmosphere ideal for rest and preparation."
+      },
+      "two": {
+        "title": "VIP Airport Transfer",
+        "content": "Travel in style with a personal airport transfer in a Mercedes V-Class with captain seats or a vehicle of equivalent luxury. Your arrival is seamless, private, and entirely stress-free. "
+      },
+      "three": {
+        "title": "Priority Registration",
+        "content": "Priority Registration."
+      },
+      "four": {
+        "title": "Exclusive One-on-One Consultations",
+        "content": "Gain direct access to leading experts through individual consultations tailored to your personal or business objectives. This is your opportunity to discuss real challenges and find actionable insights. "
+      },
+      "five": {
+        "title": "Extended Expert Support",
+        "content": "Your forum experience doesn't end when the event does. VIP participants receive six months of post-forum expert guidance to support implementation and long-term impact."
+      },
+      "six": {
+        "title": "Premium Merchandise Package",
+        "content": "Receive an exclusive VIP gift set — carefully curated, high-quality items that reflect the prestige of your participation."
+      },
+      "seven": {
+        "title": "Full-Service Support at Every Stage",
+        "content": "From pre-event planning to on-site assistance and post-event follow-up, VIP guests receive dedicated support to ensure a smooth and optimized experience."
+      },
+      "eight": {
+        "title": "Strategic Forum Benefits",
+        "content": "From pre-event planning to on-site assistance and post-event follow-up, VIP guests receive dedicated support to ensure a smooth and optimized experience."
+      },
+      "nine": {
+        "title": "Strategic Forum Benefits",
+        "content": "As a VIP, you'll have greater opportunities to network with key speakers, decision-makers, and high-level attendees. You gain access to rooms and moments where real partnerships begin."
+      }
+    },
+    "progress": {
+      "one": "Personal Information",
+      "two": "Motivation & Goals",
+      "three": "Terms & Conditions",
+      "four": "Payment"
+    },
+    "steps": {
+      "buttons": {
+        "back": "Previous",
+        "next": "Next",
+        "pay": "Pay & submit"
+      },
+      "one": {
+        "full_name": "Full Name (as per Passport)",
+        "birthday": "Date of birth *",
+        "tel": "Contact number *",
+        "country": "Country of residence *",
+        "visa": "I need visa",
+        "personal_data": "I agree to the processing of my personal data",
+        "gender": "Gender *",
+        "nationality": "Nationality *",
+        "email": "Email address *",
+        "depart": "Departure city *",
+        "photo": "Upload your profile photo *",
+        "photoNotif": "File selected:",
+        "passport": "Upload your passport/ID *",
+        "passportNotif": "File selected:"
+      },
+      "two": {
+        "words": "/250 words",
+        "char": "characters",
+        "experience": "Can you provide a brief overview of your background, including your education, professional or business experience? (250 words or less) *",
+        "motivation": "What motivates you to join the event (250 words or less) *",
+        "future_goals": "Describe your future goals (250 words or less) *",
+        "add_info": "Additional Information",
+        "socials": "Facebook/LinkedIn Profile link (optional)",
+        "source": "Where did you hear about Capital of Tomorrow? *",
+        "sourcePlaceholder": "e.g., Social media, friend, website, etc."
+      },
+      "three": {
+        "declaration": {
+          "strong": "Declaration:",
+          "content": "I declare that the information provided in this application is true and accurate to the best of my knowledge. I hereby consent and agree to abide by the terms and conditions outlined below. I understand that any false information may result in disqualification from participation.."
+        },
+        "terms": {
+          "title": "Terms and Conditions:",
+          "one": "Assistance at every step — before, during, and after the event",
+          "two": "VIP Airport Transfers",
+          "three": "Single Room (Superior Class)",
+          "four": "Transfers to and from official event venues",
+          "five": "Full access to all forum events and sessions",
+          "six": "Covered meals at the official venue or partner locations",
+          "seven": "Showcase your business idea to an international audience and investors",
+          "eight": "Recognition of your participation + exclusive forum merchandise",
+          "nine": "Continued access to expert advice and business guidance post-forum"
+        },
+        "note": {
+          "one": "Please note: Participants are solely responsible for obtaining their own travel documents, including visas. The organisers do not take responsibility for  refusals or delays. In the event of a participant’s decision to withdraw or if   unable to attend (including due to visa refusal), only 50% of the total order cost refundable.",
+          "two": "Incomplete applications will not be considered for evaluation or participation. After submission, applicants will be notified via email and must confirm their participation within the specified timeframe. Failure to confirm on time may result in forfeiting the VIP delegate opportunity.",
+          "three": "By submitting this application, participants grant the organisers of Capital of Tomorrow 2025 the right to use their name, biography, and any submitted materials for event-related promotional purposes.",
+          "four": "Personal information provided in the application will be used solely for the purpose of evaluation and event organisation. The organisers will handle personal data in compliance with applicable data protection laws and regulations.",
+          "five": "Delegate selection will be conducted by an independent panel of judges, including high-profile board members from European countries. All selection outcomes are final and non-negotiable.",
+          "six": "Vostocnik Solution is not responsible for any loss, injury, damage, or theft during the event. Attendees are expected to safeguard their belongings and follow all event safety protocols. Assistance from the organising team will be available as needed.",
+          "seven": "By participating, attendees waive the right to legal claims against the organisation related to application fees or partial refunds.",
+          "eight": "Participants also commit to refraining from any oral, visual, or auditory defamation of the organisation, particularly if they disagree with their assigned category. Any violation of this provision will lead to legal consequences.",
+          "nine": "By submitting this application, participants confirm that they have read, understood, and agreed to these terms and conditions."
+        }
+      },
+      "four": {
+        "full_name_card": "Full Name (from the Card)",
         "card_number": "Credit/Debit card *",
         "expiry": "Expiry *",
         "expiryPlaceholder": "MM/YY",

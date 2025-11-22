@@ -15,6 +15,7 @@ import {
 const StepFour = ({
   onNext,
   defaultValues,
+  isVip,
   ...buttonProps
 }: StepComponentProps<StepFourData>) => {
   const t = useTranslations('apply.steps.four');
@@ -140,6 +141,7 @@ const StepFour = ({
         numStep={4}
         onNext={handleSubmit(onSubmit)}
         isValid={isValid}
+        isVip={isVip}
         {...buttonProps}
       />
     </>
