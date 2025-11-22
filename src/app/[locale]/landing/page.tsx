@@ -1,0 +1,19 @@
+import { Locale, routing } from 'i18n/routing';
+import { setRequestLocale } from 'next-intl/server';
+
+import { LandingContents } from '@/app/[locale]/landing/LandingContents';
+
+type ApplyPageProps = {
+  params: { locale: Locale };
+};
+
+export default function ApplyPage({ params }: ApplyPageProps) {
+  const { locale } = params;
+  setRequestLocale(locale);
+
+  return <LandingContents />;
+}
+
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
+}
