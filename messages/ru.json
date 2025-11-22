@@ -464,6 +464,64 @@
     },
     "loading": "Загрузка..."
   },
+  "landing": {
+    "hero": {
+      "title": "",
+      "subtitle": "",
+      "paragraph": ""
+    },
+    "events": {
+      "title": "OUR EVENTS",
+      "paragraph": "OUR EVENTS HELP ENTREPRENEURS IMPROVE PITCHING AND PUBLIC SPEAKING SKILLS, GAIN UP-TO-DATE KNOWLEDGE, EXPLORE NEW APPROACHES TO INTERNATIONAL BUSINESS, AND CONNECT WITH PARTNERS AND INVESTORS."
+    },
+    "values": {
+      "title": "EVENTS' VALUES",
+      "list": {
+        "one": "SUPPORT FOR YOUNG TALENT AND EXPERIENCED LEADERS",
+        "two": "THE POWER OF COMMUNITY AND NETWORKING",
+        "three": "MAKING ENTREPRENEURSHIP ACCESSIBLE TO EVERYONE",
+        "four": "ENTREPRENEURSHIP AS A LIFESTYLE",
+        "five": "INNOVATION AND COURAGE",
+        "six": "EDUCATION THROUGH PRACTICE",
+        "seven": "GLOBAL THINKING WITHOUT BOUNDARIES",
+        "eight": "DEVELOPMENT AT ALL STAGES OF THE PATH"
+      }
+    },
+    "solutions": {
+      "title": "SOLUTIONS",
+      "subtitle": "WE SPECIALIZE IN PREPARING COMPANIES TO ENTER THE MIDDLE EAST AND RUSSIAN MARKETS. OUR EXPERTISE INCLUDES OPERATIONAL EXIT AND INVESTMENT RAISING FOR COMPANIES SEEKING INTERNATIONAL GROWTH AND PROFITABILITY IN NEW MARKETS",
+      "list": {
+        "title": "",
+        "one": {
+          "title": "Strategic Consulting",
+          "content": "Comprehensive market and competitor analysis: study of local companies and foreign corporations, determination of their shares in the target market."
+        },
+        "two": {
+          "title": "Legal Consulting",
+          "content": "Detailed review of potential forms of operation in the target country with a description of all legal requirements for successful market entry."
+        },
+        "three": {
+          "title": "Marketing and PR",
+          "content": "Brand adaptation to cultural nuances and effective promotion in the local market taking into account regional specifics."
+        },
+        "four": {
+          "title": "Financial Consulting",
+          "content": "Detailed analysis of investment activity in the Middle East countries "
+        }
+      }
+    },
+    "partners": {
+      "inex": {
+        "title": "INEX is an expert in service design and customer experience (CX).",
+        "paragraph": "Since 2008, the company has been exploring customer journeys, creating and implementing services for major corporations, training teams, and fostering a culture of customer centricity."
+      },
+      "psychgeo": {
+        "title": "PHYSGEO - leaders of the oil and gas consulting industry.",
+        "paragraph": "They develop the largest fields, implement cutting-edge technologies, and set the pace for the entire industry."
+      }
+    }
+  },
+
   "footer": {
     "navigation": {
       "title": "Навигация:"

@@ -11,11 +11,9 @@ import './globals.css';
 import { fonts } from '@/lib/fonts';
 import { cn } from '@/lib/utils';
 
-import { BlobsParallaxGroup, Footer, Navbar } from '@/components';
+import { Footer, Navbar } from '@/components';
 
 import { siteConfig } from '@/constant/config';
-import { blobs } from '@/constant/data';
-import { isProd } from '@/constant/env';
 
 // export async function generateMetadata(
 //   props: Omit<LayoutProps<'/[locale]'>, 'children'>
@@ -83,7 +81,6 @@ export default async function LocaleLayout({
           fonts
         )}
       >
-        {isProd && <BlobsParallaxGroup blobs={blobs} />}
         <NextIntlClientProvider>
           <Navbar locale={locale} />
           {children}

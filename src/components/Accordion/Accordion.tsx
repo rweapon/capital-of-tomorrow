@@ -13,6 +13,7 @@ export interface IAccordionProps {
   items: AccordionItem[];
   extraContent?: ReactNode;
   initialActives?: number[];
+  textColor?: 'white' | 'black';
 }
 
 export const Accordion = ({
@@ -20,6 +21,7 @@ export const Accordion = ({
   items,
   extraContent,
   initialActives = [],
+  textColor = 'white',
 }: IAccordionProps) => {
   const [activeIndices, setActiveIndices] = useState<number[]>(initialActives);
 
@@ -32,7 +34,12 @@ export const Accordion = ({
   return (
     <section className='mx-auto w-full max-w-[1440px] px-3 sm:px-10 lg:px-24'>
       <header className='mx-16 mb-7 sm:mx-0 sm:mb-12'>
-        <h1 className='font-akira text-center text-xl font-extrabold uppercase text-white sm:text-4xl md:text-5xl'>
+        <h1
+          className={cn(
+            'font-akira text-center text-xl font-extrabold uppercase  sm:text-4xl md:text-5xl',
+            textColor === 'white' ? 'text-white' : 'text-black'
+          )}
+        >
           {title}
         </h1>
       </header>
@@ -48,8 +55,13 @@ export const Accordion = ({
           >
             <div
               className={cn(
-                'flex h-full w-full items-center justify-between text-left transition-colors text-white',
-                !activeIndices.includes(index) && 'hover:text-gray-300'
+                'flex h-full w-full items-center justify-between text-left transition-colors',
+                !activeIndices.includes(index) && textColor === 'white'
+                  ? 'hover:text-gray-300'
+                  : !activeIndices.includes(index) && textColor === 'black'
+                  ? 'hover:text-gray-700'
+                  : '',
+                textColor === 'white' ? 'text-white' : 'text-black'
               )}
               aria-expanded={activeIndices.includes(index)}
               aria-controls={`accordion-content-${index}`}
@@ -81,7 +93,12 @@ export const Accordion = ({
                 activeIndices.includes(index) ? 'max-h-96' : 'max-h-0'
               }`}
             >
-              <p className='font-mont text-sm font-thin text-white/80 md:text-base md:leading-[22px]'>
+              <p
+                className={cn(
+                  'font-mont text-sm font-thin md:text-base md:leading-[22px]',
+                  textColor === 'white' ? 'text-white/80' : 'text-[#1e1e1e]'
+                )}
+              >
                 {item.content}
               </p>
             </div>
