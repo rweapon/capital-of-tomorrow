@@ -100,7 +100,7 @@ export const HomeContents = ({ locale }: HomeContentsProps) => {
 
   return (
     <>
-      <HomeHero />
+      <HomeHero locale={locale} />
       <Scroll />
       <MissionSection />
       <Accordion

@@ -1,20 +1,49 @@
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
-import React from 'react';
+import React, { ReactElement } from 'react';
+
+import { cn } from '@/lib/utils';
 
 import { imagePrefix } from '@/constant/env';
+
+type PartnerCardProps = {
+  title: string;
+  paragraph: string;
+  image: ReactElement;
+  isFirst?: boolean;
+};
+
+const PartnerCard = ({
+  title,
+  paragraph,
+  image,
+  isFirst = false,
+}: PartnerCardProps) => {
+  return (
+    <article
+      className={cn(
+        'flex flex-col-reverse sm:flex-row items-center w-full bg-background px-4 sm:px-6 md:px-8 lg:px-12 gap-6',
+        !isFirst && 'sm:flex-row-reverse'
+      )}
+    >
+      <div className='flex flex-col gap-3'>
+        <h3 className='font-akira text-base lg:text-lg'>{title}</h3>
+        <p className='font-mont'>{paragraph}</p>
+      </div>
+      <div className={cn(!isFirst && 'justify-self-end')}>{image}</div>
+    </article>
+  );
+};
 
 export const LandingPartners = () => {
   const t = useTranslations('landing.partners');
 
   return (
-    <section className='flex gap-9 *:py-10'>
-      <article className='flex items-center w-full bg-background pl-4 sm:pl-6 md:pl-8 lg:pl-12 xl:pl-24 pr-12'>
-        <div className='flex flex-col gap-3 mr-4'>
-          <h3 className='font-akira text-lg'>{t('inex.title')}</h3>
-          <p className='font-mont'> {t('inex.paragraph')}</p>
-        </div>
-        <div className='justify-self-end'>
+    <section className='flex flex-col md:flex-row gap-9 *:py-10'>
+      <PartnerCard
+        title={t('inex.title')}
+        paragraph={t('inex.paragraph')}
+        image={
           <Image
             src={`${imagePrefix}/inex.svg`}
             alt='INEX Service Design'
@@ -22,10 +51,13 @@ export const LandingPartners = () => {
             height={85}
             className='h-auto lg:max-w-xs xl:max-w-lg'
           />
-        </div>
-      </article>
-      <article className='flex items-center w-full bg-background pr-4 sm:pr-6 md:pr-8 lg:pr-12 xl:pr-24 pl-12'>
-        <div>
+        }
+        isFirst
+      />
+      <PartnerCard
+        title={t('psychgeo.title')}
+        paragraph={t('psychgeo.paragraph')}
+        image={
           <Image
             src={`${imagePrefix}/psychGeo.svg`}
             alt='Psych Geo'
@@ -33,12 +65,8 @@ export const LandingPartners = () => {
             height={116}
             className='h-auto lg:max-w-xs xl:max-w-lg'
           />
-        </div>
-        <div className='flex flex-col gap-3 ml-4'>
-          <h3 className='font-akira text-lg'> {t('psychgeo.title')}</h3>
-          <p className='font-mont'> {t('psychgeo.paragraph')}</p>
-        </div>
-      </article>
+        }
+      />
     </section>
   );
 };

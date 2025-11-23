@@ -1,5 +1,5 @@
-import React, { PropsWithChildren } from 'react';
+import { PropsWithChildren } from 'react';
 
 export default async function ApplyLayout({ children }: PropsWithChildren) {
-  return <>{children}</>;
+  return children;
 }

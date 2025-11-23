@@ -14,7 +14,8 @@ import {
   truncateText,
 } from '@/app/api/submit-form/utils';
 import { ADMIN_EMAIL, FROM_EMAIL, RESEND_API_KEY } from '@/constant/env';
-
+export const dynamic = 'force-dynamic';
+export const runtime = 'nodejs';
 const resend = new Resend(RESEND_API_KEY);
 
 export interface EmailTemplateData

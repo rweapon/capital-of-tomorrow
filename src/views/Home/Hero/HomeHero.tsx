@@ -1,4 +1,5 @@
 import { Link } from 'i18n/navigation';
+import { Locale } from 'i18n/routing';
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import React from 'react';
@@ -9,7 +10,9 @@ import { NavigationKeys } from '@/constant/data';
 import { imagePrefix } from '@/constant/env';
 import { FlipClock } from '@/views/Home/FlipClock/FlipClock';
 
-export const HomeHero = () => {
+type HomeHeroProps = { locale: Locale };
+
+export const HomeHero = ({ locale }: HomeHeroProps) => {
   const t = useTranslations('home.hero');
 
   return (
@@ -42,7 +45,10 @@ export const HomeHero = () => {
             {t('year')}
           </p>
 
-          <Link href={`#${NavigationKeys.PARTICIPATE}`}>
+          <Link
+            href={`/${NavigationKeys.EVENT}#${NavigationKeys.PARTICIPATE}`}
+            locale={locale}
+          >
             <Button className='w-full tracking-tight ' size='lg'>
               {t('button')}
             </Button>
