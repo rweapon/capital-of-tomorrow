@@ -346,42 +346,42 @@
     },
     "vipData": {
       "title": "",
-      "paragraph": "VIP is more than access — it’s influence, insight, and investment in your success.",
+      "paragraph": "VIP — это не просто доступ; это влияние, инсайты и инвестиции в ваш успех.",
       "one": {
-        "title": "Premium Accommodation",
-        "content": "Enjoy your stay in a Superior Lux single room — a spacious, elegantly appointed suite that offers complete privacy, comfort, and a refined atmosphere ideal for rest and preparation."
+        "title": "Премиальное размещение",
+        "content": "Наслаждайтесь проживанием в одноместном номере Superior Lux — просторном, элегантно обставленном сьюте, который предлагает полную приватность, комфорт и утонченную атмосферу, идеальную для отдыха и подготовки."
       },
       "two": {
-        "title": "VIP Airport Transfer",
-        "content": "Travel in style with a personal airport transfer in a Mercedes V-Class with captain seats or a vehicle of equivalent luxury. Your arrival is seamless, private, and entirely stress-free. "
+        "title": "VIP-трансфер из аэропорта",
+        "content": "Путешествуйте с комфортом на персональном трансфере из аэропорта на Mercedes V-Class с креслами капитана или автомобиле аналогичного класса. Ваше прибытие будет бесшовным, частным и полностью свободным от стресса."
       },
       "three": {
-        "title": "Priority Registration",
-        "content": "Priority Registration."
+        "title": "Приоритетная регистрация",
+        "content": "Приоритетная регистрация."
       },
       "four": {
-        "title": "Exclusive One-on-One Consultations",
-        "content": "Gain direct access to leading experts through individual consultations tailored to your personal or business objectives. This is your opportunity to discuss real challenges and find actionable insights. "
+        "title": "Эксклюзивные индивидуальные консультации",
+        "content": "Получите прямой доступ к ведущим экспертам через индивидуальные консультации, адаптированные под ваши личные или бизнес-задачи. Это ваша возможность обсудить реальные вызовы и найти действенные решения."
       },
       "five": {
-        "title": "Extended Expert Support",
-        "content": "Your forum experience doesn't end when the event does. VIP participants receive six months of post-forum expert guidance to support implementation and long-term impact."
+        "title": "Расширенная экспертная поддержка",
+        "content": "Ваш опыт на форуме не заканчивается с мероприятием. Участники VIP-пакета получают шесть месяцев экспертного сопровождения после форума для поддержки внедрения и долгосрочного результата."
       },
       "six": {
-        "title": "Premium Merchandise Package",
-        "content": "Receive an exclusive VIP gift set — carefully curated, high-quality items that reflect the prestige of your participation."
+        "title": "Премиальный набор мерча",
+        "content": "Получите эксклюзивный VIP-подарочный набор — тщательно отобранные предметы высшего качества, которые отражают престиж вашего участия."
       },
       "seven": {
-        "title": "Full-Service Support at Every Stage",
-        "content": "From pre-event planning to on-site assistance and post-event follow-up, VIP guests receive dedicated support to ensure a smooth and optimized experience."
+        "title": "Полное сопровождение на каждом этапе",
+        "content": "От планирования до мероприятия до помощи на месте и последующего сопровождения — гости VIP-категории получают персональную поддержку для обеспечения гладкого и оптимизированного опыта."
       },
       "eight": {
-        "title": "Strategic Forum Benefits",
-        "content": "From pre-event planning to on-site assistance and post-event follow-up, VIP guests receive dedicated support to ensure a smooth and optimized experience."
+        "title": "Стратегические преимущества форума",
+        "content": "От планирования до мероприятия до помощи на месте и последующего сопровождения — гости VIP-категории получают персональную поддержку для обеспечения гладкого и оптимизированного опыта."
       },
       "nine": {
-        "title": "Strategic Forum Benefits",
-        "content": "As a VIP, you'll have greater opportunities to network with key speakers, decision-makers, and high-level attendees. You gain access to rooms and moments where real partnerships begin."
+        "title": "Стратегические преимущества форума",
+        "content": "Как VIP-участник, вы получите больше возможностей для нетворкинга с ключевыми спикерами, лицами, принимающими решения, и участниками высокого уровня. Вы получаете доступ в залы и к моментам, где начинаются настоящие партнерства."
       }
     },
     "progress": {
@@ -466,58 +466,58 @@
   },
   "landing": {
     "hero": {
-      "title": "",
-      "subtitle": "",
-      "paragraph": ""
+      "title": "VOSTOCHNIK",
+      "subtitle": "SOLUTIONS & EVENTS",
+      "paragraph": "МЫ ОРГАНИЗУЕМ БИЗНЕС-ФОРУМЫ С ПРОГРАММАМИ АКСЕЛЕРАЦИИ И ПРЕДОСТАВЛЯЕМ ИНДИВИДУАЛЬНЫЕ АНАЛИТИЧЕСКИЕ РЕШЕНИЯ ДЛЯ РАСТУЩИХ КОМПАНИЙ"
     },
     "events": {
-      "title": "OUR EVENTS",
-      "paragraph": "OUR EVENTS HELP ENTREPRENEURS IMPROVE PITCHING AND PUBLIC SPEAKING SKILLS, GAIN UP-TO-DATE KNOWLEDGE, EXPLORE NEW APPROACHES TO INTERNATIONAL BUSINESS, AND CONNECT WITH PARTNERS AND INVESTORS."
+      "title": "НАШИ МЕРОПРИЯТИЯ",
+      "paragraph": "НАШИ МЕРОПРИЯТИЯ ПОМОГАЮТ ПРЕДПРИНИМАТЕЛЯМ УЛУЧШИТЬ НАВЫКИ ПИТЧИНГА И ПУБЛИЧНЫХ ВЫСТУПЛЕНИЙ, ПОЛУЧИТЬ АКТУАЛЬНЫЕ ЗНАНИЯ, ИЗУЧИТЬ НОВЫЕ ПОДХОДЫ К МЕЖДУНАРОДНОМУ БИЗНЕСУ И НАЙТИ ПАРТНЕРОВ И ИНВЕСТОРОВ."
     },
     "values": {
-      "title": "EVENTS' VALUES",
+      "title": "ЦЕННОСТИ МЕРОПРИЯТИЙ",
       "list": {
-        "one": "SUPPORT FOR YOUNG TALENT AND EXPERIENCED LEADERS",
-        "two": "THE POWER OF COMMUNITY AND NETWORKING",
-        "three": "MAKING ENTREPRENEURSHIP ACCESSIBLE TO EVERYONE",
-        "four": "ENTREPRENEURSHIP AS A LIFESTYLE",
-        "five": "INNOVATION AND COURAGE",
-        "six": "EDUCATION THROUGH PRACTICE",
-        "seven": "GLOBAL THINKING WITHOUT BOUNDARIES",
-        "eight": "DEVELOPMENT AT ALL STAGES OF THE PATH"
+        "one": "ПОДДЕРЖКА МОЛОДЫХ ТАЛАНТОВ И ОПЫТНЫХ ЛИДЕРОВ",
+        "two": "СИЛА СООБЩЕСТВА И НЕТВОРКИНГА",
+        "three": "ПРЕДПРИНИМАТЕЛЬСТВО ДОСТУПНОЕ КАЖДОМУ",
+        "four": "ПРЕДПРИНИМАТЕЛЬСТВО КАК СТИЛЬ ЖИЗНИ",
+        "five": "ИННОВАЦИИ И СМЕЛОСТЬ",
+        "six": "ОБУЧЕНИЕ ЧЕРЕЗ ПРАКТИКУ",
+        "seven": "ГЛОБАЛЬНОЕ МЫШЛЕНИЕ БЕЗ ГРАНИЦ",
+        "eight": "РАЗВИТИЕ НА ВСЕХ ЭТАПАХ ПУТИ"
       }
     },
     "solutions": {
-      "title": "SOLUTIONS",
-      "subtitle": "WE SPECIALIZE IN PREPARING COMPANIES TO ENTER THE MIDDLE EAST AND RUSSIAN MARKETS. OUR EXPERTISE INCLUDES OPERATIONAL EXIT AND INVESTMENT RAISING FOR COMPANIES SEEKING INTERNATIONAL GROWTH AND PROFITABILITY IN NEW MARKETS",
+      "title": "РЕШЕНИЯ",
+      "subtitle": "МЫ СПЕЦИАЛИЗИРУЕМСЯ НА ПОДГОТОВКЕ КОМПАНИЙ К ВЫХОДУ НА РЫНКИ БЛИЖНЕГО ВОСТОКА И РОССИИ. НАША ЭКСПЕРТИЗА ВКЛЮЧАЕТ ОПЕРАЦИОННЫЙ ВЫХОД И ПРИВЛЕЧЕНИЕ ИНВЕСТИЦИЙ ДЛЯ КОМПАНИЙ, СТРЕМЯЩИХСЯ К МЕЖДУНАРОДНОМУ РОСТУ И ПРИБЫЛЬНОСТИ НА НОВЫХ РЫНКАХ",
       "list": {
         "title": "",
         "one": {
-          "title": "Strategic Consulting",
-          "content": "Comprehensive market and competitor analysis: study of local companies and foreign corporations, determination of their shares in the target market."
+          "title": "Стратегический консалтинг",
+          "content": "Комплексный анализ рынка и конкурентов: изучение местных компаний и иностранных корпораций, определение их долей на целевом рынке."
         },
         "two": {
-          "title": "Legal Consulting",
-          "content": "Detailed review of potential forms of operation in the target country with a description of all legal requirements for successful market entry."
+          "title": "Юридический консалтинг",
+          "content": "Детальный обзор потенциальных форм деятельности в целевой стране с описанием всех юридических требований для успешного выхода на рынок."
         },
         "three": {
-          "title": "Marketing and PR",
-          "content": "Brand adaptation to cultural nuances and effective promotion in the local market taking into account regional specifics."
+          "title": "Маркетинг и PR",
+          "content": "Адаптация бренда к культурным особенностям и эффективное продвижение на местном рынке с учетом региональной специфики."
         },
         "four": {
-          "title": "Financial Consulting",
-          "content": "Detailed analysis of investment activity in the Middle East countries "
+          "title": "Финансовый консалтинг",
+          "content": "Детальный анализ инвестиционной активности в странах Ближнего Востока"
         }
       }
     },
     "partners": {
       "inex": {
-        "title": "INEX is an expert in service design and customer experience (CX).",
-        "paragraph": "Since 2008, the company has been exploring customer journeys, creating and implementing services for major corporations, training teams, and fostering a culture of customer centricity."
+        "title": "INEX — эксперт в области дизайна услуг и клиентского опыта (CX).",
+        "paragraph": "С 2008 года компания исследует клиентские journey, создает и внедряет сервисы для крупных корпораций, обучает команды и формирует культуру клиентоцентричности."
       },
       "psychgeo": {
-        "title": "PHYSGEO - leaders of the oil and gas consulting industry.",
-        "paragraph": "They develop the largest fields, implement cutting-edge technologies, and set the pace for the entire industry."
+        "title": "PHYSGEO — лидеры консалтинговой индустрии нефти и газа.",
+        "paragraph": "Они разрабатывают крупнейшие месторождения, внедряют передовые технологии и задают темп всей отрасли."
       }
     }
   },

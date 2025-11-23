@@ -1,29 +1,19 @@
 import { Locale, routing } from 'i18n/routing';
 import { setRequestLocale } from 'next-intl/server';
 
-import { BlobsParallaxGroup } from '@/components';
+import { LandingContents } from '@/app/[locale]/LandingContents';
 
-import { HomeContents } from '@/app/[locale]/homeContents';
-import { blobs } from '@/constant/data';
-
-type HomePageProps = {
+type ApplyPageProps = {
   params: { locale: Locale };
 };
 
-const Home = ({ params }: HomePageProps) => {
+export default function ApplyPage({ params }: ApplyPageProps) {
   const { locale } = params;
   setRequestLocale(locale);
 
-  return (
-    <>
-      <BlobsParallaxGroup blobs={blobs} />
-      <HomeContents locale={locale} />;
-    </>
-  );
-};
+  return <LandingContents />;
+}
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
-
-export default Home;
