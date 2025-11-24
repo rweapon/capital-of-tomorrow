@@ -11,7 +11,7 @@ export default function ApplyPage({ params }: ApplyPageProps) {
   const { locale } = params;
   setRequestLocale(locale);
 
-  return <LandingContents />;
+  return <LandingContents locale={locale} />;
 }
 
 export function generateStaticParams() {
