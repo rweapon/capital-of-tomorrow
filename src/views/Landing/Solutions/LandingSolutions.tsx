@@ -33,7 +33,9 @@ export const LandingSolutions = () => {
       <p className='font-mont font-light text-base md:text-xl'>
         {t('subtitle')}
       </p>
-      <Accordion title='' items={solutions} textColor='black' />
+      <div className='accordion-wrapper'>
+        <Accordion title='' items={solutions} textColor='black' />
+      </div>
     </section>
   );
 };

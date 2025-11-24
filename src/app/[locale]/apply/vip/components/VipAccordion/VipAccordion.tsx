@@ -49,11 +49,13 @@ export const VipAccordion = () => {
 
   return (
     <>
-      <Accordion
-        title={t('title')}
-        items={vipData}
-        initialActives={initialActives}
-      />
+      <div className='container accordion-wrapper'>
+        <Accordion
+          title={t('title')}
+          items={vipData}
+          initialActives={initialActives}
+        />
+      </div>
       <div className='container text-primary-foreground'>
         <h1 className='font-akira text-xl md:text-2xl lg:text-3xl'>
           {t('paragraph')}
