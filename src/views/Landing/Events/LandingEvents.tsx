@@ -1,10 +1,17 @@
+import { Link } from 'i18n/navigation';
+import { Locale } from 'i18n/routing';
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import React from 'react';
 
+import { NavigationKeys } from '@/constant/data';
 import { imagePrefix } from '@/constant/env';
 
-export const LandingEvents = () => {
+type LandingEventsProps = {
+  locale: Locale;
+};
+
+export const LandingEvents = ({ locale }: LandingEventsProps) => {
   const t = useTranslations('landing.events');
 
   return (
@@ -19,14 +26,20 @@ export const LandingEvents = () => {
         <p className='font-mont font-light text-base sm:text-lg lg:text-2xl'>
           {t('paragraph')}
         </p>
-        <div className='h-72'>
-          <Image
-            src={`${imagePrefix}/landing_event.svg`}
-            alt='badge'
-            width={247}
-            height={400}
-            className='h-auto lg:max-w-xs xl:max-w-lg'
-          />
+        <div className='h-72 flex'>
+          <Link
+            href={`/${NavigationKeys.EVENT}`}
+            locale={locale}
+            className='hover:opacity-90 transition-all'
+          >
+            <Image
+              src={`${imagePrefix}/landing_event.svg`}
+              alt='badge'
+              width={247}
+              height={400}
+              className='h-auto lg:max-w-xs xl:max-w-lg'
+            />
+          </Link>
         </div>
       </div>
     </section>
