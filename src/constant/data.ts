@@ -297,11 +297,11 @@ export const enum NavigationKeys {
 
 export const flatNavigationItems = [
   { id: NavigationKeys.ABOUT, href: '/' },
+  { id: NavigationKeys.EVENT, href: `/${NavigationKeys.EVENT}` },
   {
     id: NavigationKeys.PARTICIPATE,
     href: `/${NavigationKeys.EVENT}/#${NavigationKeys.PARTICIPATE}`,
   },
-  { id: NavigationKeys.EVENT, href: `/${NavigationKeys.EVENT}` },
   {
     id: NavigationKeys.PARTNERS,
     href: `/${NavigationKeys.EVENT}/#${NavigationKeys.PARTNERS}`,
