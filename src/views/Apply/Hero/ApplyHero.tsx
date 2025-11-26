@@ -9,7 +9,7 @@ export function ApplyHero({ page }: ApplyHeroProps) {
   const t = useTranslations(`${page}.hero`);
 
   return (
-    <section className='container text-primary-foreground'>
+    <section className='container text-primary-foreground header-buffer'>
       <h1 className='font-akira text-2xl md:text-3xl lg:text-5xl mb-6 lg:mb-12'>
         {t('title')}
       </h1>

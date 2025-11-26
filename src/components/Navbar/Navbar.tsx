@@ -34,8 +34,8 @@ export const Navbar = ({ locale }: NavbarProps) => {
     );
   };
   return (
-    <header className='relative flex items-center justify-end md:justify-betwen w-full md:flex-col px-2 sm:px-4 md:px-8 lg:px-12 xl:px-24 mt-4'>
-      <nav className='hidden md:block h-16 w-full border-b border-primarytext-primary-foreground/50 '>
+    <header className='fixed top-0 z-50 bg-black/80 flex items-center justify-end md:justify-betwen w-full md:flex-col px-2 sm:px-4 md:px-8 lg:px-12 xl:px-24 border-b border-primary text-primary-foreground/50'>
+      <nav className='hidden md:block h-16 w-full  '>
         <ul className='shrink-1 flex size-full items-center justify-between gap-x-px xl:gap-x-8'>
           {navigationItems.map((item) => (
             <li className='font-monda flex size-full' key={item.id}>
@@ -54,11 +54,15 @@ export const Navbar = ({ locale }: NavbarProps) => {
           />
         </ul>
       </nav>
+      <div className='block md:hidden absolute left-1/2 -translate-x-1/2'>
+        <LanguageSwitcher
+          checked={isLanguageSwitcherChecked}
+          onChangeLanguage={onChangeLanguage}
+        />
+      </div>
       <MobileMenu
         locale={locale}
         className='block md:hidden relative p-0 w-12 aspect-square bg-transparent border-none cursor-pointer burger-button burger-button_after'
-        isLanguageSwitcherChecked={isLanguageSwitcherChecked}
-        onChangeLanguage={onChangeLanguage}
       />
     </header>
   );

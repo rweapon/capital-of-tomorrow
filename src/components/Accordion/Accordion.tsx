@@ -105,7 +105,6 @@ export const Accordion = ({
           </article>
         ))}
       </div>
-
       {extraContent && <div className='mt-12'>{extraContent}</div>}
     </section>
   );
