@@ -5,7 +5,6 @@ import { Locale } from 'i18n/routing';
 import { useTranslations } from 'next-intl';
 import { useState } from 'react';
 
-import { LanguageSwitcher } from '@/components';
 import { Button } from '@/components/Button/button';
 import {
   Dialog,
@@ -21,16 +20,9 @@ import { flatNavigationItems } from '@/constant/data';
 type MobileMenuProps = {
   locale: Locale;
   className?: string;
-  isLanguageSwitcherChecked: boolean;
-  onChangeLanguage: (value: boolean) => void;
 };
 
-export const MobileMenu = ({
-  locale,
-  className,
-  isLanguageSwitcherChecked,
-  onChangeLanguage,
-}: MobileMenuProps) => {
+export const MobileMenu = ({ locale, className }: MobileMenuProps) => {
   const [open, setOpen] = useState(false);
   const navigation = useTranslations('navigation');
 
@@ -69,10 +61,6 @@ export const MobileMenu = ({
               </Link>
             </li>
           ))}
-          <LanguageSwitcher
-            checked={isLanguageSwitcherChecked}
-            onChangeLanguage={onChangeLanguage}
-          />
         </ul>
       </DialogContent>
     </Dialog>

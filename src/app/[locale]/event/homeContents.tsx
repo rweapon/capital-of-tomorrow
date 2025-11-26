@@ -113,7 +113,6 @@ export const HomeContents = ({ locale }: HomeContentsProps) => {
       <Scroll />
       <PartnershipSection />
       <PartnershipCards locale={locale} />
-      {/* <ImageSlider /> */}
       <Accordion title={t('qa.title')} items={qAData} />
     </>
   );

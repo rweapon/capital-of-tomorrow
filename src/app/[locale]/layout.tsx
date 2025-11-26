@@ -76,7 +76,7 @@ export default async function LocaleLayout({
     <html suppressHydrationWarning>
       <body
         className={cn(
-          'relative box-border min-h-screen overflow-x-hidden flex flex-col gap-8 md:gap-12 lg:gap-20 ',
+          'relative box-border min-h-screen overflow-x-hidden flex flex-col gap-8 md:gap-12 lg:gap-20 mt-12 md:mt-16 ',
           locale === 'ru' && 'not-akira',
           fonts
         )}

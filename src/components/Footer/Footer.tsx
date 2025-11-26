@@ -52,7 +52,7 @@ export const Footer = ({ locale }: FooterProps) => {
   };
 
   return (
-    <footer className='bg-[#1E1E1E]/70 text-white/70 sm:mt-20 pt-6 font-monda uppercase'>
+    <footer className='bg-[#212121] text-white/70 pt-6 font-monda uppercase  '>
       <section className='container pb-4'>
         <div className='flex flex-col md:flex-row md:*:flex-1 gap-8'>
           <div className='flex flex-col gap-2'>
