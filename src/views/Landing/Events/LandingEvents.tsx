@@ -15,7 +15,7 @@ export const LandingEvents = ({ locale }: LandingEventsProps) => {
   const t = useTranslations('landing.events');
 
   return (
-    <section className='z-10 bg-background w-full py-8 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-24 flex flex-col gap-3'>
+    <section className='z-10 bg-background w-full py-8 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-24 flex flex-col gap-3 landing-section'>
       <h2 className='font-akira font-extrabold text-xl sm:text-3xl xl:text-5xl w-min'>
         {t('title')}
       </h2>

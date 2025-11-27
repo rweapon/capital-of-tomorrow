@@ -1,9 +1,16 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 'use client';
-import React, { useEffect, useRef } from 'react';
+import React, { useCallback, useEffect, useRef } from 'react';
+import { useMediaQuery } from 'react-responsive';
 
 export const LandingPlanet = () => {
   const planet = useRef<HTMLDivElement>(null);
   const sparkContainer = useRef<HTMLDivElement>(null);
+
+  const isXl = useMediaQuery({ query: '(min-width: 1248px)' });
+  const isLg = useMediaQuery({ query: '(min-width: 1024px)' });
+  const isMd = useMediaQuery({ query: '(min-width: 765px)' });
+  const isSm = useMediaQuery({ query: '(min-width: 765px)' });
 
   const generateSparks = () => {
     if (!sparkContainer.current) return;
@@ -40,18 +47,33 @@ export const LandingPlanet = () => {
     }
   };
 
-  useEffect(() => {
-    window.addEventListener('scroll', () => {
-      if (!planet.current) return;
+  const getPxShift = () => {
+    if (isXl) return 0.6;
+    if (isLg) return 0.02;
+    if (isMd) return 0.2;
+    if (isSm) return 0.1;
+    return 0.5;
+  };
 
-      const scrollY = window.scrollY;
-      if (scrollY < window.innerHeight) {
-        planet.current.style.transform = `translate(-50%, ${
-          scrollY * 0.6
-        }px) scale(${1 - scrollY * 0.0002})`;
-      }
-    });
+  const scrollPlanetEffect = () => {
+    if (!planet.current) return;
+    const pxShift = getPxShift();
+
+    const scrollY = window.scrollY;
+    if (scrollY < window.innerHeight) {
+      planet.current.style.transform = `translate(-50%, ${
+        scrollY * pxShift
+      }px) scale(${1 - scrollY * 0.0002})`;
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', scrollPlanetEffect);
     generateSparks();
+
+    return () => {
+      window.removeEventListener('scroll', scrollPlanetEffect);
+    };
   }, []);
 
   return (
