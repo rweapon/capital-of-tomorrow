@@ -26,7 +26,7 @@ export const LandingSolutions = () => {
   ];
 
   return (
-    <section className='bg-background w-full py-10 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-24 flex flex-col gap-4 !text-foreground -landing-buffer'>
+    <section className='bg-background w-full py-10 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-24 flex flex-col gap-4 !text-foreground -landing-buffer landing-section'>
       <h2 className='font-akira font-extrabold text-xl lg:text-3xl xl:text-5xl '>
         {t('title')}
       </h2>

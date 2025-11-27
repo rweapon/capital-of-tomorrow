@@ -39,7 +39,7 @@ export const LandingPartners = () => {
   const t = useTranslations('landing.partners');
 
   return (
-    <section className='flex flex-col gap-4 bg-primary -landing-buffer landing-buffer landing-bottom-buffer -landing-bottom-buffer'>
+    <section className='flex flex-col gap-4 bg-primary -landing-buffer landing-buffer landing-bottom-buffer -landing-bottom-buffer landing-section'>
       <h2 className='ml-4 sm:ml-6 md:ml-8 lg:ml-12 xl:ml-24 font-akira font-extrabold text-xl sm:text-3xl xl:text-5xl text-background'>
         {t('title')}
       </h2>
