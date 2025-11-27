@@ -374,10 +374,21 @@
     pointer-events: none;
   }
 
+  .landing-hero {
+    @apply sm:h-[unset];
+
+    height: calc(100svh - 80px);
+  }
+
+  .landing-section {
+    @apply min-h-svh sm:min-h-[unset];
+  }
+
   .planet-container {
+    @apply top-[60%] sm:top-[30%] md:top-[30%] lg:top-[35%] xl:top-[45%] 2xl:top-[55%];
     position: absolute;
     left: 50%;
-    top: 55%;
+    /* top: 55%; */
     transform: translate(-50%, 0);
     width: 140vw;
     height: 140vw;

@@ -5,7 +5,7 @@ export const LandingValues = () => {
   const t = useTranslations('landing.values');
 
   return (
-    <section className='flex flex-col gap-10 w-full px-4 sm:px-6 md:px-8 lg:px-12 xl:px-24 text-background bg-primary landing-buffer -landing-buffer landing-bottom-buffer'>
+    <section className='flex flex-col gap-10 w-full px-4 sm:px-6 md:px-8 lg:px-12 xl:px-24 text-background bg-primary landing-buffer -landing-buffer landing-bottom-buffer landing-section'>
       <h2 className='font-akira font-extrabold text-xl sm:text-3xl xl:text-5xl'>
         {t('title')}{' '}
       </h2>
