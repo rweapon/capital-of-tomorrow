@@ -84,17 +84,19 @@ const StepThree = ({
             <li>{t('terms.nine')}</li>
             {!isVip && <li>{t('terms.ten')}</li>}
           </ul>
-          <div>
-            <p>{t('note.one')}</p>
-            <p>{t('note.two')}</p>
-            <p>{t('note.three')}</p>
-            <p>{t('note.four')}</p>
-            <p>{t('note.five')}</p>
-            <p>{t('note.six')}</p>
-            <p>{t('note.seven')}</p>
-            <p>{t('note.eight')}</p>
-            <p>{t('note.nine')}</p>
-          </div>
+          {isVip && (
+            <div>
+              <p>{t('note.one')}</p>
+              <p>{t('note.two')}</p>
+              <p>{t('note.three')}</p>
+              <p>{t('note.four')}</p>
+              <p>{t('note.five')}</p>
+              <p>{t('note.six')}</p>
+              <p>{t('note.seven')}</p>
+              <p>{t('note.eight')}</p>
+              <p>{t('note.nine')}</p>
+            </div>
+          )}
         </div>
       </form>
       <FormButtons
