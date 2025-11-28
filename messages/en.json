@@ -164,7 +164,7 @@
         }
       },
       "scoutingProject": {
-        "title": "SCOUTING PROJECT",
+        "title": "FAST TRACK",
         "buttonText": "Get started",
         "listItems": {
           "one": "Participation in the forum",
@@ -177,7 +177,7 @@
         }
       },
       "invitationLetter": {
-        "title": "INVITATION LETTER",
+        "title": "FORUM ACCESS PASS",
         "buttonText": "Get started",
         "listItems": {
           "one": "Official invitation",
@@ -206,19 +206,19 @@
       "advantages": {
         "title": "PARTNERSHIP ADVANTAGES",
         "one": {
-          "title": "Increased brand awareness.",
+          "title": "Increased brand awareness",
           "text": "Your brand will gain visibility in front of the target audience through all communication channels of the event - from social media to offline space."
         },
         "two": {
-          "title": "Access to the audience of young entrepreneurs and startups.",
+          "title": "Access to the audience of young entrepreneurs and startups",
           "text": "This is a chance to interact directly with ambitious founders, innovators, and future business leaders - those who are shaping the next generation economy."
         },
         "three": {
-          "title": "Stand out among colleagues and competitors.",
+          "title": "Stand out among colleagues and competitors",
           "text": "Participation in the forums program gives you the opportunity to declare yourself as a brand that supports development, innovation, and progress."
         },
         "four": {
-          "title": "Direct interaction with participants.",
+          "title": "Direct interaction with participants",
           "text": "You will be able to present your products, get feedback, network and find new customers or partners."
         }
       },
@@ -242,7 +242,7 @@
           "price": "3000",
           "buttonText": "Get started",
           "listItems": {
-            "one": "Everything from the Official package",
+            "one": "Everything from the Visibility partner",
             "two": "Own area for networking/branding ",
             "three": "Stand table with company representative and merchandising",
             "four": "5 posts on social media and 1 vertical video about the company; company brochure added to participants' merchandise"
@@ -267,7 +267,7 @@
   "apply": {
     "hero": {
       "title": "APPLICATION FORM",
-      "content": "We invite bold dreamers and creators to Capital of Tomorrow, a forum for the next generation of entrepreneurs to be held in Dubai on November 26-28, 2025. If you are a startup, future entrepreneur, visionary, or social innovator, this is the place for you. This is not just a forum, but a place where ambitions meet support and ideas become action. It's time to act - your idea, your voice, your path starts here."
+      "content": "We invite bold dreamers and creators to Capital of Tomorrow, a forum for the next generation of entrepreneurs to be held in Dubai on January 29-31, 2026. If you are a startup, future entrepreneur, visionary, or social innovator, this is the place for you. This is not just a forum, but a place where ambitions meet support and ideas become action. It's time to act - your idea, your voice, your path starts here."
     },
     "progress": {
       "one": "Personal Information",
@@ -335,7 +335,7 @@
         "expiry": "Expiry *",
         "expiryPlaceholder": "MM/YY",
         "cvc": "CVC *",
-        "fee": "Application fee £ 19",
+        "fee": "Application fee:",
         "payment_consent": "I agree to the processing of my personal data and payment information"
       }
     },
@@ -460,7 +460,7 @@
         "expiry": "Expiry *",
         "expiryPlaceholder": "MM/YY",
         "cvc": "CVC *",
-        "fee": "Application fee £ 19",
+        "fee": "Application fee:",
         "payment_consent": "I agree to the processing of my personal data and payment information"
       }
     },

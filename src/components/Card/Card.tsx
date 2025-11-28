@@ -6,6 +6,12 @@ import React from 'react';
 import { GRADIENTS } from '@/components/Card/data';
 import { BackgroundType, IGradientProps } from '@/components/Card/types';
 
+export type ParticipationType =
+  | 'fully-funded'
+  | 'fast-track'
+  | 'forum-access'
+  | 'vip';
+
 export interface ICardProps {
   title: string;
   listItems: string[];
@@ -29,6 +35,7 @@ export interface ICardProps {
   buttonText: string;
   link: string;
   locale: Locale;
+  type: ParticipationType;
 }
 
 const Gradient: React.FC<IGradientProps> = ({
@@ -121,6 +128,7 @@ const Card: React.FC<ICardProps> = ({
   buttonText,
   link,
   locale,
+  type,
 }) => {
   const numericWidth = parseInt(width);
   const numericHeight = parseInt(height);
@@ -250,6 +258,10 @@ const Card: React.FC<ICardProps> = ({
     const borderRadiusClass =
       layout === 'partnership' ? 'rounded-[35px]' : 'rounded-[12px]';
 
+    const onClick = (type: ParticipationType) => {
+      localStorage.setItem('participation', type);
+    };
+
     if (buttonBackgroundType === 'gold-gradient') {
       return (
         <div
@@ -300,6 +312,7 @@ const Card: React.FC<ICardProps> = ({
             <button
               className={`font-mont  relative z-10 size-full bg-transparent font-bold ${borderRadiusClass} transition-all duration-200 hover:scale-105`}
               style={buttonStyle}
+              onClick={() => onClick(type)}
             >
               {buttonText}
             </button>
@@ -313,6 +326,7 @@ const Card: React.FC<ICardProps> = ({
         <button
           className={`font-mont font-bold  ${borderRadiusClass} transition-all duration-200 hover:scale-105`}
           style={{ ...buttonStyle, background: buttonBackgroundColor }}
+          onClick={() => onClick(type)}
         >
           {buttonText}
         </button>

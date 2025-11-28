@@ -16,6 +16,7 @@ const StepFour = ({
   onNext,
   defaultValues,
   isVip,
+  locale,
   ...buttonProps
 }: StepComponentProps<StepFourData>) => {
   const t = useTranslations('apply.steps.four');
@@ -41,6 +42,23 @@ const StepFour = ({
     // Save to localStorage as backup
     localStorage.setItem('stepFourData', JSON.stringify(data));
     onNext(data);
+  };
+
+  const getFee = () => {
+    const participation =
+      localStorage.getItem('participation') || 'fully-funded';
+    let fee = '19';
+
+    if (participation === 'fast-track') {
+      fee = '600';
+    } else if (participation === 'forum-access') {
+      fee = '100';
+    } else if (participation === 'vip') {
+      fee = '1750';
+    }
+
+    // Logic to determine fee can be added here
+    return locale === 'en' ? `£ ${fee}` : `${fee} £`;
   };
 
   return (
@@ -110,7 +128,7 @@ const StepFour = ({
         </div>
 
         <h3 className='font-mont font-extrabold text-2xl text-primary-foreground'>
-          {t('fee')}
+          {t('fee')} {getFee()}
         </h3>
 
         <Controller

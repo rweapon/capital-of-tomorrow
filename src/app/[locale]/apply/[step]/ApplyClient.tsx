@@ -217,7 +217,7 @@ const ApplyClient: React.FC<ApplyClientProps> = ({ numStep, locale }) => {
   }, [numStep, locale]);
 
   // Check if user can access current step (has completed previous steps)
-  const canAccessStep = (step: number): boolean => {
+  const canAccessStep = (step: number) => {
     if (step === 1) return true;
 
     const requiredSteps = [
@@ -231,7 +231,17 @@ const ApplyClient: React.FC<ApplyClientProps> = ({ numStep, locale }) => {
         return false;
       }
     }
-    return true;
+  };
+
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const isObjectNotEmpty = (obj: any) => {
+    // First, ensure the value is actually an object and not null or undefined
+    if (typeof obj !== 'object' || obj === null) {
+      return false; // Not an object, or it's null, so it's not "not empty"
+    }
+
+    // Check if the object has any enumerable properties
+    return Object.keys(obj).length > 0;
   };
 
   // Redirect to first incomplete step if accessing invalid step
@@ -239,9 +249,9 @@ const ApplyClient: React.FC<ApplyClientProps> = ({ numStep, locale }) => {
     if (!isLoading && !canAccessStep(numStep)) {
       // Find the first incomplete step
       let redirectStep = 1;
-      if (formData.stepOne) redirectStep = 2;
-      if (formData.stepTwo) redirectStep = 3;
-      if (formData.stepThree) redirectStep = 4;
+      if (isObjectNotEmpty(formData.stepOne)) redirectStep = 2;
+      if (isObjectNotEmpty(formData.stepTwo)) redirectStep = 3;
+      if (isObjectNotEmpty(formData.stepThree)) redirectStep = 4;
 
       router.push(`/${NavigationKeys.APPLY}/${redirectStep}`, { locale });
     }
@@ -287,6 +297,7 @@ const ApplyClient: React.FC<ApplyClientProps> = ({ numStep, locale }) => {
         onNext={(data) => handleNext(data, 4)}
         onPrevious={handlePrevious}
         defaultValues={formData.stepFour}
+        locale={locale}
       />
     ),
   };
