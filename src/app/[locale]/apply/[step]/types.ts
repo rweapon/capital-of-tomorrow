@@ -1,3 +1,4 @@
+import { Locale } from 'i18n/routing';
 import z from 'zod';
 
 import { validateCreditCard, validateExpiry } from '@/lib/helper';
@@ -119,4 +120,5 @@ export type StepComponentProps<T> = {
   onPrevious: VoidFunction;
   defaultValues?: Partial<T>;
   isVip?: boolean;
+  locale?: Locale;
 };

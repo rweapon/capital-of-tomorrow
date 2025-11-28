@@ -88,7 +88,7 @@ export const MissionSection: React.FC = () => {
             {missionGoals.map((goal, index) => (
               <h2
                 key={index}
-                className='font-mont xs:text-sm xs:text-left text-start text-xs font-bold text-white/80 sm:text-base'
+                className='font-mont xs:text-sm xs:text-left text-xs font-bold text-white/80 sm:text-base inline-block text-center'
               >
                 {goal}
               </h2>
