@@ -35,7 +35,7 @@ export interface ICardProps {
   buttonText: string;
   link: string;
   locale: Locale;
-  type: ParticipationType;
+  type?: ParticipationType;
 }
 
 const Gradient: React.FC<IGradientProps> = ({
@@ -258,7 +258,8 @@ const Card: React.FC<ICardProps> = ({
     const borderRadiusClass =
       layout === 'partnership' ? 'rounded-[35px]' : 'rounded-[12px]';
 
-    const onClick = (type: ParticipationType) => {
+    const onClick = (type?: ParticipationType) => {
+      if (!type) return;
       localStorage.setItem('participation', type);
     };
 
