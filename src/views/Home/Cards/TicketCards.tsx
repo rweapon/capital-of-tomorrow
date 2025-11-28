@@ -33,6 +33,7 @@ export const TicketCards = ({ locale }: TicketCardsProps) => {
       shadow: '0 4px 4px 0 rgba(0, 0, 0, 0.25)',
       link: `/${NavigationKeys.APPLY}/1`,
       locale,
+      type: 'fully-funded',
     },
     {
       title: t('scoutingProject.title'),
@@ -57,6 +58,7 @@ export const TicketCards = ({ locale }: TicketCardsProps) => {
       borderColor: '#c7c1c1',
       link: `/${NavigationKeys.APPLY}/1`,
       locale,
+      type: 'fast-track',
     },
     {
       title: t('invitationLetter.title'),
@@ -79,6 +81,7 @@ export const TicketCards = ({ locale }: TicketCardsProps) => {
       borderColor: '#c7c1c1',
       link: `/${NavigationKeys.APPLY}/1`,
       locale,
+      type: 'forum-access',
     },
     {
       title: t('vip.title'),
@@ -102,6 +105,7 @@ export const TicketCards = ({ locale }: TicketCardsProps) => {
       shadow: '0 8px 32px rgba(212, 175, 55, 0.3)',
       link: `/${NavigationKeys.APPLY}/vip/1`,
       locale,
+      type: 'vip',
     },
   ];
 
