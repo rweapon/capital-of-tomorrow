@@ -17,7 +17,13 @@
       "location": "DUBAI",
       "month": "JANUARY",
       "year": "2026",
-      "button": "APPLY NOW"
+      "button": "APPLY NOW",
+      "timer": {
+        "one": "Days",
+        "two": "Hours",
+        "three": "Minutes",
+        "four": "Seconds"
+      }
     },
     "scroll": "GRANT GRANT GRANT GRANT GRANT GRANT GRANT GRANT GRANT GRANT GRANT GRANT GRANT GRANT GRANT GRANT GRANT GRANT GRANT GRANT GRANT GRANT GRANT GRANT GRANT GRANT",
     "mission": {
